@@ -43,8 +43,8 @@ Project root: https://sourceforge.net/projects/xml2j/
 
 
 <!-- import = framework import -->
-<xsl:param name="import" select="'com.ldx.xml.core'"/>
-<xsl:param name="import-util" select="'com.ldx.util'"/>
+<xsl:param name="import" select="'com.xml2j.xml.core'"/>
+<xsl:param name="import-util" select="'com.xml2j.util'"/>
 <!-- module-name -->
 <xsl:param name="module-name" select="'[module-name]'" />
 <xsl:param name="module-package" select="'[module-package]'" />
@@ -258,8 +258,8 @@ import org.xml.sax.XMLReader;
 import <xsl:value-of select="$package"/>.<xsl:value-of select="$typeName"/>;
 import <xsl:value-of select="$package"/>.<xsl:value-of select="$typeName"/>Handler;
 </xsl:if><xsl:text/>
-import com.ldx.xml.core.XMLMessageHandler;
-import com.ldx.xml.parser.ParserTask;
+import com.xml2j.xml.core.XMLMessageHandler;
+import com.xml2j.xml.parser.ParserTask;
 
 /**
  * This class reads the XML document from an XML inputsource.
@@ -324,7 +324,7 @@ public class <xsl:value-of select="$handlerClassname"/> extends
 
 <!-- with PRINTING -->
 <xsl:if test="$with-printing='1'">
-import com.ldx.util.Printer;<xsl:text>&#xA;</xsl:text>
+import com.xml2j.util.Printer;<xsl:text>&#xA;</xsl:text>
 </xsl:if>
 
 
@@ -336,7 +336,7 @@ import java.util.List;<xsl:text/>
 import java.util.ArrayList;
 </xsl:if>
 <xsl:if test="elementList/element">
-import com.ldx.util.Compare;
+import com.xml2j.util.Compare;
 </xsl:if>
 
 <xsl:variable name="doExtend">
@@ -606,7 +606,7 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
 	 *  This method prints an XML fragment starting from <xsl:value-of select="@type" />.
 	 *
 	 *  @param out the Printer that the element is printed to
-	 *  @see com.ldx.util.Printer
+	 *  @see com.xml2j.util.Printer
 	 */
 	protected void printElements(Printer out) {
 		super.printElements(out);
@@ -715,7 +715,7 @@ import <xsl:value-of select="$import"/>.ComplexDataType;</xsl:if>
 <xsl:if test="$doExtend='false'">
 import <xsl:value-of select="$import"/>.XMLEvent;</xsl:if>
 import <xsl:value-of select="$import"/>.XMLFragmentHandler;<xsl:text/>
-import com.ldx.xml.parser.ParserTask;<xsl:text/>
+import com.xml2j.xml.parser.ParserTask;<xsl:text/>
 
 <!-- write imports -->
 <xsl:for-each select="elementList/element"><xsl:text />
@@ -1001,15 +1001,15 @@ Creating processor: <xsl:value-of select="concat($processor-package,'.',$process
 <xsl:value-of select="$header"/>
 <!-- import <xsl:value-of select="$module-package"/>.*; -->
 <xsl:if test="$with-printing='1'">
-import com.ldx.util.ConsoleWriter;
+import com.xml2j.util.ConsoleWriter;
 </xsl:if>	
-import com.ldx.xml.core.ComplexDataType;
-import com.ldx.xml.core.MessageProcessor;
-import com.ldx.xml.core.ProcessorException;
-import com.ldx.xml.core.XMLEvent;
+import com.xml2j.xml.core.ComplexDataType;
+import com.xml2j.xml.core.MessageProcessor;
+import com.xml2j.xml.core.ProcessorException;
+import com.xml2j.xml.core.XMLEvent;
 
 /**
- *	This class processes events that are sent by the LDX+ framework.
+ *	This class processes events that are sent by the XML2J framework.
  */
 public class <xsl:value-of select="$processor-name"/> implements MessageProcessor {
 
@@ -1050,11 +1050,11 @@ import java.io.IOException;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
-//-----------------------    	LDX		-----------------------//
-import com.ldx.xml.core.MessageHandler;
-import com.ldx.xml.core.ParserConfiguration;
-import com.ldx.xml.core.ParserConfigurationException;
-import com.ldx.xml.parser.ParserRunnable;
+//-----------------------    	XML2J		-----------------------//
+import com.xml2j.xml.core.MessageHandler;
+import com.xml2j.xml.core.ParserConfiguration;
+import com.xml2j.xml.core.ParserConfigurationException;
+import com.xml2j.xml.parser.ParserRunnable;
 
 import <xsl:value-of select="concat($message-handler-package,'.',$message-handler-name)"/>;
 
@@ -1119,11 +1119,11 @@ import java.io.IOException;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.ErrorHandler;
-//-----------------------    	LDX		-----------------------//
-import com.ldx.xml.core.MessageHandler;
-import com.ldx.xml.core.ParserConfiguration;
-import com.ldx.xml.core.ParserConfigurationException;
-import com.ldx.xml.parser.ParserTask;
+//-----------------------    	XML2J		-----------------------//
+import com.xml2j.xml.core.MessageHandler;
+import com.xml2j.xml.core.ParserConfiguration;
+import com.xml2j.xml.core.ParserConfigurationException;
+import com.xml2j.xml.parser.ParserTask;
 import <xsl:value-of select="concat($message-handler-package,'.',$message-handler-name)"/>;
 
 /**
@@ -1196,16 +1196,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //-----------------------    	SAX		-----------------------//
 import org.xml.sax.SAXException;
-//-----------------------    	LDX		-----------------------//
-import com.ldx.xml.core.ParserConfiguration;
-import com.ldx.xml.core.ProcessorException;
+//-----------------------    	XML2J		-----------------------//
+import com.xml2j.xml.core.ParserConfiguration;
+import com.xml2j.xml.core.ProcessorException;
 <xsl:choose>
 	<xsl:when test="$application-name and $runnable-name">
-import com.ldx.xml.parser.ParserRunnable;
-import com.ldx.util.DefaultThreadManager;
+import com.xml2j.xml.parser.ParserRunnable;
+import com.xml2j.util.DefaultThreadManager;
 	</xsl:when>
 	<xsl:otherwise>
-import com.ldx.xml.parser.ParserTask;
+import com.xml2j.xml.parser.ParserTask;
 	</xsl:otherwise>
 </xsl:choose>	
 <xsl:if test="$application-name and $runnable-name">
