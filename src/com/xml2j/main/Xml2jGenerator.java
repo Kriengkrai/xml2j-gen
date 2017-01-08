@@ -115,7 +115,7 @@ public class Xml2jGenerator {
 			+ "\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE "
 			+ "\nOR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
 				
-			+ "\nhttps://sourceforge.net/projects/xml-java/"
+			+ "\nhttps://sourceforge.net/projects/xml2j/"
 			+ "\nemail: lolke@lolkedijkstra.com"
 			+ "\n---------------------------------------------------------------------------------------\n";	
 	
@@ -123,8 +123,8 @@ public class Xml2jGenerator {
 	/* CUSTOM HEADER */
 	static String headerFile = null;
 	static String header =
-			"\n	This software was generated using xml-java code generator. "
-			+ "\n see: https://sourceforge.net/projects/xml-java/"
+			"\n	This software was generated using xml2j code generator. "
+			+ "\n see: https://sourceforge.net/projects/xml2j/"
 			+ "\n  -----------------------------------------------------------------------------\n";	
 
 	
@@ -215,7 +215,7 @@ public class Xml2jGenerator {
 	static final String BASE = "com.xml2j";
 	
     static ByteArrayOutputStream raw(String input) throws IOException {
-    	InputStream is = new FileInputStream(XML2J_HOME + "/xsl/" + input + ".xsl");
+    	InputStream is = new FileInputStream(XML2J_HOME + "/xslt/" + input + ".xsl");
 
     	ByteArrayOutputStream bos = null;
 		try {
@@ -303,7 +303,7 @@ public class Xml2jGenerator {
 		} catch (IOException e) {
 			Notification.error("Cannot find or read file: " + configFileName);
 		} catch (Exception e) {
-			Notification.error("Invalid or missing data. Reinstall LDX Generator.");
+			Notification.error("Invalid or missing data. Reinstall XML2J Generator.");
 		}
 		
 		/* load configuration */
@@ -323,7 +323,7 @@ public class Xml2jGenerator {
 			xb3 = raw(xsl3).toByteArray();
 			xb4 = raw(xsl4).toByteArray();
 		} catch (IOException e1) {
-			Notification.error("Unsupported option -x");
+			Notification.error(e1.getMessage());
 		}
 
 		/* start transformation */
