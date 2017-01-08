@@ -50,10 +50,10 @@ public class Xml2jGenerator {
 	static final boolean INTERMEDIATE = true;
 
 
-	final static String xsl1 = "ldxg1";
-	final static String xsl2 = "ldxg2";
-	final static String xsl3 = "ldxg3";
-	final static String xsl4 = "ldxg4";
+	final static String xsl1 = "xml2j1";
+	final static String xsl2 = "xml2j2";
+	final static String xsl3 = "xml2j3";
+	final static String xsl4 = "xml2j4";
 	
 	/* input parameters */
 	final static String PACKAGE_NAME = "package-name";
@@ -194,7 +194,7 @@ public class Xml2jGenerator {
 		public final static String usage = "Error: Must provide configuration file. Option: -c"
 				+ "\n\t-? prints this message"
 				+ "\n\t-l print license details"
-				+ "\n\t-w working directory either absolute or relative to ldxg.jar's directory"
+				+ "\n\t-w working directory either absolute or relative to xml2j.jar's directory"
 				+ "\n\t-h[customheader] insert custom header"
 				+ "\n\t-s[UID] support for serialization with optional UID"
 				+ "\n\t-p generate printing methods"
