@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml2java.net/tutorial/zoo"
+        xmlns="http://xml2java.net/tutorial/zoo"
+        elementFormDefault="qualified">
+     
+    <xsd:simpleType name="SexType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="male"/>
+			<xsd:enumeration value="female"/>
+		</xsd:restriction>
+    </xsd:simpleType>    
+
+    <xsd:simpleType name="UnitType">
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="day"/>
+			<xsd:enumeration value="week"/>
+			<xsd:enumeration value="month"/>
+			<xsd:enumeration value="year"/>
+		</xsd:restriction>
+    </xsd:simpleType>    
+	
+    <xsd:complexType name="AgeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:positiveInteger">
+				<xsd:attribute name="unit" type="UnitType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+    </xsd:complexType>   
+	
+    <xsd:complexType name="GestationType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:positiveInteger">
+				<xsd:attribute name="unit" type="UnitType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+    </xsd:complexType>   
+
+    <xsd:complexType name="IncubationType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:positiveInteger">
+				<xsd:attribute name="unit" type="UnitType"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+    </xsd:complexType>   
+
+    
+    <xsd:complexType name="AnimalType">
+		<xsd:sequence>
+			<xsd:element name="sex" type="SexType"/>
+			<xsd:element name="age" type="AgeType"/>
+		</xsd:sequence>
+    </xsd:complexType>
+	
+    <xsd:complexType name="MammalType">
+		<xsd:complexContent>
+			  <xsd:extension base="AnimalType">
+				  <xsd:sequence>
+						<xsd:element name="gestation" type="GestationType"/>
+				  </xsd:sequence>
+			  </xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+    <xsd:complexType name="CatType">
+		<xsd:complexContent>
+			<xsd:extension base="MammalType">
+				<xsd:sequence>
+					<xsd:element name="name" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="DogType">
+		<xsd:complexContent>
+			<xsd:extension base="MammalType">
+				<xsd:sequence>
+					<xsd:element name="name" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+    </xsd:complexType>
+	
+    <xsd:complexType name="BirdType">
+		<xsd:complexContent>
+			<xsd:extension base="AnimalType">
+				<xsd:sequence>
+					<xsd:element name="incubation" type="IncubationType"/>
+					<xsd:element name="name" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+    </xsd:complexType>
+	
+	
+    <xsd:element name="animal" type="AnimalType" />
+    <xsd:element name="mammal" substitutionGroup="animal" type="MammalType" />
+    <xsd:element name="bird" substitutionGroup="animal" type="BirdType" />
+    <xsd:element name="cat" substitutionGroup="mammal" type="CatType" />
+    <xsd:element name="dog" substitutionGroup="mammal" type="DogType" />
+	
+    
+	<xsd:complexType name="ZooType">
+		<xsd:sequence>
+			<xsd:element ref="animal" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+
+	<xsd:complexType name="BirdZooType">
+		<xsd:sequence>
+			<xsd:element ref="bird" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MammalZooType">
+		<xsd:sequence>
+			<xsd:element ref="mammal" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ZooCollection">
+		<xsd:sequence>
+			<xsd:element name="zoo" type="ZooType" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="birdZoo" type="BirdZooType" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="mammalZoo" type="MammalZooType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	
+    <xsd:element name="zooCollection" type="ZooCollection"/>
+     
+</xsd:schema>

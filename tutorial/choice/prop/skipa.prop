@@ -1,0 +1,7 @@
+#LDX-PROPERTIES
+#process root
+container/@process=true
+
+#but skip A
+container/A/@detach=true
+

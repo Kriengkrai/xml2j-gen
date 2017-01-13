@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+	This example illustrates a sequence with multiple occurences
+-->
+
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="yournamespace/seq"
+        xmlns="yournamespace/seq"
+        elementFormDefault="qualified">
+    
+	<!-- ALT 3: sequence embedded in type, type multiplicity by ref -->	
+	<xsd:complexType name="nameType">
+		<xsd:sequence>
+		   <xsd:element name="firstName" type="xsd:string"/>
+		   <xsd:element name="middleName" type="xsd:string"/>
+		   <xsd:element name="lastName" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- element declaration -->	
+	<xsd:element name="name" type="nameType"/>
+	
+	<xsd:complexType name="ContainerType3">
+		<xsd:sequence>
+			<!-- referencing element declaration -->
+			<xsd:element ref="name" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>		
+	</xsd:complexType>
+
+	<xsd:element name="container" type="ContainerType3"/>
+	
+</xsd:schema>

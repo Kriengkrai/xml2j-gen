@@ -1,0 +1,15 @@
+Jan 16, 2016 10:33:45 AM com.ldx.tutorial.seq1.application.Seq1Application main
+INFO: Starting application.
+Jan 16, 2016 10:33:45 AM com.ldx.tutorial.seq1.application.Seq1Application main
+FINE: Loading runtime configuration
+Jan 16, 2016 10:33:45 AM com.ldx.tutorial.seq1.application.Seq1Application main
+FINE: #prop/default.prop
+#Sat Jan 16 10:33:45 CET 2016
+container/@process=true
+
+Jan 16, 2016 10:33:45 AM com.ldx.tutorial.seq1.application.Seq1Application main
+FINE: Validating input/data.xml against schema/schema.xsd
+Jan 16, 2016 10:33:45 AM com.ldx.tutorial.seq1.application.Seq1Application main
+INFO: Start Processing..
+Jan 16, 2016 10:33:45 AM com.ldx.tutorial.seq1.application.Seq1Application main
+INFO: Processing complete.

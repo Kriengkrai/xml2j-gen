@@ -1,0 +1,8 @@
+#LDX-PROPERTIES
+# process container
+ProductContainer/@process=true
+
+# but not the shirts
+ProductContainer/Shirt/@detach=true
+
+

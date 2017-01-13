@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="XML2J Tutorial" default="javadoc">
+	<!-- environment -->
+	<property environment="env"/>
+	<!-- name of the main class -->
+	<property name="main-class" value=""/>	
+	<!-- name of the module -->
+	<property name="module" value="com.xml2j.tutorial"/>	
+	<!-- generated jar name -->
+	<property name="jar.name" value="default.jar"/>
+	<!-- dependencies -->
+	
+	<!-- where is the source -->
+	<!-- if you generate the source locally (relative to the working directory) -->
+	<property name="src.dir" value="./src"/>
+	<!-- where you want your javadoc -->
+	<property name="docs.dir" value="./docs"/>
+	<!-- where you want your jars -->
+	<property name="build.dir" value="./lib"/>
+	<property name="lib.dir" value="./lib"/>
+
+	<!-- where the source of xml2j-framework is -->
+	<!--
+	<property name="framework.src.dir" value="${env.XML2J_HOME}/src" />
+	-->
+	<property name="framework.src.dir" value="../../xml2j-core/src" />
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar"/>
+	</path>
+
+    <target name="javadoc" depends="">
+    <javadoc 
+    	access="protected" 
+    	author="false" 
+    	classpath="classpath" 
+    	destdir="${docs.dir}" 
+    	doctitle="XML2J Toolkit for Java v. 2.2.1" 
+    	nodeprecated="true" 
+    	nodeprecatedlist="true" 
+    	noindex="false" 
+    	nonavbar="false" 
+    	notree="false" 
+    	packagenames="${module}.*" 
+    	source="1.7" 
+    	sourcepath="${src.dir};${framework.src.dir}" 
+    	splitindex="true" 
+    	use="true" 
+    	version="true">
+    	<bottom>
+        	<![CDATA[<b>Copyright © Lolke B. Dijkstra - Dijkstra ICT Consulting - 2009-2014</b>]]>
+        </bottom>
+    </javadoc>
+    </target>
+      
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}/classes"/>
+        <javac srcdir="${src.dir};${framework.src.dir}" destdir="${build.dir}/classes" classpathref="classpath" includeantruntime="false"/>
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar 
+        	destfile="./${jar.name}" 
+        	basedir="${build.dir}/classes"
+        	index="true">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}"/>
+			</manifest>
+        </jar>
+    </target>
+ 
+    <target name="buildall" depends="clean, compile" />
+    <target name="all" depends="javadoc, clean, compile, jar" />  
+ 
+</project>

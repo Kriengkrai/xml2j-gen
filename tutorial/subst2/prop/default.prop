@@ -1,0 +1,6 @@
+#LDX-PROPERTIES
+# process library
+library/@process=true
+library/miscellaneousItems/CD/@process=true
+library/books/book/@process=true
+

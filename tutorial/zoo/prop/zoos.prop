@@ -1,0 +1,9 @@
+#LDX-PROPERTIES
+# process Zoo
+zooCollection/zoo/@process=true
+# process Zoo
+zooCollection/mammalZoo/@process=true
+# process Zoo
+zooCollection/birdZoo/@process=true
+
+

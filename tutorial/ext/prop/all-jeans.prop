@@ -1,0 +1,8 @@
+#LDX-PROPERTIES
+# process container
+ProductContainer/@process=true
+
+# but not the jeans
+ProductContainer/Jeans/@detach=true
+
+

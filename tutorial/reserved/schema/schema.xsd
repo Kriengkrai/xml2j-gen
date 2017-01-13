@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+	This example illustrates the use of reserved names
+-->
+
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml2java.net/test/res"
+        xmlns="http://xml2java.net/test/res"
+        elementFormDefault="qualified">
+    
+
+    <xsd:complexType name="AType">
+      <xsd:sequence>
+    	<xsd:element name="int" type="xsd:string"/>
+    	<xsd:element name="long" type="xsd:string"/>
+    	<xsd:element name="short" type="xsd:string"/>
+    	<xsd:element name="try" type="xsd:string"/>
+    	<xsd:element name="catch" type="xsd:string"/>
+    	<xsd:element name="while" type="xsd:string"/>
+    	<xsd:element name="do" type="xsd:string"/>
+    	<xsd:element name="finally" type="xsd:string"/>
+    	<xsd:element name="final" type="xsd:string"/>    	
+      </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:element name="A" type="AType" />
+    
+    <xsd:element name="container">
+    <xsd:complexType>
+      <xsd:sequence>
+    	<xsd:element ref="A" />
+      </xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

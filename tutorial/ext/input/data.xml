@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProductContainer
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="yournamespace/sub">
+	<Shirt>
+		<number>1</number>
+		<name>shirt 1</name>
+		<size system="US">10</size>
+	</Shirt>	
+	<Jeans>
+		<number>2</number>
+		<name>jeans reg. fit</name>
+		<width system="US">32</width>
+		<length system="US">34</length>
+	</Jeans>	
+	<Shirt>
+		<number>3</number>
+		<name>shirt 3</name>
+		<fit>XL</fit>
+	</Shirt>	
+</ProductContainer>

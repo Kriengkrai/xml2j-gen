@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/test">
+	<A>
+		<childOfA>A.1</childOfA>
+	</A>	
+	<B>
+		<childOfB>B.1</childOfB>
+	</B>	
+	<C>
+		<childOfC>C.1</childOfC>		
+	</C>	
+	<B>
+		<childOfB>B.2</childOfB>
+	</B>	
+	<A>
+		<childOfA>A.2</childOfA>
+	</A>	
+	<C>
+		<childOfC>C.2</childOfC>		
+	</C>	
+</container>

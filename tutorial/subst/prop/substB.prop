@@ -1,0 +1,7 @@
+#LDX-PROPERTIES
+# process B
+container/B/@detach=true
+container/B/@process=true
+
+
+

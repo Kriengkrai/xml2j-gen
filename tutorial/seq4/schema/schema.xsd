@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+	This example illustrates a sequence with multiple occurences
+-->
+
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="yournamespace/seq"
+        xmlns="yournamespace/seq"
+        elementFormDefault="qualified">
+    
+	
+	<!-- ALT 4 as 1, but with group -->
+	<xsd:group name="nameGroup">
+		<xsd:sequence>
+		   <xsd:element name="firstName" type="xsd:string"/>
+		   <xsd:element name="middleName" type="xsd:string"/>
+		   <xsd:element name="lastName" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:group>
+	
+	<xsd:complexType name="ContainerType4">
+		<xsd:group ref="nameGroup" minOccurs="0" maxOccurs="10" />
+	</xsd:complexType>
+	
+	<xsd:element name="container" type="ContainerType4"/>
+	
+	
+</xsd:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+	This example illustrates multiple occurences of model groups
+-->
+
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml2java.net/test"
+        xmlns="http://xml2java.net/test"
+        elementFormDefault="qualified">
+    
+    <xsd:element name="description" type="xsd:string"/>
+    <xsd:element name="comment" type="xsd:string"/>
+    
+    <xsd:group name="DescrGroup">
+    	<xsd:sequence>
+    		<xsd:element ref="description"/>
+    		<xsd:element ref="comment"/>
+      	</xsd:sequence>
+	</xsd:group>
+
+    <xsd:complexType name="AType">
+      <xsd:sequence>
+      	<xsd:group ref="DescrGroup" maxOccurs="unbounded"/>
+    	<xsd:element name="first" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+    
+    <!-- BType shows an alternative description for AType -->
+    <xsd:complexType name="BType">
+      <xsd:sequence>    	
+    	<xsd:sequence maxOccurs="10">
+    		<xsd:element ref="description"/>
+    		<xsd:element ref="comment"/>
+      	</xsd:sequence>
+    	<xsd:element name="second" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- CType shows yet another alternative description for AType -->
+    <xsd:complexType name="CType">
+      <xsd:sequence>    	
+    	<xsd:sequence maxOccurs="unbounded">
+      		<xsd:group ref="DescrGroup"/>
+      	</xsd:sequence>
+    	<xsd:element name="third" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:element name="A" type="AType"/>
+    <xsd:element name="B" type="BType"/>
+    <xsd:element name="C" type="CType"/>
+
+    <xsd:complexType name="ContainerType">
+      <xsd:sequence>
+    	<xsd:element ref="A" maxOccurs="unbounded" />
+    	<xsd:element ref="B" maxOccurs="unbounded" />
+    	<xsd:element ref="C" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+
+	
+    <xsd:element name="container" type="ContainerType"/>
+</xsd:schema>

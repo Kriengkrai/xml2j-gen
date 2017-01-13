@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml2j-generator 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="urn:xml2j.sourceforge.io">
+ 	<domain name="tutorial">
+ 		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
+ 		<!-- the module name is used as an extension for generation of the package-name -->
+ 		<!-- all paths are either relative to the working directory or absolute -->
+		<module name="recursion2" 
+				input-path="schema" 
+				output-path="src"> 
+ 			<!-- for each XSD the root type to be handled and the name of the handler 
+ 			     class are specified -->	
+ 			<interface 
+ 				name="schema.xsd" 						
+ 				message-handler-root="a" 	
+ 				message-handler-name="RecursiveDocumentHandler"
+				message-handler-processor="RecursiveDocumentProcessor"
+				message-handler-application="RecursiveDocumentApplication"/>
+ 		</module>
+	</domain>
+</xml2j-generator>

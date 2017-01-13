@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/test/res">
+
+ 
+	
+	<A>
+		<int>int</int>
+		<long>long</long>
+		<short>short</short>
+		<try>try</try>
+		<catch>catch</catch>
+		<while>while</while>
+		<do>do</do>
+		<finally>finally</finally>
+		<final>final</final>
+	</A>	
+</container>

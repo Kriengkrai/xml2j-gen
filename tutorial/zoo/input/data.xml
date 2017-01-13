@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zooCollection
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/tutorial/zoo">
+	<zoo>
+		<cat>
+			<sex>male</sex>
+			<age unit="month">22</age>
+			<gestation unit="week">9</gestation>
+			<name>Felix</name>
+		</cat>	
+		<dog>
+			<sex>male</sex>
+			<age unit="year">4</age>
+			<gestation unit="week">11</gestation>
+			<name>Dogbert</name>
+		</dog>	
+		<bird>
+			<sex>female</sex>
+			<age unit="year">53</age>
+			<incubation unit="week">11</incubation>
+			<name>Tweety</name>
+		</bird>	
+	</zoo>
+	<birdZoo>
+		<bird>
+			<sex>female</sex>
+			<age unit="year">45</age>
+			<incubation unit="week">11</incubation>
+			<name>Sparkle</name>
+		</bird>	
+	</birdZoo>
+	<mammalZoo>
+		<cat>
+			<sex>male</sex>
+			<age unit="month">12</age>
+			<gestation unit="week">9</gestation>
+			<name>Boris</name>
+		</cat>	
+		<dog>
+			<sex>male</sex>
+			<age unit="year">5</age>
+			<gestation unit="week">11</gestation>
+			<name>Dude</name>
+		</dog>	
+	</mammalZoo>
+</zooCollection>	

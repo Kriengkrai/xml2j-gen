@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!--
+	This example illustrates multiple occurences of model groups
+-->
+
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml2java.net/test"
+        xmlns="http://xml2java.net/test"
+        elementFormDefault="qualified">
+    
+    <xsd:element name="a" type="AType" />
+    <xsd:element name="b" type="BType" />
+
+    <xsd:complexType name="AType" mixed="true">
+		<xsd:sequence minOccurs="0" maxOccurs="1">
+			<xsd:element ref="a" />
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:string"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="BType" mixed="true">
+		<xsd:sequence minOccurs="0" maxOccurs="1">
+			<xsd:element ref="a" />
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:string"/>
+    </xsd:complexType>
+
+    
+    <xsd:element name="document">
+    <xsd:complexType>
+		<xsd:sequence maxOccurs="1">
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="a" />
+			</xsd:sequence>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="b" />
+			</xsd:sequence>
+		</xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+    
+</xsd:schema>

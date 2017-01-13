@@ -1,0 +1,22 @@
+all sh scripts ending with -mod apply to a module and take the module name as parameter.
+e.g. to generate code for module choice: sh gen-mod.sh choice
+
+----------------------------------------------------------------
+overview:
+----------------------------------------------------------------
+all-mod		clean, gen, make, run
+clean-mod	clean module
+gen-mod		generate code for module
+make-mod	build module
+run-mod		run module
+
+================================================================
+
+all sh scripts ending with -all apply to all tutorial modules.
+----------------------------------------------------------------
+overview:
+----------------------------------------------------------------
+clean-all	clean all modules and clean tutorial level
+gen-all		generate code for all modules in directory ./src
+
+================================================================

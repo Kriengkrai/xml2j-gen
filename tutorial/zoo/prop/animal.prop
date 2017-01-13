@@ -1,0 +1,7 @@
+#LDX-PROPERTIES
+# don't process the zoo instead process animals individually
+zooCollection/zoo/dog/@process=true
+zooCollection/zoo/cat/@process=true
+
+
+

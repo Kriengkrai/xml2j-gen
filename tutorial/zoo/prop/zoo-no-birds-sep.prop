@@ -1,0 +1,9 @@
+#LDX-PROPERTIES
+# process Zoo
+zooCollection/zoo/@process=true
+
+# don't process birds in zoo container, but process each bird individually
+zooCollection/zoo/bird/@detach=true
+zooCollection/zoo/bird/@process=true
+
+

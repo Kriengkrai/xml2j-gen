@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/test/subst">
+	<A>
+		<aelement>A.first</aelement>
+		<containedA><name>contents of embedded containedA within A</name></containedA>
+	</A>	
+	<B>
+		<aelement>B.first</aelement>
+		<containedA><name>contents of embedded containedA within B</name></containedA>
+		<belement>B.second</belement>
+	</B>	
+	<C>
+		<aelement>C.first</aelement>
+		<containedA><name>contents of embedded containedA within C</name></containedA>
+		<belement>contents of belement within C</belement>
+		<celement>C.third</celement>		
+	</C>	
+</container>

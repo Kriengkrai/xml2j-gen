@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="yournamespace/sub"
+        xmlns="yournamespace/sub"
+        elementFormDefault="qualified">
+    
+	<xsd:complexType name="SizeType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:integer">
+				<xsd:attribute name="system" type="xsd:token"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ProductType">
+		<xsd:sequence>
+		   <xsd:element name="number" type="xsd:string"/>
+		   <xsd:element name="name" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ShirtType">
+		<xsd:complexContent>
+			<xsd:extension base="ProductType">
+				<xsd:choice>
+					<!-- either size (numeric) or fit (XXS..XXL) -->
+				   <xsd:element name="size" type="SizeType"/>
+				   <xsd:element name="fit" type="xsd:string"/>
+				</xsd:choice>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="JeansType">
+		<xsd:complexContent>
+			<xsd:extension base="ProductType">
+				<xsd:sequence>
+				   <xsd:element name="width" type="SizeType"/>
+				   <xsd:element name="length" type="SizeType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	
+    <xsd:element name="Product" type="ProductType" />
+    <xsd:element name="Shirt" substitutionGroup="Product" type="ShirtType" />
+    <xsd:element name="Jeans" substitutionGroup="Product" type="JeansType" />
+	
+	
+	<xsd:complexType name="ProductContainerType">
+		<xsd:sequence>
+			<xsd:element ref="Product" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+    </xsd:complexType>
+		
+    <xsd:element name="ProductContainer" type="ProductContainerType" />
+		
+	
+</xsd:schema>

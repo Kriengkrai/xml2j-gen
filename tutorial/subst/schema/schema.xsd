@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml2java.net/test/subst"
+        xmlns="http://xml2java.net/test/subst"
+        elementFormDefault="qualified">
+    
+    <xsd:complexType name="AContainedType">
+      <xsd:sequence>
+    	<xsd:element name="name" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>    
+    
+    <xsd:complexType name="AType">
+      <xsd:sequence>
+    	<xsd:element name="aelement" type="xsd:string"/>
+    	<xsd:element name="containedA" type="AContainedType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BType">
+    <xsd:complexContent>
+      <xsd:extension base="AType">
+      <xsd:sequence>
+    	<xsd:element name="belement" type="xsd:string"/>
+      </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CType">
+    <xsd:complexContent>
+      <xsd:extension base="BType">
+      <xsd:sequence>
+    	<xsd:element name="celement" type="xsd:string"/>
+      </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+    </xsd:complexType>
+
+    
+    <xsd:element name="A" type="AType" />
+    <xsd:element name="B" substitutionGroup="A" type="BType" />
+    <xsd:element name="C" substitutionGroup="B" type="CType" />
+    
+    <xsd:element name="container">
+    <xsd:complexType>
+      <xsd:sequence>
+    	<xsd:element ref="A" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+
+    
+</xsd:schema>

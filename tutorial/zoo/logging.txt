@@ -1,0 +1,15 @@
+Jan 07, 2017 3:29:14 PM com.ldx.tutorial.zoo.application.ZooApplication main
+INFO: Starting application.
+Jan 07, 2017 3:29:14 PM com.ldx.tutorial.zoo.application.ZooApplication main
+FINE: Loading runtime configuration
+Jan 07, 2017 3:29:14 PM com.ldx.tutorial.zoo.application.ZooApplication main
+FINE: #prop/default.prop
+#Sat Jan 07 15:29:14 CET 2017
+zooCollection/@process=true
+
+Jan 07, 2017 3:29:14 PM com.ldx.tutorial.zoo.application.ZooApplication main
+FINE: Validating input/data.xml against schema/schema.xsd
+Jan 07, 2017 3:29:14 PM com.ldx.tutorial.zoo.application.ZooApplication main
+INFO: Start Processing..
+Jan 07, 2017 3:29:14 PM com.ldx.tutorial.zoo.application.ZooApplication main
+INFO: Processing complete.

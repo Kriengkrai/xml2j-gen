@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/test/subst">
+	<books>
+		<book>
+			<id>BA12345</id>
+			<author>author1</author>
+			<title>book1</title>
+		</book>
+	</books>	
+
+	<cds>
+		<CD>
+			<id>CD00001</id>
+			<artist>artist2</artist>
+			<title>title2</title>
+		</CD>
+	</cds>	
+	
+	<miscellaneousItems>
+		<book>
+			<id>BA12346</id>
+			<author>author1</author>
+			<title>book2</title>
+		</book>
+		<book>
+			<id>BA12347</id>
+			<author>author1</author>
+			<title>book3</title>
+		</book>
+		
+		<CD>
+			<id>CD00002</id>
+			<artist>artist2</artist>
+			<title>title3</title>
+		</CD>
+	</miscellaneousItems>	
+
+</library>

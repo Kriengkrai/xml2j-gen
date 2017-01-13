@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<document
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/test">
+	<a id="1">one<a id="1.1">one.one<a id="1.1.1">one.one.one</a></a></a>	
+	<a id="2">two<a id="2.1">two.one<a id="2.1.1">two.one.one</a></a></a>	
+	<b id="3">three<a id="3.1">three.one<a id="3.1.1">three.one.one</a></a></b>		
+</document>

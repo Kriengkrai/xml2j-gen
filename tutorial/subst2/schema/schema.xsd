@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<xsd:schema 
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xml2java.net/test/subst"
+        xmlns="http://xml2java.net/test/subst"
+        elementFormDefault="qualified">
+		
+	<!-- this is a more complex schema involving substitution -->	
+    
+    <xsd:simpleType name="IDType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]{2}[0-9]{5}"/>
+		</xsd:restriction>
+    </xsd:simpleType>    
+    
+    <xsd:complexType name="LibraryItemType" abstract="true">
+      <xsd:sequence>
+    	<xsd:element name="id" type="IDType"/>
+      </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="BookType">
+    <xsd:complexContent>
+		<xsd:extension base="LibraryItemType">
+			<xsd:sequence>
+				<xsd:element name="author" type="xsd:string"/>
+				<xsd:element name="title" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:extension>
+    </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="CDType">
+    <xsd:complexContent>
+		<xsd:extension base="LibraryItemType">
+			<xsd:sequence>
+				<xsd:element name="artist" type="xsd:string"/>
+				<xsd:element name="title" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:extension>
+    </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="item" type="LibraryItemType" />
+    <xsd:element name="book" substitutionGroup="item" type="BookType" />
+    <xsd:element name="CD" substitutionGroup="item" type="CDType" />
+    
+	<xsd:complexType name="GenericCollectionType">
+      <xsd:sequence>
+    	<xsd:element ref="item" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+	
+	<xsd:complexType name="BookCollectionType">
+      <xsd:sequence>
+    	<xsd:element ref="book" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+
+	<xsd:complexType name="OpticalCollectionType">
+      <xsd:sequence>
+    	<xsd:element ref="CD" minOccurs="0" maxOccurs="unbounded" />
+      </xsd:sequence>
+    </xsd:complexType>
+	
+
+    <xsd:element name="books" type="BookCollectionType" />
+    <xsd:element name="cds" type="OpticalCollectionType" />
+    <xsd:element name="miscellaneousItems" type="GenericCollectionType"/>
+
+	
+    <xsd:element name="library">
+    <xsd:complexType>
+      <xsd:sequence>
+    	<xsd:element ref="books" />
+    	<xsd:element ref="cds" />
+    	<xsd:element ref="miscellaneousItems" minOccurs="0" />
+      </xsd:sequence>
+    </xsd:complexType>
+    </xsd:element>
+    
+</xsd:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="yournamespace/seq">
+	
+	<name>
+		<firstName>A</firstName>
+		<middleName>B</middleName>
+		<lastName>C</lastName>
+	</name>
+
+	<name>
+		<firstName>D</firstName>
+		<middleName>E</middleName>
+		<lastName>F</lastName>
+	</name>
+
+	<name>
+		<firstName>G</firstName>
+		<middleName>H</middleName>
+		<lastName>I</lastName>
+	</name>
+	
+</container>

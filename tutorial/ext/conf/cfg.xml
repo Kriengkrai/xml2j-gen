@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xml2j-generator 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="urn:xml2j.sourceforge.io">
+	<!-- 
+		A generator configuration has precisely 1 domain element, indicating the domain for which
+		code generation is performed.
+		
+		The base package defaults to "com.xml2j", but can have any value of your liking
+		to change its value use the base attribute. In this case base is explicitely set
+		to "com.xml2j". The domain name is added to the package-name, giving com.xml2j.tutorial. 
+	-->
+ 	<domain 
+		base="com.xml2j" 
+		name="tutorial">
+		<!--
+			Within a domain multiple modules may be present. For each module the module name 
+			is added to the domain package, in this case giving: com.xml2j.tutorial.ext
+		-->
+		<module name="ext" 
+				input-path="schema" 
+				output-path="src"> 
+				
+ 			<!-- 
+				Within a module multiple interfaces may exist. Each interface corresponds to 
+				an XML Schema file. For each XSD the root type to be handled and the name of the handler 
+ 			    class are specified.
+			-->	
+ 			<interface 
+ 				name="schema.xsd" 	
+ 				message-handler-root="ProductContainer" 	
+ 				message-handler-name="ExtMessageHandler"
+				message-handler-processor="ExtProcessor"
+				message-handler-application="ExtApplication"/>
+			
+ 		</module>
+	</domain>
+</xml2j-generator>

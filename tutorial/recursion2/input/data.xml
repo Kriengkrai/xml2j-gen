@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<a id="0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://xml2java.net/test">nil
+	<a id="1">one
+		<a id="1.1">one.one
+			<a id="1.1.1">one.one.one
+			</a>	
+		</a>
+	</a>	
+</a>

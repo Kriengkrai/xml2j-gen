@@ -1,0 +1,5 @@
+#LDX-PROPERTIES
+# process Zoo
+zooCollection/zoo/@process=true
+
+

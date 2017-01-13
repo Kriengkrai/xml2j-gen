@@ -1,0 +1,9 @@
+#LDX-PROPERTIES
+#process root
+container/@process=true
+container/A/@process=true
+container/B/@process=true
+container/C/@process=true
+
+
+
