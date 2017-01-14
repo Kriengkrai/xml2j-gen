@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -82,7 +82,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <xsl:param name="source-path" select="'./src'"/>
 
 <!-- project-root -->
-<xsl:param name="project-root" select="'XML-JAVA https://sourceforge.net/projects/xml-java/'"/>
+<xsl:param name="project-root" select="'XML2J https://sourceforge.net/projects/xml2j/'"/>
 
 <!-- author -->
 <xsl:param name="author" select="'@author Lolke B. Dijkstra'"/>
