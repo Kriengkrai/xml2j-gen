@@ -17,6 +17,9 @@ In the example above:
 * -w is the working directory for the choice project
 * -c is the fully qualified name of the configuration file
 
+To see possible arguments (help): 
+* java -jar xml2j.jar
+
 ** SAMPLES **
 I have added a samples directory with among others SEPA. In here I am also using Spring Data with MongoDB to persists transactions to Mongo. You will need to have [xml2j-springdata](https://github.com/lolkedijkstra/xml2j-springdata.git) as well if you want to use these samples.
 

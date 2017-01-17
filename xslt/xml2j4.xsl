@@ -1192,6 +1192,7 @@ public class <xsl:value-of select="$application-task-name"/> extends ParserTask 
 import java.io.FileInputStream;
 import java.io.IOException;
 //-----------------------    LOGGING	-----------------------//
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //-----------------------    	SAX		-----------------------//
@@ -1249,6 +1250,7 @@ public class <xsl:value-of select="$classname"/> {
 		final String schema = args.length &gt;= 3 ? args[2] : null;
 		
 		// initialize logger component
+		BasicConfigurator.configure();
 		Logger log = LoggerFactory.getLogger(<xsl:value-of select="$classname"/>.class);
 		
 		try {

@@ -1,4 +1,4 @@
-#LDX-PROPERTIES
+#XML2J-PROPERTIES
 #process root
 container/@process=true
 container/A/@process=true

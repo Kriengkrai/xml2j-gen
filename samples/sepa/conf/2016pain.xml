@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Example PAIN XML2J code generator configuration
+	
+source: http://www.iso20022.org/payments_messages.page
+
+=============================================================================================
+Message Name							Msg ID (Schema)	Submitting Organisation		Instances	
+=============================================================================================
+CustomerCreditTransferInitiationV07				pain.001.001.07			ISTH			N/A
+CustomerPaymentStatusReportV07					pain.002.001.07			ISTH			N/A
+CustomerPaymentReversalV06						pain.007.001.06			SWIFT			N/A
+CustomerDirectDebitInitiationV06				pain.008.001.06			ISTH			N/A
+CreditorPaymentActivationRequestV05				pain.013.001.05			CBI				N/A		
+CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
+=============================================================================================
+
+-->
+<xml2j-generator 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="urn:xml2j.sourceforge.io">
+ 	<domain 
+		base="com.xml2j"		
+		name="sepa2016">
+ 		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
+ 		<!-- the module name is used as an extension for generation of the package-name -->
+		<module name="pain" 
+				input-path="schema/pain" 
+				output-path="pain/src/main"> 
+ 			<!-- 
+				for each XSD the root type to be handled and the name of the handler class are specified 
+				e.g. Document and CustomerCreditTransferInitiationV07Document
+			-->	
+			
+			<!-- CustomerCreditTransferInitiationV07		pain.001.001.07 -->
+ 			<interface 
+ 				name="pain.001.001.07.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="CustomerCreditTransferInitiationV07Document"
+ 				message-handler-name="CustomerCreditTransferInitiationV07MessageHandler"
+				message-handler-processor="CustomerCreditTransferInitiationV07Processor"
+				message-handler-runnable="CustomerCreditTransferInitiationV07Runnable"
+				message-handler-application="CustomerCreditTransferInitiationV07Application"/>
+				
+			<!-- CustomerPaymentStatusReportV07				pain.002.001.07	-->			
+ 			<interface 
+ 				name="pain.002.001.07.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="CustomerPaymentStatusReportV07Document"
+ 				message-handler-name="CustomerPaymentStatusReportV07MessageHandler" 
+				message-handler-processor="CustomerPaymentStatusReportV07Processor"
+				message-handler-runnable="CustomerPaymentStatusReportV07Runnable"
+				message-handler-application="CustomerPaymentStatusReportV07Application"/>
+				
+			<!-- CustomerPaymentReversalV06					pain.007.001.06	-->			
+ 			<interface 
+ 				name="pain.007.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="CustomerPaymentReversalV06Document"
+ 				message-handler-name="CustomerPaymentReversalV06MessageHandler"
+				message-handler-processor="CustomerPaymentReversalV06Processor"
+				message-handler-runnable="CustomerPaymentReversalV06Runnable"
+				message-handler-application="CustomerPaymentReversalV06Application"/>
+				
+			<!-- CustomerDirectDebitInitiationV06			pain.008.001.06	-->			
+ 			<interface 
+ 				name="pain.008.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="CustomerDirectDebitInitiationV06Document"
+ 				message-handler-name="CustomerDirectDebitInitiationV06MessageHandler"
+ 				message-handler-processor="CustomerDirectDebitInitiationV06Processor"
+ 				message-handler-runnable="CustomerDirectDebitInitiationV06Runnable"
+				message-handler-application="CustomerDirectDebitInitiationV06Application"/>
+				
+			<!-- CreditorPaymentActivationRequestV05		pain.013.001.05 -->				
+			<interface 
+ 				name="pain.013.001.05.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="CreditorPaymentActivationRequestV05Document"
+ 				message-handler-name="CreditorPaymentActivationRequestV05MessageHandler"
+				message-handler-processor="CreditorPaymentActivationRequestV05Processor"
+				message-handler-runnable="CreditorPaymentActivationRequestV05Runnable"
+				message-handler-application="CreditorPaymentActivationRequestV05Application"/>
+				
+			<!-- CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05	-->			
+ 			<interface 
+ 				name="pain.014.001.05.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="CreditorPaymentActivationRequestStatusReportV05Document"
+ 				message-handler-name="CreditorPaymentActivationRequestStatusReportV05MessageHandler"
+				message-handler-processor="CreditorPaymentActivationRequestStatusReportV05Processor"
+				message-handler-runnable="CreditorPaymentActivationRequestStatusReportV05Runnable"
+				message-handler-application="CreditorPaymentActivationRequestStatusReportV05Application"/>
+				
+ 		</module>
+	</domain>
+</xml2j-generator>

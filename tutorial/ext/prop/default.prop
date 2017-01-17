@@ -1,4 +1,4 @@
-#LDX-PROPERTIES
+#XML2J-PROPERTIES
 # process container
 ProductContainer/@process=true
 

@@ -1,4 +1,4 @@
-#LDX-PROPERTIES
+#XML2J-PROPERTIES
 # process library
 library/@process=true
 library/miscellaneousItems/CD/@process=true

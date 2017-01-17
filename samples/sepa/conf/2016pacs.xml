@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Example PACS XML2J code generator configuration
+	
+
+
+source: http://www.iso20022.org/payments_messages.page
+
+==============================================================================================================
+Message Name							Msg ID (Schema)	Submitting Organisation		Instances	Msg Def Report
+==============================================================================================================
+FIToFIPaymentStatusReportV07			pacs.002.001.07			SWIFT					N/A			MDR
+FIToFICustomerDirectDebitV06			pacs.003.001.06			SWIFT					N/A
+PaymentReturnV06						pacs.004.001.06			SWIFT					N/A
+FIToFIPaymentReversalV06				pacs.007.001.06			SWIFT					N/A
+FIToFICustomerCreditTransferV06			pacs.008.001.06			SWIFT					N/A
+FinancialInstitutionCreditTransferV06	pacs.009.001.06			SWIFT					N/A
+FinancialInstitutionDirectDebitV02		pacs.010.001.02			SWIFT					N/A
+==============================================================================================================
+
+-->
+<xml2j-generator 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="urn:xml2j.sourceforge.io">
+ 	<domain 
+		base="com.xml2j"		
+		name="sepa2016">
+ 		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
+ 		<!-- the module name is used as an extension for generation of the package-name -->
+		<module name="pacs" 
+				input-path="schema/pacs" 
+				output-path="pacs/src/main"> 
+ 			<!-- 
+				for each XSD the root type to be handled and the name of the handler class are specified 
+				e.g. Document and FIToFIPaymentStatusReportV07Document
+			-->	
+			
+			<!-- FIToFIPaymentStatusReportV07			pacs.002.001.07 -->
+ 			<interface 
+ 				name="pacs.002.001.07.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="FIToFIPaymentStatusReportV07Document"
+ 				message-handler-name="FIToFIPaymentStatusReportV07MessageHandler"
+				message-handler-processor="FIToFIPaymentStatusReportV07Processor"
+				message-handler-runnable="FIToFIPaymentStatusReportV07Runnable"
+				message-handler-application="FIToFIPaymentStatusReportV07Application"/>
+				
+			<!-- FIToFICustomerDirectDebitV06			pacs.003.001.06	-->			
+ 			<interface 
+ 				name="pacs.003.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="FIToFICustomerDirectDebitV06Document"
+ 				message-handler-name="FIToFICustomerDirectDebitV06MessageHandler" 
+				message-handler-processor="FIToFICustomerDirectDebitV06Processor"
+				message-handler-runnable="FIToFICustomerDirectDebitV06Runnable"
+				message-handler-application="FIToFICustomerDirectDebitV06Application"/>
+				
+			<!-- PaymentReturnV06						pacs.004.001.06	-->			
+ 			<interface 
+ 				name="pacs.004.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="PaymentReturnV06Document"
+ 				message-handler-name="PaymentReturnV06MessageHandler"
+				message-handler-processor="PaymentReturnV06Processor"
+				message-handler-runnable="PaymentReturnV06Runnable"
+				message-handler-application="PaymentReturnV06Application"/>
+				
+			<!-- FIToFIPaymentReversalV06				pacs.007.001.06	-->			
+ 			<interface 
+ 				name="pacs.007.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="FIToFIPaymentReversalV06Document"
+ 				message-handler-name="FIToFIPaymentReversalV06MessageHandler"
+ 				message-handler-processor="FIToFIPaymentReversalV06Processor"
+ 				message-handler-runnable="FIToFIPaymentReversalV06Runnable"
+				message-handler-application="FIToFIPaymentReversalV06Application"/>
+				
+			<!-- FIToFICustomerCreditTransferV06		pacs.008.001.06 -->				
+			<interface 
+ 				name="pacs.008.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="FIToFICustomerCreditTransferV06Document"
+ 				message-handler-name="FIToFICustomerCreditTransferV06MessageHandler"
+				message-handler-processor="FIToFICustomerCreditTransferV06Processor"
+				message-handler-runnable="FIToFICustomerCreditTransferV06Runnable"
+				message-handler-application="FIToFICustomerCreditTransferV06Application"/>
+				
+			<!-- FinancialInstitutionCreditTransferV06	pacs.009.001.06	-->			
+ 			<interface 
+ 				name="pacs.009.001.06.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="FinancialInstitutionCreditTransferV06Document"
+ 				message-handler-name="FinancialInstitutionCreditTransferV06MessageHandler"
+				message-handler-processor="FinancialInstitutionCreditTransferV06Processor"
+				message-handler-runnable="FinancialInstitutionCreditTransferV06Runnable"
+				message-handler-application="FinancialInstitutionCreditTransferV06Application"/>
+				
+			<!-- FinancialInstitutionDirectDebitV02		pacs.010.001.02	-->			
+ 			<interface 
+ 				name="pacs.010.001.02.xsd" 
+ 				message-handler-root="Document" 	
+ 				root-type-rename="FinancialInstitutionDirectDebitV02Document"
+ 				message-handler-name="FinancialInstitutionDirectDebitV02MessageHandler"
+				message-handler-processor="FinancialInstitutionDirectDebitV02Processor"
+				message-handler-runnable="FinancialInstitutionDirectDebitV02Runnable"
+				message-handler-application="FinancialInstitutionDirectDebitV02Application"/>
+ 		</module>
+	</domain>
+</xml2j-generator>

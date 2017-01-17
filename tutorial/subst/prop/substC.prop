@@ -1,4 +1,4 @@
-#LDX-PROPERTIES
+#XML2J-PROPERTIES
 # process C
 container/C/@detach=true
 container/C/@process=true
