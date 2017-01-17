@@ -20,7 +20,7 @@ In the example above:
 To see possible arguments (help): 
 * java -jar xml2j.jar
 
-** SAMPLES **
+**SAMPLES**
 I have added a samples directory with among others SEPA. In here I am also using Spring Data with MongoDB to persists transactions to Mongo. You will need to have [xml2j-springdata](https://github.com/lolkedijkstra/xml2j-springdata.git) as well if you want to use these samples.
 
 
