@@ -18,6 +18,7 @@ package com.xml2j.sepa2016.pain.application;
 import java.io.FileInputStream;
 import java.io.IOException;
 //-----------------------    LOGGING	-----------------------//
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //-----------------------    	SAX		-----------------------//
@@ -69,6 +70,7 @@ public class CustomerCreditTransferInitiationV07Application {
 		final String schema = args.length >= 3 ? args[2] : null;
 		
 		// initialize logger component
+		BasicConfigurator.configure();
 		Logger log = LoggerFactory.getLogger(CustomerCreditTransferInitiationV07Application.class);
 		
 		try {
