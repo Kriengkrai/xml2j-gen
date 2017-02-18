@@ -26,7 +26,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <!--
 	step4 (4/4) Java code generation 
 	
-	version:		2.4		
+	version:		2.4.1		
 	
 	changelog:
 		support for
@@ -41,6 +41,8 @@ Project root: https://sourceforge.net/projects/xml2j/
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:Date="java:java.util.Date">
 
+
+<xsl:param name="xml2j-version" select="'2.4.1'"/>
 
 <!-- import = framework import -->
 <xsl:param name="import" select="'com.xml2j.xml.core'"/>
@@ -85,7 +87,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <xsl:param name="project-root" select="'XML2J https://sourceforge.net/projects/xml2j/'"/>
 
 <!-- author -->
-<xsl:param name="author" select="'@author Lolke B. Dijkstra'"/>
+<xsl:param name="author" select="'XML2J Generator'"/>
 
 <!-- custom header -->
 <xsl:param
@@ -115,14 +117,17 @@ Project root: https://sourceforge.net/projects/xml2j/
     name="header">
 /******************************************************************************
   -----------------------------------------------------------------------------
-  XML-Java XSD to Java code generator
+  XML2J XSD to Java code generator
   -----------------------------------------------------------------------------
   <xsl:value-of select="$custom-header"/>
-  This code was generated using XML-JAVA code generator.
-  Project home: <xsl:value-of select="$project-root"/> 
+  This code was generated using XML2J code generator.
   
+  Version: <xsl:value-of select="$xml2j-version"/> 
+  Project home: <xsl:value-of select="$project-root"/> 
+
   Module: <xsl:value-of select="$module"/> 
   Generation date: <xsl:value-of select="$current-date"/> 
+  Author: <xsl:value-of select="$author"/>
 
 ******************************************************************************/
 </xsl:variable>
@@ -377,12 +382,11 @@ import <xsl:value-of select="$import"/>.TypeAllocator;
  * This class provides getters and setters for embedded attributes and elements.
  * Any complex data structure can be navigated by using the element getter methods.
  * <!-- @see &lt;<xsl:value-of select="$classname"/>Handler&gt; -->
- * <xsl:value-of select="$author"/>
  */
 public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$super"/> {
 <xsl:if test="$with-serialization='1'">
 	/**
-	 * default serial version UID 
+	 * serial version UID 
 	 */
 	private static final long serialVersionUID = <xsl:value-of select="$serialversion-uid"/>;
 </xsl:if>
@@ -550,6 +554,10 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
 	public boolean equals(Object that) {  
 		if (!super.equals(that))
 			return false;
+      
+	 <xsl:if test="elementList/element"> 
+		      <xsl:text>&#x9;</xsl:text><xsl:value-of select="$classname"/> t = (<xsl:value-of select="$classname"/>)that;
+	 </xsl:if>        
   <xsl:for-each select="elementList/element">
     <xsl:if test="not(@substitutes)">
   	<xsl:variable name="tName" select="translate(@name,$org_char,$rep_char)"/>
@@ -559,11 +567,11 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
   	
 	<xsl:choose>	
 		<xsl:when test="@ismulti='true'">
-		if (!Compare.equals(<xsl:value-of select="$attributeName"/>List, ((<xsl:value-of select="$classname"/>)that).<xsl:value-of select="$attributeName"/>List))
+		if (!Compare.equals(<xsl:value-of select="$attributeName"/>List, t.<xsl:value-of select="$attributeName"/>List))
 			return false;
 		</xsl:when>
 		<xsl:otherwise>
-		if (!Compare.equals(<xsl:value-of select="$attributeName"/>, ((<xsl:value-of select="$classname"/>)that).<xsl:value-of select="$attributeName"/>))
+		if (!Compare.equals(<xsl:value-of select="$attributeName"/>, t.<xsl:value-of select="$attributeName"/>))
 			return false;
 		</xsl:otherwise>
 	</xsl:choose>	
@@ -753,7 +761,6 @@ import com.xml2j.xml.parser.ParserTask;<xsl:text/>
  * <xsl:value-of select="$classname"/> handler class.
  *
  * @see <xsl:value-of select="$classname"/>
- * <xsl:value-of select="$author"/>
  */
 public class <xsl:value-of select="$classname"/>Handler <xsl:choose>
 <xsl:when test="$doExtend='true'">extends <xsl:value-of select="$extendsType"/>Handler {</xsl:when>

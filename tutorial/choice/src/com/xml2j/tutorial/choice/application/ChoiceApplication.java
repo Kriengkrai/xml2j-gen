@@ -6,10 +6,10 @@ package com.xml2j.tutorial.choice.application;
   -----------------------------------------------------------------------------
   
   This code was generated using XML-JAVA code generator.
-  Project home: XML-JAVA https://sourceforge.net/projects/xml-java/ 
+  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
   
   Module: CHOICE 
-  Generation date: Fri Jan 13 16:20:27 CET 2017 
+  Generation date: Sat Feb 18 11:45:10 CET 2017 
 
 ******************************************************************************/
 
@@ -18,6 +18,7 @@ package com.xml2j.tutorial.choice.application;
 import java.io.FileInputStream;
 import java.io.IOException;
 //-----------------------    LOGGING	-----------------------//
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //-----------------------    	SAX		-----------------------//
@@ -66,6 +67,7 @@ public class ChoiceApplication {
 		final String schema = args.length >= 3 ? args[2] : null;
 		
 		// initialize logger component
+		BasicConfigurator.configure();
 		Logger log = LoggerFactory.getLogger(ChoiceApplication.class);
 		
 		try {

@@ -7,14 +7,12 @@ package com.xml2j.tutorial.choice;
   -----------------------------------------------------------------------------
   
   This code was generated using XML-JAVA code generator.
-  Project home: XML-JAVA https://sourceforge.net/projects/xml-java/ 
+  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
   
   Module: CHOICE 
-  Generation date: Fri Jan 13 16:20:27 CET 2017 
+  Generation date: Sat Feb 18 11:45:10 CET 2017 
 
 ******************************************************************************/
-
-import com.xml2j.util.Printer;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -33,7 +31,7 @@ import com.xml2j.xml.core.TypeAllocator;
  * This class provides getters and setters for embedded attributes and elements.
  * Any complex data structure can be navigated by using the element getter methods.
  * 
- * 
+ * XML2J-Generator
  */
 public class ContainerType_d0e5_a6 extends ComplexDataType {
 
@@ -172,40 +170,4 @@ public class ContainerType_d0e5_a6 extends ComplexDataType {
 
   
   
-  
-	/**
-	 *	Printing method, prints the XML element to a Printer.
-	 *  This method prints an XML fragment starting from containerType_d0e5_a6.
-	 *
-	 *  @param out the Printer that the element is printed to
-	 *  @see com.xml2j.util.Printer
-	 */
-	protected void printElements(Printer out) {
-		super.printElements(out);
-  
-		if (m_aList != null)
-			for(AType l_A : m_aList) {
-				l_A.print(out);
-			}
-		else {
-			// out.print("<A>null</A>");
-		}
-		
-		if (m_bList != null)
-			for(BType l_B : m_bList) {
-				l_B.print(out);
-			}
-		else {
-			// out.print("<B>null</B>");
-		}
-		
-		if (m_cList != null)
-			for(CType l_C : m_cList) {
-				l_C.print(out);
-			}
-		else {
-			// out.print("<C>null</C>");
-		}
-		
-	}
 }

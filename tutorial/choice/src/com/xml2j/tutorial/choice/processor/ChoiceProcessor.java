@@ -7,14 +7,12 @@ package com.xml2j.tutorial.choice.processor;
   -----------------------------------------------------------------------------
   
   This code was generated using XML-JAVA code generator.
-  Project home: XML-JAVA https://sourceforge.net/projects/xml-java/ 
+  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
   
   Module: CHOICE 
-  Generation date: Fri Jan 13 16:20:27 CET 2017 
+  Generation date: Sat Feb 18 11:45:10 CET 2017 
 
 ******************************************************************************/
-
-import com.xml2j.util.ConsoleWriter;
 	
 import com.xml2j.xml.core.ComplexDataType;
 import com.xml2j.xml.core.MessageProcessor;
@@ -36,7 +34,7 @@ public class ChoiceProcessor implements MessageProcessor {
 		 */	
 			
 		if (evt == XMLEvent.END) {
-			data.print( ConsoleWriter.out );
+			System.out.println( data.getClass().toString() );
 		}
 	}
 }
