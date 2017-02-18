@@ -1,6 +1,6 @@
 package com.xml2j;
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -22,35 +22,34 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Project root: https://sourceforge.net/projects/xml2j/
 ********************************************************************************/
 
-
 import java.io.PrintStream;
 
-
 public class Xml2jConfiguration {
-	
+
 	public Xml2jDomain getDomain() {
 		return this.theDomain;
 	}
-	
+
 	private static Xml2jConfiguration configuration = new Xml2jConfiguration();
+
 	public static Xml2jConfiguration instance() {
 		return configuration;
 	}
-	
+
 	final static String ldxGenerator = "ldx-generator";
 	final static String domain = "domain";
 	final static String module = "module";
 	final static String interf = "interface";
-	
 
 	Xml2jDomain theDomain = null;
-	
-	public void add(Xml2jDomain domain) {
+
+	public void add(final Xml2jDomain domain) {
 		this.theDomain = domain;
 	}
-	
-	public void print(PrintStream s) {
-		s.println("ldx-generator");
-		theDomain.print(s);	s.println();
+
+	public void print(final PrintStream s) {
+		s.println("xml2j-generator");
+		theDomain.print(s);
+		s.println();
 	}
 }

@@ -1,6 +1,6 @@
 package com.xml2j.main;
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -37,7 +37,7 @@ import com.xml2j.Xml2jInterface;
 import com.xml2j.Xml2jModule;
 
 public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
-	
+
 	final static String BASE = "base";
 	final static String NAME = "name";
 	final static String PACKAGE_NAME = "package-name";
@@ -52,27 +52,26 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 	final static String ROOT_TYPE_RENAME = "root-type-rename";
 	final static String INPUT_PATH = "input-path";
 	final static String OUTPUT_PATH = "output-path";
-	
-	private Xml2jConfiguration configuration = Xml2jConfiguration.instance();
-	
-	public void parseDocument(String document) throws SAXException, IOException, ParserConfigurationException {
-		//get a factory
+
+	private final Xml2jConfiguration configuration = Xml2jConfiguration.instance();
+
+	public void parseDocument(final String document) throws SAXException, IOException, ParserConfigurationException {
+		// get a factory
 		SAXParserFactory spf = SAXParserFactory.newInstance();
-		
-		//get a new instance of parser
+
+		// get a new instance of parser
 		SAXParser sp = spf.newSAXParser();
-			
-		//parse the file and also register this class for call backs
+
+		// parse the file and also register this class for call backs
 		sp.parse(document, this);
 	}
 
 	@Override
-	public void startElement(String uri, String localName, String qName,
-			Attributes atts) throws SAXException {
+	public void startElement(final String uri, final String localName, final String qName, final Attributes atts) throws SAXException {
 
-		if( qName.equals("ldx-generator")) {
+		if (qName.equals("ldx-generator")) {
 			//
-		} else if( qName.equals("domain")) {
+		} else if (qName.equals("domain")) {
 			Xml2jDomain domain = new Xml2jDomain();
 			domain.base = atts.getValue(BASE);
 			domain.name = atts.getValue(NAME);
@@ -84,7 +83,7 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 			module.input_path = atts.getValue(INPUT_PATH);
 			module.output_path = atts.getValue(OUTPUT_PATH);
 			configuration.getDomain().add(module);
-			
+
 		} else if (qName.equals("interface")) {
 			Xml2jInterface intf = new Xml2jInterface();
 			intf.name = atts.getValue(NAME);

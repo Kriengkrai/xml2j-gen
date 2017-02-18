@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -32,7 +32,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 					embedding elements within elementList
 					embedding attributes within attributeList
 
-	version:		2.4				
+	version:		2.4.1				
 *******************************************************************************
 -->
 

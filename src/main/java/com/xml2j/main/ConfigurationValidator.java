@@ -1,6 +1,6 @@
 package com.xml2j.main;
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -36,56 +36,50 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-
-
 public class ConfigurationValidator {
-	
+
 	static public class Exception extends SAXException {
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
 
-		public Exception(String err) {
+		public Exception(final String err) {
 			super(err);
 		}
 	}
 
-
 	private String schemaName = null;
-	
-	public ConfigurationValidator(String schema) {
+
+	public ConfigurationValidator(final String schema) {
 		schemaName = schema;
 	}
-	
-	
+
 	static class ConfigurationErrorHandler implements ErrorHandler {
 
-		//@Override
-		public void error(SAXParseException exception) throws SAXException {
+		// @Override
+		public void error(final SAXParseException exception) throws SAXException {
 			throw new Exception(exception.getMessage());
 		}
 
-		//@Override
-		public void fatalError(SAXParseException exception) throws SAXException {
+		// @Override
+		public void fatalError(final SAXParseException exception) throws SAXException {
 			throw new Exception(exception.getMessage());
 		}
 
-		//@Override
-		public void warning(SAXParseException exception) throws SAXException {
+		// @Override
+		public void warning(final SAXParseException exception) throws SAXException {
 			throw new Exception(exception.getMessage());
 		}
 	}
 
-	
-	public void validateDocument(String document) throws SAXException, FileNotFoundException, IOException {
-		SchemaFactory schemaFactory = SchemaFactory
-				.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-		
+	public void validateDocument(final String document) throws SAXException, FileNotFoundException, IOException {
+		SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+
 		Schema schema = schemaFactory.newSchema(new StreamSource(schemaName));
 		Validator validator = schema.newValidator();
 		validator.setErrorHandler(new ConfigurationErrorHandler());
-		validator.validate(new StreamSource(new FileInputStream( document )));
+		validator.validate(new StreamSource(new FileInputStream(document)));
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.xml2j;
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -30,28 +30,24 @@ public class Xml2jModule {
 	public String name = null;
 	public String input_path = null;
 	public String output_path = null;
-	
+
 	int currInterface = -1;
-	
+
 	List<Xml2jInterface> intl = new ArrayList<Xml2jInterface>();
-	
+
 	public List<Xml2jInterface> interfaces() {
 		return intl;
 	}
-	
-	public void add(Xml2jInterface iface) {
+
+	public void add(final Xml2jInterface iface) {
 		currInterface++;
 		intl.add(iface);
 	}
-	
-	public void print(PrintStream s) {
-		s.println("\nldx-module" 
-				+	"\nname: "	+ name
-				+	"\ninput_path: " + input_path
-				+	"\noutput_path: " + output_path
-				);
 
-		for( Xml2jInterface i : intl) {
+	public void print(final PrintStream s) {
+		s.println("\nxml2j-module" + "\nname: " + name + "\ninput_path: " + input_path + "\noutput_path: " + output_path);
+
+		for (Xml2jInterface i : intl) {
 			i.print(s);
 		}
 	}

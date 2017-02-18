@@ -1,6 +1,6 @@
 package com.xml2j;
 /********************************************************************************
-Copyright 2016 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -30,32 +30,29 @@ public class Xml2jDomain {
 	public String base = null;
 	public String name = null;
 	int currModule = -1;
-	
+
 	List<Xml2jModule> modules = new ArrayList<Xml2jModule>();
-	
+
 	public List<Xml2jModule> modules() {
 		return modules;
 	}
-	
+
 	public Xml2jModule current() {
 		return modules.get(currModule);
 	}
-	
-	public void add(Xml2jModule mod) {
+
+	public void add(final Xml2jModule mod) {
 		currModule++;
-//		System.err.println("setting module");
+		// System.err.println("setting module");
 		modules.add(mod);
 	}
 
-	public void print(PrintStream s) {
-		s.println( "\nldx-domain"
-				+	"\nname: "	+ name
-				+	"\nbase: " + base
-				);
+	public void print(final PrintStream s) {
+		s.println("\nxml2j-domain" + "\nname: " + name + "\nbase: " + base);
 
-		for( Xml2jModule m : modules) {
+		for (Xml2jModule m : modules) {
 			m.print(s);
 		}
-	}	
-	
+	}
+
 }
