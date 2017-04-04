@@ -11,8 +11,13 @@ This service allows you to generate an XSD using various options, of which the d
 
 
 **REBUILD FROM SCRATCH**
+<<<<<<< HEAD
 * If you want to rebuild xml2j-gen use: `mvn clean install`. You will probably be getting an error due to the dependency to saxon. To resolve this add the jar to your maven repo.
 From the xml2j-gen directory issue the following command: `mvn install:install-file -Dfile=./libs/saxon.jar -DgroupId=com.icl.saxon -DartiffactId=saxon -Dversion=6.5.5 -Dpackaging=jar` 
+=======
+* If you want to rebuild xml2j-gen use: mvn clean install. You will probably be getting an error due to the dependency to saxon. To resolve this add the jar to your maven repo.
+From the xml2j-gen directory issue the following command: mvn install:install-file -Dfile=./libs/saxon.jar -DgroupId=com.icl.saxon -DartiffactId=saxon -Dversion=6.5.5 -Dpackaging=jar 
+>>>>>>> 36a3e720feca581c9e0857d034f4a3f8f681ba70
 (assuming the jar is in the libs subdirectory) 
 
 **Code Generation** 
