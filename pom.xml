@@ -5,53 +5,81 @@
   <properties>
   	<slf4j.version>1.7.21</slf4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>	
   </properties>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>xml2j7</groupId>
+  <groupId>com.xml2j</groupId>
   <artifactId>xml2j-gen</artifactId>
   <version>2.4.0</version>
-  <name>xml2j-gen</name>
-  <description>xml2j-gen Java Code Generator</description>
+  <name>xml2j-generator</name>
+  <description>xml2j Java Code Generator</description>
   <build>
     <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.3</version>
-        <configuration>
-          <source/>
-          <target/>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.3</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-            <configuration>
-              <transformers>
-                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>com.xml2j.main.Xml2jGenerator</mainClass>
-                </transformer>
-              </transformers>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>	  
+		<plugin>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.3</version>
+			<configuration>
+			  <source/>
+			  <target/>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-shade-plugin</artifactId>
+			<version>2.4.3</version>
+			<executions>
+			  <execution>
+				<phase>package</phase>
+				<goals>
+				  <goal>shade</goal>
+				</goals>
+				<configuration>
+				  <transformers>
+					<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+					  <mainClass>com.xml2j.main.Xml2jGenerator</mainClass>
+					</transformer>
+				  </transformers>
+				</configuration>
+			  </execution>
+			</executions>
+		</plugin>	 
+		<plugin>
+			<groupId>com.coderplus.maven.plugins</groupId>
+			<artifactId>copy-rename-maven-plugin</artifactId>
+			<version>1.0.1</version>
+			<executions>
+			  <execution>
+				<id>rename-file</id>
+				<phase>install</phase>
+				<goals>
+				  <goal>rename</goal>
+				</goals>
+				<configuration>
+				  <sourceFile>${project.basedir}/target/xml2j-gen-2.4.0.jar</sourceFile>
+				  <destinationFile>./xml2j.jar</destinationFile>
+				</configuration>
+			  </execution>
+			</executions>
+		  </plugin>		
     </plugins>
   </build>
   <dependencies>
-  	<dependency>
-		<groupId>com.xml2j</groupId>
-		<artifactId>xml2j</artifactId>
-		<version>2.4.0</version>
-	</dependency>
+	<!--
+		in my case the maven dependency at:
+		https://mvnrepository.com/artifact/saxon/saxon/6.5.5 
+		failed to download. So I included the saxon.jar in the subsiding libs folder.
+		
+		remedy: 
+			install the jar manually in your repo. 
+			on the command line issue the following command:
+			
+			> mvn install:install-file -Dfile=C:\Development\xml2j-gen\libs\saxon.jar -DgroupId=com.icl -DartifactId=saxon -Dversion=6.5.5 -Dpackaging=jar 
+			
+			Note: you will have to replace C:\Development\xml2j-gen\libs\saxon.jar with the path you are using.
+	-->	
 	<dependency>
-		<groupId>com.icl.saxon</groupId>
+		<groupId>com.icl</groupId>
 		<artifactId>saxon</artifactId>
 		<version>6.5.5</version>
 	</dependency>

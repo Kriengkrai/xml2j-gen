@@ -1,6 +1,6 @@
 package com.xml2j.main;
 /********************************************************************************
-Copyright 2016, 2017 Lolke B. Dijkstra
+Copyright 2016-2018 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -22,16 +22,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Project root: https://sourceforge.net/projects/xml2j/
 ********************************************************************************/
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.Closeable;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
@@ -45,11 +37,11 @@ import com.xml2j.Xml2jInterface;
 import com.xml2j.Xml2jModule;
 
 public class Xml2jGenerator {
-	static final String VERSION = "VERSION: 2.4.1";
+	private static final String VERSION = "VERSION: 2.4.2";
 
 	// @formatter:off
-	static String license = "\n\r---------------------------------------------------------------------------------------"
-			+ "\nCopyright 2016, 2017 Lolke B. Dijkstra " + "\nPermission is hereby granted, free of charge, to any person obtaining a copy"
+	private static String license = "\n\r---------------------------------------------------------------------------------------"
+			+ "\nCopyright 2016-2018 Lolke B. Dijkstra " + "\nPermission is hereby granted, free of charge, to any person obtaining a copy"
 			+ "\nof this software and associated documentation files (the \"Software\"), to deal"
 			+ "\nin the Software without restriction, including without limitation the rights to "
 			+ "\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of "
@@ -70,55 +62,59 @@ public class Xml2jGenerator {
 			+ "\n---------------------------------------------------------------------------------------\n";
 
 	/* CUSTOM HEADER */
-	static String headerFile = null;
-	static String header = "\n	This software was generated using XML2J code generator. " 
+	private static String headerFile = null;
+	private static String header = "\n	This software was generated using XML2J code generator. "
 			+ "\n see: https://sourceforge.net/projects/xml2j/"
 			+ "\n  -----------------------------------------------------------------------------\n";
 	// @formatter:on
 
 	/* input parameters for transformations */
-	final static String PACKAGE_NAME = "package-name";
-	final static String MODULE_NAME = "module-name";
-	final static String MODULE_PACKAGE = "module-package";
+	static final private String PACKAGE_NAME = "package-name";
+	static final private String MODULE_NAME = "module-name";
+	static final private String MODULE_PACKAGE = "module-package";
+	static final private String GROUP_ID = "group-id";
 
-	final static String MESSAGE_HANDLER_ROOT = "message-handler-root";
-	final static String MESSAGE_HANDLER_NAME = "message-handler-name";
-	final static String MESSAGE_HANDLER_PACKAGE = "message-handler-package";
-	final static String ROOT_TYPE_RENAME = "root-type-rename";
+	static final private String MESSAGE_HANDLER_ROOT = "message-handler-root";
+	static final private String MESSAGE_HANDLER_NAME = "message-handler-name";
+	static final private String MESSAGE_HANDLER_PACKAGE = "message-handler-package";
+	static final private String ROOT_TYPE_RENAME = "root-type-rename";
 
-	final static String PROCESSOR_PACKAGE = "processor-package";
-	final static String PROCESSOR_NAME = "processor-name";
+	static final private String PROCESSOR_PACKAGE = "processor-package";
+	static final private String PROCESSOR_NAME = "processor-name";
 
-	final static String APPLICATION_NAME = "application-name";
-	final static String APPLICATION_PACKAGE = "application-package";
-	final static String APPLICATION_TASK_NAME = "application-task-name";
-	final static String APPLICATION_TASK_PACKAGE = "application-task-package";
-	final static String RUNNABLE_NAME = "runnable-name";
-	final static String RUNNABLE_PACKAGE = "runnable-package";
+	static final private String APPLICATION_NAME = "application-name";
+	static final private String APPLICATION_PACKAGE = "application-package";
+	static final private String APPLICATION_TASK_NAME = "application-task-name";
+	static final private String APPLICATION_TASK_PACKAGE = "application-task-package";
+	static final private String RUNNABLE_NAME = "runnable-name";
+	static final private String RUNNABLE_PACKAGE = "runnable-package";
 
-	final static String PRINTING = "with-printing";
-	final static String LICENSE = "license";
-	final static String SOURCE_PATH = "source-path";
-	final static String AUTHOR = "author";
-	final static String CUSTOMHEADER = "custom-header";
+	static final private String PRINTING = "with-printing";
+	static final private String LICENSE = "license";
+	static final private String SOURCE_PATH = "source-path";
+	static final private String AUTHOR = "author";
+	static final private String CUSTOMHEADER = "custom-header";
 
-	final static String SERIALIZATION = "with-serialization";
-	final static String SERIALVERSION_UID = "serialversion-uid";
+	static final private String SERIALIZATION = "with-serialization";
+	static final private String SERIALVERSION_UID = "serialversion-uid";
 
-	final static String XML2J_VERSION = "xml2j-version";
+	static final private String XML2J_VERSION = "xml2j-version";
+	static final String emptyDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><document xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"/>";
+
 
 	private static Xml2jModule module;
 	private static Xml2jInterface iface;
 	private static String moduleRoot;
 	private static String modulePackage;
 	private static Xml2jGeneratorSettings generatorSettings;
+	private static Xml2jDomain d;
 
 	static class Header {
 		static String customHeader = null;
 
 		static String readHeader(final String fileName) {
 			String input = "\r";
-			String line = null;
+			String line;
 
 			BufferedReader br = null;
 			try {
@@ -138,6 +134,7 @@ public class Xml2jGenerator {
 				try {
 					br.close();
 				} catch (Exception e) {
+					Notification.error(e.getMessage());
 				}
 			}
 			return customHeader = input;
@@ -157,15 +154,15 @@ public class Xml2jGenerator {
 		static boolean intermediate = false;
 
 		static void print() {
-			System.out.println("author: " + Options.author);
-			System.out.println("configFileName: " + Options.configFileName);
-			System.out.println("workingDirectory: " + Options.workingDirectory);
-			System.out.println("printMethods: " + Options.printMethods);
-			System.out.println("printLicense: " + Options.printLicense);
-			System.out.println("printVersion: " + Options.printVersion);
-			System.out.println("serialization: " + Options.serialization);
-			System.out.println("UID: " + Options.UID);
-			System.out.println("intermediate: " + Options.intermediate);
+			Notification.message("author: " + Options.author);
+			Notification.message("configFileName: " + Options.configFileName);
+			Notification.message("workingDirectory: " + Options.workingDirectory);
+			Notification.message("printMethods: " + Options.printMethods);
+			Notification.message("printLicense: " + Options.printLicense);
+			Notification.message("printVersion: " + Options.printVersion);
+			Notification.message("serialization: " + Options.serialization);
+			Notification.message("UID: " + Options.UID);
+			Notification.message("intermediate: " + Options.intermediate);
 		}
 
 	}
@@ -176,7 +173,7 @@ public class Xml2jGenerator {
 
 	static class CommandLine {
 
-		public static void parse(final String[] args) {
+		 static void parse(final String[] args) {
 
 			for (String arg : args) {
 				if (arg.startsWith("-a") && arg.length() > 2) {
@@ -189,6 +186,7 @@ public class Xml2jGenerator {
 					try {
 						Options.UID = Long.parseLong(arg.substring(2));
 					} catch (Exception e) {
+						Notification.message("Warning: option -s ignored (not an integral number)");
 					}
 				} else if (arg.equals("-p")) {
 					Options.printMethods = true;
@@ -212,7 +210,7 @@ public class Xml2jGenerator {
 
 		// @formatter:off
 		/** command line parameters */
-		public final static String usage = "Error: Must provide configuration file. Option: -c" 
+		static final String usage = "Error: Must provide configuration file. Option: -c"
 				+ "\n\t-? prints this message" 
 				+ "\n\t-l print license details"
 				+ "\n\t-w working directory either absolute or relative to xml2j.jar's directory" 
@@ -225,20 +223,20 @@ public class Xml2jGenerator {
 		// @formatter:on
 
 		/** print command line usage */
-		public static void usage() {
-			System.out.println(usage);
+		static void usage() {
+			Notification.message(usage);
 		}
 	}
 
 	/* basic settings */
-	static final String XML2J_HOME = "XML2J_HOME";
+	private static final String XML2J_HOME = "XML2J_HOME";
 	static final String HOME = System.getenv(XML2J_HOME);
-	static final String SCHEMA = HOME + "/schema/xml2j.xsd";
-	static final String BASE = "com.xml2j";
+	private static final String SCHEMA = HOME + "/schema/xml2j.xsd";
+	private static final String BASE = "com.xml2j";
 
-	static final String SAXPARSERFACTORY = "org.apache.xerces.jaxp.SAXParserFactoryImpl";
+	private static final String SAXPARSERFACTORY = "org.apache.xerces.jaxp.SAXParserFactoryImpl";
 
-	static void initialize() {
+	private static void initialize() {
 		if (!Options.workingDirectory.equals("."))
 			Options.configFileName = Options.workingDirectory + "/" + Options.configFileName;
 
@@ -254,11 +252,11 @@ public class Xml2jGenerator {
 		setParserFactory();
 	}
 
-	static void setParserFactory() {
+	private static void setParserFactory() {
 		System.setProperty("javax.xml.parsers.SAXParserFactory", SAXPARSERFACTORY);
 	}
 
-	static void validateConfiguration() {
+	private static void validateConfiguration() {
 		Notification.message("Validating configuration...");
 
 		ConfigurationValidator validator = new ConfigurationValidator(SCHEMA);
@@ -271,7 +269,7 @@ public class Xml2jGenerator {
 		}
 	}
 
-	static void parseConfiguration() {
+	private static void parseConfiguration() {
 		Notification.message("Reading configuration...");
 
 		ConfigurationHandler handler = new ConfigurationHandler();
@@ -284,7 +282,7 @@ public class Xml2jGenerator {
 		}
 	}
 
-	static class Xml2jGeneratorSettings {
+	private static class Xml2jGeneratorSettings {
 		String workingDirectory;
 		String base;
 		String domainname;
@@ -308,25 +306,26 @@ public class Xml2jGenerator {
 	}
 
 	/* steps */
-	static enum Step {
-		ONE, TWO, THREE, FOUR
+	enum Step {
+		STEP_ONE, STEP_TWO, STEP_THREE, GENERATE_JAVA, GENERATE_POM
 	}
 
-	static Map<Step, String> steps = new EnumMap<Step, String>(Step.class);
+	private static Map<Step, String> steps = new EnumMap<>(Step.class);
 
 	static {
-		steps.put(Step.ONE, "xml2j1");
-		steps.put(Step.TWO, "xml2j2");
-		steps.put(Step.THREE, "xml2j3");
-		steps.put(Step.FOUR, "xml2j4");
+		steps.put(Step.STEP_ONE, "xml2j1");
+		steps.put(Step.STEP_TWO, "xml2j2");
+		steps.put(Step.STEP_THREE, "xml2j3");
+		steps.put(Step.GENERATE_JAVA, "xml2j4");
+		steps.put(Step.GENERATE_POM, "xml2j5");
 	}
 
-	private final static Map<String, String> getParamStep1() {
-		return new HashMap<String, String>();
+	private static Map<String, String> getParamStep1() {
+		return new HashMap<>();
 	}
 
-	private final static Map<String, String> getParamStep2() {
-		Map<String, String> param = new HashMap<String, String>();
+	private static Map<String, String> getParamStep2() {
+		Map<String, String> param = new HashMap<>();
 
 		param.put(Xml2jGenerator.PACKAGE_NAME, modulePackage);
 		param.put(Xml2jGenerator.MODULE_NAME, module.name);
@@ -334,8 +333,8 @@ public class Xml2jGenerator {
 		return param;
 	}
 
-	private final static Map<String, String> getParamStep3() {
-		Map<String, String> param = new HashMap<String, String>();
+	private static Map<String, String> getParamStep3() {
+		Map<String, String> param = new HashMap<>();
 
 		param.put(MESSAGE_HANDLER_ROOT, iface.message_handler_root);
 		param.put(MESSAGE_HANDLER_NAME, iface.message_handler_name);
@@ -345,8 +344,8 @@ public class Xml2jGenerator {
 		return param;
 	}
 
-	private final static Map<String, String> getParamStep4() {
-		Map<String, String> param = new HashMap<String, String>();
+	private static Map<String, String> getParamStep4() {
+		Map<String, String> param = new HashMap<>();
 
 		param.put(MODULE_NAME, module.name);
 		param.put(MODULE_PACKAGE, modulePackage);
@@ -370,37 +369,55 @@ public class Xml2jGenerator {
 		return param;
 	}
 
-	final static Map<String, String> getParam(final Step step) {
+	private static Map<String, String> getParamStep5() {
+		Map<String, String> param = new HashMap<>();
+
+		param.put(GROUP_ID, modulePackage.substring(0, modulePackage.lastIndexOf('.')));
+		param.put(MODULE_NAME, module.name);
+		param.put(MODULE_PACKAGE, modulePackage);
+		param.put(APPLICATION_NAME, iface.message_handler_application);
+		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
+		param.put(SOURCE_PATH, Options.workingDirectory + "/" + module.output_path);
+
+		return param;
+	}
+
+
+	private static Map<String, String> getParam(final Step step) {
 		switch (step) {
-		case ONE:
+		case STEP_ONE:
 			return getParamStep1();
 
-		case TWO:
+		case STEP_TWO:
 			return getParamStep2();
 
-		case THREE:
+		case STEP_THREE:
 			return getParamStep3();
 
-		case FOUR:
+		case GENERATE_JAVA:
 			return getParamStep4();
+
+		case GENERATE_POM:
+			return getParamStep5();
 		}
 		return null;
 	}
 
-	static ByteArrayOutputStream performStep(final Step step, final InputStream input) {
+	private static boolean isIntermediateStep(final Step step) {
+		return (step == Step.STEP_ONE || step == Step.STEP_TWO || step == Step.STEP_THREE);
+	}
+
+	private static ByteArrayOutputStream performStep(final Step step, final InputStream input) {
 		final Map<String, String> param = getParam(step);
 		Transformation t = new Transformation(steps.get(step), param);
 
-		String inSystemId = Step.ONE == step ? moduleRoot + iface.name : null;
+		String inSystemId = Step.STEP_ONE == step ? moduleRoot + iface.name : null;
 		ByteArrayOutputStream output = t.executeStep(input, inSystemId);
-
-		if (Options.intermediate)
-			writeIntermediate(iface.name, output.toByteArray(), step);
 
 		return output;
 	}
 
-	static InputStream getInputStream() {
+	private static InputStream getInputStream() {
 		InputStream input = null;
 		try {
 			if (Xml2jGenerator.Options.verbose)
@@ -414,11 +431,11 @@ public class Xml2jGenerator {
 		return input;
 	}
 
-	static InputStream toInputStream(final ByteArrayOutputStream output) {
+	private static InputStream toInputStream(final ByteArrayOutputStream output) {
 		return new ByteArrayInputStream(output.toByteArray());
 	}
 
-	static void closeStream(final Closeable input) {
+	private static void closeStream(final Closeable input) {
 		try {
 			input.close();
 		} catch (IOException e) {
@@ -426,21 +443,21 @@ public class Xml2jGenerator {
 		}
 	}
 
-	static void generateCodeForDomain(final Xml2jDomain d) {
+	private static void generateCodeForDomain(final Xml2jDomain d) {
 		List<Xml2jModule> modules = d.modules();
 		for (Xml2jModule m : modules) {
 			generateCodeForModule(m);
 		}
 	}
 
-	static void generateCodeForModule(final Xml2jModule m) {
+	private static void generateCodeForModule(final Xml2jModule m) {
 		/* setting parameters for code generation */
 		module = m;
 		moduleRoot = Options.workingDirectory + "/" + module.input_path + "/";
 		modulePackage = generatorSettings.domainpackage + "." + module.name;
 
 		if (Options.verbose)
-			System.out.println(String.format("\n%s : %s, %s : %s", MODULE_NAME, module.name, PACKAGE_NAME, modulePackage));
+			Notification.message(String.format("\n%s : %s, %s : %s", MODULE_NAME, module.name, PACKAGE_NAME, modulePackage));
 
 		/* for all interfaces in module generate code */
 		List<Xml2jInterface> interfaces = m.interfaces();
@@ -449,7 +466,7 @@ public class Xml2jGenerator {
 		}
 	}
 
-	static void generateCodeForInterface(final Xml2jInterface i) {
+	private static void generateCodeForInterface(final Xml2jInterface i) {
 		iface = i;
 
 		/* print configuration parameters */
@@ -458,34 +475,64 @@ public class Xml2jGenerator {
 		else
 			Notification.message(moduleRoot + iface.name);
 
-		if (iface.message_handler_application != null && iface.message_handler_runnable == null && iface.message_handler_application_task == null)
+		if (iface.message_handler_application != null
+				&& iface.message_handler_runnable == null
+				&& iface.message_handler_application_task == null)
 			iface.message_handler_application_task = iface.message_handler_application + "Task";
 
 		/* transformation steps */
 		InputStream input = getInputStream();
 		ByteArrayOutputStream output;
 
-		output = performStep(Step.ONE, input);
+		Step step = Step.STEP_ONE;
+		output = performStep(step, input);
+		if (Options.intermediate)
+			writeTransformationResultFile(iface.name, output.toByteArray(), step);
 		closeStream(input);
 
+		step = Step.STEP_TWO;
 		input = toInputStream(output);
-		output = performStep(Step.TWO, input);
+		output = performStep(step, input);
+		if (Options.intermediate)
+			writeTransformationResultFile(iface.name, output.toByteArray(), step);
 		closeStream(input);
 
+		step = Step.STEP_THREE;
 		input = toInputStream(output);
-		output = performStep(Step.THREE, input);
+		output = performStep(step, input);
+		if (Options.intermediate)
+			writeTransformationResultFile(iface.name, output.toByteArray(), step);
 		closeStream(input);
 
+		step = Step.GENERATE_JAVA;
 		input = toInputStream(output);
-		output = performStep(Step.FOUR, input);
+		output = performStep(step, input);
 		closeStream(input);
+
+		step = Step.GENERATE_POM;
+		input = new ByteArrayInputStream(emptyDocument.getBytes(StandardCharsets.UTF_8));
+		output = performStep(step, input);
+		closeStream(input);
+
+		writeMvnPomFile(output.toByteArray());
 		closeStream(output);
 	}
 
+	private static void writeMvnPomFile(byte[] byteArray) {
+		try {
+			FileOutputStream fi = new FileOutputStream(String.format("%s/pom-gen.xml", Options.workingDirectory));
+			fi.write(byteArray);
+			fi.flush();
+			fi.close();
+		} catch (IOException e) {
+			Notification.error("write POM: " + e.getMessage());
+		}
+	}
+
 	/**
-	 * Write intermediate steps to existing $HOME/temp/int folder.
+	 * Write transformation steps to existing $HOME/temp/int folder.
 	 * 
-	 * @pre $HOME/temp directory exists
+	 * pre-condition: $HOME/temp directory exists
 	 * @param intName
 	 *            name of the interface
 	 * @param byteArray
@@ -493,9 +540,9 @@ public class Xml2jGenerator {
 	 * @param step
 	 *            step
 	 */
-	private static void writeIntermediate(final String intName, final byte[] byteArray, final Step step) {
+	private static void writeTransformationResultFile(final String intName, final byte[] byteArray, final Step step) {
 		try {
-			FileOutputStream fi = new FileOutputStream(String.format("%s/temp/%s-%s.xml", System.getenv(XML2J_HOME), intName, step));
+			FileOutputStream fi = new FileOutputStream(String.format("%s/temp/%s-%s.xml", HOME, intName, step));
 			fi.write(byteArray);
 			fi.flush();
 			fi.close();
@@ -518,12 +565,12 @@ public class Xml2jGenerator {
 
 		/* exit conditions */
 		if (Options.printVersion) {
-			System.out.println(VERSION);
+			Notification.message(VERSION);
 			System.exit(0);
 		}
 
 		if (Options.printLicense) {
-			System.out.println("LICENSE: " + license);
+			Notification.message("LICENSE: " + license);
 			System.exit(0);
 		}
 
