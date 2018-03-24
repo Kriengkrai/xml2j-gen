@@ -24,7 +24,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 ********************************************************************************/
 -->
 <!--
-	step4 (4/4) Java code generation 
+	step4 (4/5) Java code generation 
 	
 	version:		2.4.1		
 	

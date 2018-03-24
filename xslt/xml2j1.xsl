@@ -25,7 +25,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 -->
 <!-- 
 *******************************************************************************
-	module: 		step1 (1/4)
+	module: 		step1 (1/5)
 	purpose:		merging of xsd files into one xsd
 	
 	version:		2.4.1			

@@ -27,7 +27,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 
 <!-- 
 *******************************************************************************
-	module: 		step3 (3/4)
+	module: 		step3 (3/5)
 	purpose:		adding @base to intermediate file
 					embedding elements within elementList
 					embedding attributes within attributeList

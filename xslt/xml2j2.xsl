@@ -25,7 +25,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 -->
 <!-- 
 *******************************************************************************
-	module: 		step2 (2/4)
+	module: 		step2 (2/5)
 	purpose:		conversion of schema file to intermediate xml file
 	
 	version:		2.4.1
