@@ -1,4 +1,4 @@
-** XML2J-GENERATOR **
+**XML2J-GENERATOR**
 
 This is the code generator that goes with xml2j-core.
 This tool lets you generate xml handling code for your Java applications. The generator generates code using multiple steps. All code is included. 
