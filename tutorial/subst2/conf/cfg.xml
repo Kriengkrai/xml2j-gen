@@ -7,7 +7,7 @@
  		<!-- the module name is used as an extension for generation of the package-name -->
 		<module name="subst2" 
 				input-path="schema" 
-				output-path="src"> 
+				output-path="src/main/java"> 
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 

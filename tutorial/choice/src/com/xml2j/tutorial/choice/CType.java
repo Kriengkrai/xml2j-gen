@@ -3,16 +3,21 @@ package com.xml2j.tutorial.choice;
 
 /******************************************************************************
   -----------------------------------------------------------------------------
-  XML-Java XSD to Java code generator
+  XML2J XSD to Java code generator
   -----------------------------------------------------------------------------
   
-  This code was generated using XML-JAVA code generator.
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  This code was generated using XML2J code generator.
   
+  Version: 2.4.1 
+  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+
   Module: CHOICE 
-  Generation date: Sat Feb 18 11:45:10 CET 2017 
+  Generation date: Sat Mar 24 17:37:02 CET 2018 
+  Author: XML2J-Generator
 
 ******************************************************************************/
+
+import com.xml2j.util.Printer;
 
 import com.xml2j.util.Compare;
 
@@ -28,12 +33,11 @@ import com.xml2j.xml.core.TypeAllocator;
  * This class provides getters and setters for embedded attributes and elements.
  * Any complex data structure can be navigated by using the element getter methods.
  * 
- * XML2J-Generator
  */
 public class CType extends ComplexDataType {
 
 	/**
-	 * default serial version UID 
+	 * serial version UID 
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -110,8 +114,10 @@ public class CType extends ComplexDataType {
 	public boolean equals(Object that) {  
 		if (!super.equals(that))
 			return false;
-  
-		if (!Compare.equals(m_childOfC, ((CType)that).m_childOfC))
+      
+	 	CType t = (CType)that;
+	 
+		if (!Compare.equals(m_childOfC, t.m_childOfC))
 			return false;
 		
 		return true;
@@ -119,4 +125,22 @@ public class CType extends ComplexDataType {
 
   
   
+  
+	/**
+	 *	Printing method, prints the XML element to a Printer.
+	 *  This method prints an XML fragment starting from CType.
+	 *
+	 *  @param out the Printer that the element is printed to
+	 *  @see com.xml2j.util.Printer
+	 */
+	protected void printElements(Printer out) {
+		super.printElements(out);
+  
+		if (m_childOfC != null) {
+			out.print("\n<childOfC>");
+			out.print(m_childOfC);
+			out.print("</childOfC>\n");
+		}
+		
+	}
 }

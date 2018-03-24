@@ -19,7 +19,7 @@
 		-->
 		<module name="ext" 
 				input-path="schema" 
-				output-path="src"> 
+				output-path="src/main/java"> 
 				
  			<!-- 
 				Within a module multiple interfaces may exist. Each interface corresponds to 

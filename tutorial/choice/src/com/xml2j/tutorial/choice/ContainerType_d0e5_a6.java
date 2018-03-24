@@ -3,16 +3,21 @@ package com.xml2j.tutorial.choice;
 
 /******************************************************************************
   -----------------------------------------------------------------------------
-  XML-Java XSD to Java code generator
+  XML2J XSD to Java code generator
   -----------------------------------------------------------------------------
   
-  This code was generated using XML-JAVA code generator.
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  This code was generated using XML2J code generator.
   
+  Version: 2.4.1 
+  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+
   Module: CHOICE 
-  Generation date: Sat Feb 18 11:45:10 CET 2017 
+  Generation date: Sat Mar 24 17:37:02 CET 2018 
+  Author: XML2J-Generator
 
 ******************************************************************************/
+
+import com.xml2j.util.Printer;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -31,12 +36,11 @@ import com.xml2j.xml.core.TypeAllocator;
  * This class provides getters and setters for embedded attributes and elements.
  * Any complex data structure can be navigated by using the element getter methods.
  * 
- * XML2J-Generator
  */
 public class ContainerType_d0e5_a6 extends ComplexDataType {
 
 	/**
-	 * default serial version UID 
+	 * serial version UID 
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -155,14 +159,16 @@ public class ContainerType_d0e5_a6 extends ComplexDataType {
 	public boolean equals(Object that) {  
 		if (!super.equals(that))
 			return false;
-  
-		if (!Compare.equals(m_aList, ((ContainerType_d0e5_a6)that).m_aList))
+      
+	 	ContainerType_d0e5_a6 t = (ContainerType_d0e5_a6)that;
+	 
+		if (!Compare.equals(m_aList, t.m_aList))
 			return false;
 		
-		if (!Compare.equals(m_bList, ((ContainerType_d0e5_a6)that).m_bList))
+		if (!Compare.equals(m_bList, t.m_bList))
 			return false;
 		
-		if (!Compare.equals(m_cList, ((ContainerType_d0e5_a6)that).m_cList))
+		if (!Compare.equals(m_cList, t.m_cList))
 			return false;
 		
 		return true;
@@ -170,4 +176,40 @@ public class ContainerType_d0e5_a6 extends ComplexDataType {
 
   
   
+  
+	/**
+	 *	Printing method, prints the XML element to a Printer.
+	 *  This method prints an XML fragment starting from containerType_d0e5_a6.
+	 *
+	 *  @param out the Printer that the element is printed to
+	 *  @see com.xml2j.util.Printer
+	 */
+	protected void printElements(Printer out) {
+		super.printElements(out);
+  
+		if (m_aList != null)
+			for(AType l_A : m_aList) {
+				l_A.print(out);
+			}
+		else {
+			// out.print("<A>null</A>");
+		}
+		
+		if (m_bList != null)
+			for(BType l_B : m_bList) {
+				l_B.print(out);
+			}
+		else {
+			// out.print("<B>null</B>");
+		}
+		
+		if (m_cList != null)
+			for(CType l_C : m_cList) {
+				l_C.print(out);
+			}
+		else {
+			// out.print("<C>null</C>");
+		}
+		
+	}
 }

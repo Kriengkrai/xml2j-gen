@@ -8,7 +8,7 @@
  		<!-- all paths are either relative to the working directory or absolute -->
 		<module name="recursion" 
 				input-path="schema" 
-				output-path="src"> 
+				output-path="src/main/java"> 
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 

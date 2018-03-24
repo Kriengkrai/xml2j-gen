@@ -2,14 +2,17 @@ package com.xml2j.tutorial.choice.application;
 
 /******************************************************************************
   -----------------------------------------------------------------------------
-  XML-Java XSD to Java code generator
+  XML2J XSD to Java code generator
   -----------------------------------------------------------------------------
   
-  This code was generated using XML-JAVA code generator.
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  This code was generated using XML2J code generator.
   
+  Version: 2.4.1 
+  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+
   Module: CHOICE 
-  Generation date: Sat Feb 18 11:45:10 CET 2017 
+  Generation date: Sat Mar 24 17:37:02 CET 2018 
+  Author: XML2J-Generator
 
 ******************************************************************************/
 
