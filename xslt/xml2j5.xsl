@@ -72,7 +72,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <!-- global variables -->
 <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'"/> 
 <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/> 
-<xsl:variable name="module" select="translate($module-name,$lowercase,$uppercase)"/>
+<xsl:variable name="module" select="translate($module-name,$uppercase,$lowercase)"/>
 
 
 <!-- pom header -->
@@ -101,9 +101,9 @@ Project root: https://sourceforge.net/projects/xml2j/
 		</properties>
 		<modelVersion>4.0.0</modelVersion>
 		<groupId><xsl:value-of select="$group-id"/></groupId>
-		<artifactId><xsl:value-of select="$module-name"/></artifactId>
+		<artifactId><xsl:value-of select="$module"/></artifactId>
 		<version><xsl:value-of select="$version"/></version>
-		<name><xsl:value-of select="$module-name"/></name>
+		<name><xsl:value-of select="$module"/></name>
 		<build>
 			<sourceDirectory>${src.dir}</sourceDirectory>
 			<plugins>
@@ -148,8 +148,8 @@ Project root: https://sourceforge.net/projects/xml2j/
 								<goal>rename</goal>
 							</goals>
 							<configuration>
-								<sourceFile>${project.basedir}/target/<xsl:value-of select="$module-name"/>-<xsl:value-of select="$version"/>.jar</sourceFile>
-								<destinationFile>./<xsl:value-of select="$module-name"/>.jar</destinationFile>
+								<sourceFile>${project.basedir}/target/<xsl:value-of select="$module"/>-<xsl:value-of select="$version"/>.jar</sourceFile>
+								<destinationFile>./<xsl:value-of select="$module"/>.jar</destinationFile>
 							</configuration>
 						</execution>
 					</executions>
