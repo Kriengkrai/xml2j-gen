@@ -152,6 +152,7 @@ public class Xml2jGenerator {
 		static boolean serialization = true;
 		static long UID = 1L;
 		static boolean intermediate = false;
+		static boolean pom = false;
 
 		static void print() {
 			Notification.message("author: " + Options.author);
@@ -163,6 +164,7 @@ public class Xml2jGenerator {
 			Notification.message("serialization: " + Options.serialization);
 			Notification.message("UID: " + Options.UID);
 			Notification.message("intermediate: " + Options.intermediate);
+			Notification.message("pom: " + Options.pom);
 		}
 
 	}
@@ -200,6 +202,8 @@ public class Xml2jGenerator {
 					Options.intermediate = true;
 				} else if (arg.equals("-version")) {
 					Options.printVersion = true;
+				} else if (arg.equals("-pom")) {
+					Options.pom = true;
 				}
 			}
 
@@ -509,18 +513,19 @@ public class Xml2jGenerator {
 		output = performStep(step, input);
 		closeStream(input);
 
-		step = Step.GENERATE_POM;
-		input = new ByteArrayInputStream(emptyDocument.getBytes(StandardCharsets.UTF_8));
-		output = performStep(step, input);
-		closeStream(input);
-
-		writeMvnPomFile(output.toByteArray());
+		if (Options.pom) {
+			step = Step.GENERATE_POM;
+			input = new ByteArrayInputStream(emptyDocument.getBytes(StandardCharsets.UTF_8));
+			output = performStep(step, input);
+			closeStream(input);
+			writeMvnPomFile(output.toByteArray());
+		}
 		closeStream(output);
 	}
 
 	private static void writeMvnPomFile(byte[] byteArray) {
 		try {
-			FileOutputStream fi = new FileOutputStream(String.format("%s/pom-gen.xml", Options.workingDirectory));
+			FileOutputStream fi = new FileOutputStream(String.format("%s/pom.xml", Options.workingDirectory));
 			fi.write(byteArray);
 			fi.flush();
 			fi.close();
@@ -542,6 +547,11 @@ public class Xml2jGenerator {
 	 */
 	private static void writeTransformationResultFile(final String intName, final byte[] byteArray, final Step step) {
 		try {
+			final String tmpDir = HOME + "/temp";
+			File folder = new File(tmpDir);
+			if (!folder.exists()) {
+				folder.mkdir();
+			}
 			FileOutputStream fi = new FileOutputStream(String.format("%s/temp/%s-%s.xml", HOME, intName, step));
 			fi.write(byteArray);
 			fi.flush();
