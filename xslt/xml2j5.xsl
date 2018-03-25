@@ -36,7 +36,9 @@ Project root: https://sourceforge.net/projects/xml2j/
 -->
 
 <xsl:stylesheet version="1.1"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+  xmlns:Date="java:java.util.Date"
+  exclude-result-prefixes="Date">
 
 
 <xsl:param name="xml2j-version" select="'2.4.2'"/>
@@ -56,14 +58,23 @@ Project root: https://sourceforge.net/projects/xml2j/
 <!-- path for generated source code -->
 <xsl:param name="source-path" select="'./src'"/>
 
-<!-- author -->
-<xsl:param name="author" select="'XML2J Generator'"/>
+<!-- current date -->
+<xsl:script
+        implements-prefix="Date"
+        language="java"
+        src="java:java.util.Date" />
 
-<!-- custom header -->
-<xsl:param
-    name="custom-header">
-</xsl:param>
+<xsl:variable
+        name="current-date"
+        select="Date:to-string(Date:new())" />
 
+<!-- pom header -->
+<xsl:variable
+        name="header">
+    XML2J XSD to Java code generator
+    This POM file was generated using XML2J code generator.
+    Generation date: <xsl:value-of select="$current-date"/>
+</xsl:variable>
 
 <!-- pom -->
 <xsl:output method='xml' version='1.0' encoding='utf-8' indent='yes'/>
@@ -74,30 +85,28 @@ Project root: https://sourceforge.net/projects/xml2j/
 <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'"/> 
 <xsl:variable name="module" select="translate($module-name,$uppercase,$lowercase)"/>
 
-
-<!-- pom header -->
-<xsl:variable
-    name="header">
-</xsl:variable>
-
-
 <!-- MAIN PROGRAM -->
 <xsl:template match="/">
 	<!-- GENERATE POM -->
 
-	<xsl:variable name="classname" select="concat(translate(substring($application-name,1,1),$lowercase,$uppercase),substring($application-name,2))"/>
-	<xsl:variable name="mainClass" select="concat($application-package,'.',$classname)" />
+	<xsl:variable name="className" select="concat(translate(substring($application-name,1,1),$lowercase,$uppercase),substring($application-name,2))"/>
+	<xsl:variable name="mainClass" select="concat($application-package,'.',$className)" />
 
 	<project
 			xmlns="http://maven.apache.org/POM/4.0.0"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		<xsl:comment>
+			<xsl:value-of select="$header"/>
+			<xsl:text>&#xd;</xsl:text>
+		</xsl:comment>
 		<properties>
 			<slf4j.version>1.7.21</slf4j.version>
 			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 			<maven.compiler.source>1.8</maven.compiler.source>
 			<maven.compiler.target>1.8</maven.compiler.target>
-			<src.dir>${project.basedir}/src/main/java</src.dir>
+			<src.dir>${project.basedir}/<xsl:value-of select="$source-path"/></src.dir>
+			<!--<src.dir>${project.basedir}/src/main/java</src.dir>	-->
 		</properties>
 		<modelVersion>4.0.0</modelVersion>
 		<groupId><xsl:value-of select="$group-id"/></groupId>

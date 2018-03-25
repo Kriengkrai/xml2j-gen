@@ -381,7 +381,8 @@ public class Xml2jGenerator {
 		param.put(MODULE_PACKAGE, modulePackage);
 		param.put(APPLICATION_NAME, iface.message_handler_application);
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
-		param.put(SOURCE_PATH, Options.workingDirectory + "/" + module.output_path);
+
+		param.put(SOURCE_PATH, module.output_path);
 
 		return param;
 	}
