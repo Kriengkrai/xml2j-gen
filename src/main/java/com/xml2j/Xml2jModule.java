@@ -28,6 +28,7 @@ import java.util.List;
 
 public class Xml2jModule {
 	public String name = null;
+	public String description = null;
 	public String input_path = null;
 	public String output_path = null;
 

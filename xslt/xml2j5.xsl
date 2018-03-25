@@ -49,6 +49,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <!-- module-name -->
 <xsl:param name="module-name" select="'[module-name]'" />
 <xsl:param name="module-package" select="'[module-package]'" />
+<xsl:param name="module-description" select="'[module-description]'" />
 
 <!-- if application should be generated this field should be not empty -->
 <xsl:param name="application-name" select="''"/>
@@ -104,16 +105,16 @@ Project root: https://sourceforge.net/projects/xml2j/
 		<properties>
 			<slf4j.version>1.7.21</slf4j.version>
 			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-			<maven.compiler.source>1.8</maven.compiler.source>
-			<maven.compiler.target>1.8</maven.compiler.target>
 			<src.dir>${project.basedir}/<xsl:value-of select="$source-path"/></src.dir>
 			<!--<src.dir>${project.basedir}/src/main/java</src.dir>	-->
+			<dependency.locations.enabled>false</dependency.locations.enabled>
 		</properties>
 		<modelVersion>4.0.0</modelVersion>
 		<groupId><xsl:value-of select="$group-id"/></groupId>
 		<artifactId><xsl:value-of select="$module"/></artifactId>
 		<version><xsl:value-of select="$version"/></version>
 		<name><xsl:value-of select="$module"/></name>
+		<description><xsl:value-of select="$module-description"/></description>		
 		<build>
 			<sourceDirectory>${src.dir}</sourceDirectory>
 			<plugins>
@@ -121,8 +122,8 @@ Project root: https://sourceforge.net/projects/xml2j/
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.3</version>
 					<configuration>
-						<source/>
-						<target/>
+					   <source>1.8</source>
+					   <target>1.8</target>
 					</configuration>
 				</plugin>
 				<plugin>
@@ -152,25 +153,31 @@ Project root: https://sourceforge.net/projects/xml2j/
 					<version>1.0.1</version>
 					<executions>
 						<execution>
-							<id>rename-file</id>
+							<id>copy-file</id>
 							<phase>install</phase>
 							<goals>
-								<goal>rename</goal>
+								<goal>copy</goal>
 							</goals>
 							<configuration>
 								<sourceFile>${project.basedir}/target/<xsl:value-of select="$module"/>-<xsl:value-of select="$version"/>.jar</sourceFile>
-								<destinationFile>./<xsl:value-of select="$module"/>.jar</destinationFile>
+								<destinationFile>${project.basedir}/<xsl:value-of select="$module"/>.jar</destinationFile>
 							</configuration>
 						</execution>
 					</executions>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>2.9</version>
+				</plugin>				
 			</plugins>
 		</build>
 		<dependencies>
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
-				<version>3.8.1</version>
+				<version>4.12</version>
+				<scope>test</scope>			
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>

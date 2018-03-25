@@ -72,6 +72,7 @@ public class Xml2jGenerator {
 	static final private String PACKAGE_NAME = "package-name";
 	static final private String MODULE_NAME = "module-name";
 	static final private String MODULE_PACKAGE = "module-package";
+    static final private String MODULE_DESCRIPTION = "module-description";
 	static final private String GROUP_ID = "group-id";
 
 	static final private String MESSAGE_HANDLER_ROOT = "message-handler-root";
@@ -99,7 +100,7 @@ public class Xml2jGenerator {
 	static final private String SERIALVERSION_UID = "serialversion-uid";
 
 	static final private String XML2J_VERSION = "xml2j-version";
-	static final String emptyDocument = "<?xml version=\"1.0\" encoding=\"utf-8\"?><document xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"/>";
+	static final private String EMPTY_DOCUMENT = "<?xml version=\"1.0\" encoding=\"utf-8\"?><document xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"/>";
 
 
 	private static Xml2jModule module;
@@ -377,7 +378,8 @@ public class Xml2jGenerator {
 		Map<String, String> param = new HashMap<>();
 
 		param.put(GROUP_ID, modulePackage.substring(0, modulePackage.lastIndexOf('.')));
-		param.put(MODULE_NAME, module.name);
+        param.put(MODULE_NAME, module.name);
+        param.put(MODULE_DESCRIPTION, module.description);
 		param.put(MODULE_PACKAGE, modulePackage);
 		param.put(APPLICATION_NAME, iface.message_handler_application);
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
@@ -516,7 +518,7 @@ public class Xml2jGenerator {
 
 		if (Options.pom) {
 			step = Step.GENERATE_POM;
-			input = new ByteArrayInputStream(emptyDocument.getBytes(StandardCharsets.UTF_8));
+			input = new ByteArrayInputStream(EMPTY_DOCUMENT.getBytes(StandardCharsets.UTF_8));
 			output = performStep(step, input);
 			closeStream(input);
 			writeMvnPomFile(output.toByteArray());
@@ -533,7 +535,7 @@ public class Xml2jGenerator {
                 pom += count;
             pom += ".xml";
 			count++;
-			
+
 		    Notification.message("Creating POM file: " + pom);
 			FileOutputStream fi = new FileOutputStream(pom);
 			fi.write(bytes);

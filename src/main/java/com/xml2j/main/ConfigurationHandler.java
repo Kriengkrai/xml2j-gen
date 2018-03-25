@@ -40,6 +40,7 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 
 	final static String BASE = "base";
 	final static String NAME = "name";
+	final static String DESCRIPTION = "description";
 	final static String PACKAGE_NAME = "package-name";
 	final static String MODULE_NAME = "module-name";
 	final static String MESSAGE_HANDLER_ROOT = "message-handler-root";
@@ -80,6 +81,7 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 		} else if (qName.equals("module")) {
 			Xml2jModule module = new Xml2jModule();
 			module.name = atts.getValue(NAME);
+			module.description = atts.getValue(DESCRIPTION);
 			module.input_path = atts.getValue(INPUT_PATH);
 			module.output_path = atts.getValue(OUTPUT_PATH);
 			configuration.getDomain().add(module);

@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+    XML2J XSD to Java code generator
+    This POM file was generated using XML2J code generator.
+    Generation date: Sun Mar 25 19:18:16 CEST 2018
+-->
    <properties>
       <slf4j.version>1.7.21</slf4j.version>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <maven.compiler.source>1.8</maven.compiler.source>
-      <maven.compiler.target>1.8</maven.compiler.target>
       <src.dir>${project.basedir}/src/main/java</src.dir>
+      <dependency.locations.enabled>false</dependency.locations.enabled>
    </properties>
    <modelVersion>4.0.0</modelVersion>
    <groupId>com.xml2j.tutorial</groupId>
    <artifactId>zoo</artifactId>
    <version>1.0</version>
    <name>zoo</name>
+   <description/>
    <build>
       <sourceDirectory>${src.dir}</sourceDirectory>
       <plugins>
@@ -19,8 +24,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <version>3.3</version>
             <configuration>
-               <source/>
-               <target/>
+               <source>1.8</source>
+               <target>1.8</target>
             </configuration>
          </plugin>
          <plugin>
@@ -49,17 +54,22 @@
             <version>1.0.1</version>
             <executions>
                <execution>
-                  <id>rename-file</id>
+                  <id>copy-file</id>
                   <phase>install</phase>
                   <goals>
-                     <goal>rename</goal>
+                     <goal>copy</goal>
                   </goals>
                   <configuration>
                      <sourceFile>${project.basedir}/target/zoo-1.0.jar</sourceFile>
-                     <destinationFile>./zoo.jar</destinationFile>
+                     <destinationFile>${project.basedir}/zoo.jar</destinationFile>
                   </configuration>
                </execution>
             </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>2.9</version>
          </plugin>
       </plugins>
    </build>
@@ -67,7 +77,8 @@
       <dependency>
          <groupId>junit</groupId>
          <artifactId>junit</artifactId>
-         <version>3.8.1</version>
+         <version>4.12</version>
+         <scope>test</scope>
       </dependency>
       <dependency>
          <groupId>org.slf4j</groupId>
