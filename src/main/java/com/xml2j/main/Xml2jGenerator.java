@@ -523,10 +523,12 @@ public class Xml2jGenerator {
 		closeStream(output);
 	}
 
-	private static void writeMvnPomFile(byte[] byteArray) {
+	private static void writeMvnPomFile(byte[] bytes) {
 		try {
-			FileOutputStream fi = new FileOutputStream(String.format("%s/pom.xml", Options.workingDirectory));
-			fi.write(byteArray);
+            final String pom = Options.workingDirectory + "/pom.xml";
+		    Notification.message("Creating POM file: " + pom);
+			FileOutputStream fi = new FileOutputStream(pom);
+			fi.write(bytes);
 			fi.flush();
 			fi.close();
 		} catch (IOException e) {
@@ -540,12 +542,12 @@ public class Xml2jGenerator {
 	 * pre-condition: $HOME/temp directory exists
 	 * @param intName
 	 *            name of the interface
-	 * @param byteArray
+	 * @param bytes
 	 *            input
 	 * @param step
 	 *            step
 	 */
-	private static void writeTransformationResultFile(final String intName, final byte[] byteArray, final Step step) {
+	private static void writeTransformationResultFile(final String intName, final byte[] bytes, final Step step) {
 		try {
 			final String tmpDir = HOME + "/temp";
 			File folder = new File(tmpDir);
@@ -553,7 +555,7 @@ public class Xml2jGenerator {
 				folder.mkdir();
 			}
 			FileOutputStream fi = new FileOutputStream(String.format("%s/temp/%s-%s.xml", HOME, intName, step));
-			fi.write(byteArray);
+			fi.write(bytes);
 			fi.flush();
 			fi.close();
 		} catch (IOException e) {
