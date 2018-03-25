@@ -455,7 +455,7 @@ public class Xml2jGenerator {
 		}
 	}
 
-	private static void generateCodeForModule(final Xml2jModule m) {
+    private static void generateCodeForModule(final Xml2jModule m) {
 		/* setting parameters for code generation */
 		module = m;
 		moduleRoot = Options.workingDirectory + "/" + module.input_path + "/";
@@ -524,9 +524,16 @@ public class Xml2jGenerator {
 		closeStream(output);
 	}
 
-	private static void writeMvnPomFile(byte[] bytes) {
+    private static int count = 0;
+
+    private static void writeMvnPomFile(byte[] bytes) {
 		try {
-            final String pom = Options.workingDirectory + "/pom.xml";
+            String pom = Options.workingDirectory + "/pom";
+            if (count != 0)
+                pom += count;
+            pom += ".xml";
+			count++;
+			
 		    Notification.message("Creating POM file: " + pom);
 			FileOutputStream fi = new FileOutputStream(pom);
 			fi.write(bytes);
