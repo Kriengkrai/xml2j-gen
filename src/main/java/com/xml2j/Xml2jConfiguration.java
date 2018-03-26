@@ -36,11 +36,6 @@ public class Xml2jConfiguration {
 		return configuration;
 	}
 
-	final static String ldxGenerator = "ldx-generator";
-	final static String domain = "domain";
-	final static String module = "module";
-	final static String interf = "interface";
-
 	Xml2jDomain theDomain = null;
 
 	public void add(final Xml2jDomain domain) {
