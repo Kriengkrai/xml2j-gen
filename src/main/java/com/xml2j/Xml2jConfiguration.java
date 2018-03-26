@@ -25,18 +25,16 @@ Project root: https://sourceforge.net/projects/xml2j/
 import java.io.PrintStream;
 
 public class Xml2jConfiguration {
-
-	public Xml2jDomain getDomain() {
-		return this.theDomain;
-	}
-
-	private static Xml2jConfiguration configuration = new Xml2jConfiguration();
+	private Xml2jDomain theDomain = null;
 
 	public static Xml2jConfiguration instance() {
 		return configuration;
 	}
+	static Xml2jConfiguration configuration = new Xml2jConfiguration();
 
-	Xml2jDomain theDomain = null;
+	public Xml2jDomain getDomain() {
+		return this.theDomain;
+	}
 
 	public void add(final Xml2jDomain domain) {
 		this.theDomain = domain;

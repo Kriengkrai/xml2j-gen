@@ -1,6 +1,6 @@
 package com.xml2j.main;
 
-class Options {
+public class Options {
     static String author = "XML2J-Generator";
     static String configFileName = null;
     static String workingDirectory = ".";
@@ -11,6 +11,7 @@ class Options {
     static boolean serialization = true;
     static long UID = 1L;
     static boolean intermediate = false;
+    static boolean removeOldCode = false;
     static boolean pom = false;
 
     static void print() {
@@ -23,6 +24,7 @@ class Options {
         Notification.message("serialization: " + Options.serialization);
         Notification.message("UID: " + Options.UID);
         Notification.message("intermediate: " + Options.intermediate);
+        Notification.message("remove old code: " + Options.removeOldCode);
         Notification.message("pom: " + Options.pom);
     }
 }

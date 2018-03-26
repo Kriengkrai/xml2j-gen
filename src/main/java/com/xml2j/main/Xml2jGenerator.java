@@ -309,6 +309,13 @@ public class Xml2jGenerator {
 	}
 
     private static void generateCodeForModule(final Xml2jModule m) {
+		/* remove old code? */
+		if (Options.removeOldCode) {
+			String sourcePath = Options.workingDirectory + "/" + m.output_path;
+			Notification.message("Removing direotory: " + sourcePath);
+			fileDelRecursive(new File(sourcePath));
+		}
+
 		/* setting parameters for code generation */
 		module = m;
 		moduleRoot = Options.workingDirectory + "/" + module.input_path + "/";
@@ -426,6 +433,19 @@ public class Xml2jGenerator {
 		}
 	}
 
+	static boolean fileDelRecursive(File file) {
+		if (!file.exists())
+			return false;
+
+		File[] allContents = file.listFiles();
+		if (allContents != null) {
+			for (File f : allContents) {
+				fileDelRecursive(f);
+			}
+		}
+		return file.delete();
+	}
+
 	public static void main(final String[] args) {
 		if (HOME == null)
 			Notification.error("Configuration error. Missing environment variable: XML2J_HOME.");
@@ -466,6 +486,7 @@ public class Xml2jGenerator {
 		/* load configuration */
 		Xml2jConfiguration configuration = Xml2jConfiguration.instance();
 		generatorSettings = new Xml2jGeneratorSettings(configuration, Options.workingDirectory);
+
 
 		/* start transformation */
 		Notification.message("Generating java code...");

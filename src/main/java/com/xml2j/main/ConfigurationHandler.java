@@ -70,7 +70,7 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 	@Override
 	public void startElement(final String uri, final String localName, final String qName, final Attributes atts) throws SAXException {
 
-		if (qName.equals("ldx-generator")) {
+		if (qName.equals("xml2j-generator")) {
 			//
 		} else if (qName.equals("domain")) {
 			Xml2jDomain domain = new Xml2jDomain();

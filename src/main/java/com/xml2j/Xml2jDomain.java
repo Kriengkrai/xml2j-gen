@@ -29,9 +29,9 @@ import java.util.List;
 public class Xml2jDomain {
 	public String base = null;
 	public String name = null;
-	int currModule = -1;
+	private int currModule = -1;
 
-	List<Xml2jModule> modules = new ArrayList<Xml2jModule>();
+	private List<Xml2jModule> modules = new ArrayList<Xml2jModule>();
 
 	public List<Xml2jModule> modules() {
 		return modules;

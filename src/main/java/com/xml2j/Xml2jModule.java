@@ -27,8 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Xml2jModule {
-	final static String module = "xml2j-module";
-
 	public String name = null;
 	public String description = null;
 	public String input_path = null;

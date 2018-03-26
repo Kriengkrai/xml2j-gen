@@ -3,7 +3,7 @@
 <!--
     XML2J XSD to Java code generator
     This POM file was generated using XML2J code generator.
-    Generation date: Sun Mar 25 19:18:16 CEST 2018
+    Generation date: Mon Mar 26 21:41:06 CEST 2018
 -->
    <properties>
       <slf4j.version>1.7.21</slf4j.version>

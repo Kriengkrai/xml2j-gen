@@ -17,6 +17,7 @@ class CommandLine {
             + "\n\t-p generate printing methods"
             + "\n\t-v verbose"
             + "\n\t-i output intermediate results"
+            + "\n\t-r remove old code before generating code"
             + "\n\t-version prints version";
     // @formatter:on
 
@@ -52,6 +53,8 @@ class CommandLine {
                 Options.printLicense = true;
             } else if (arg.equals("-i")) {
                 Options.intermediate = true;
+            } else if (arg.equals("-r")) {
+                Options.removeOldCode = true;
             } else if (arg.equals("-version")) {
                 Options.printVersion = true;
             } else if (arg.equals("-pom")) {
