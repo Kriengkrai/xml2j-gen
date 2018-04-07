@@ -74,9 +74,7 @@
 			install the jar manually in your repo. 
 			on the command line issue the following command:
 			
-			> mvn install:install-file -Dfile=C:\Development\xml2j-gen\libs\saxon.jar -DgroupId=com.icl -DartifactId=saxon -Dversion=6.5.5 -Dpackaging=jar 
-			
-			Note: you will have to replace C:\Development\xml2j-gen\libs\saxon.jar with the path you are using.
+			> mvn install:install-file -Dfile=<path-to-saxon.jar> -DgroupId=com.icl -DartifactId=saxon -Dversion=6.5.5 -Dpackaging=jar 
 	-->	
 	<dependency>
 		<groupId>com.icl</groupId>
@@ -89,14 +87,19 @@
 		<version>2.11.0</version>
 	</dependency>
 	<dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>slf4j-api</artifactId>
-    	<version>1.7.25</version>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>1.7.25</version>
 	</dependency>
-	  <dependency>
+	<dependency>
+		  <groupId>org.slf4j</groupId>
+		  <artifactId>slf4j-simple</artifactId>
+		  <version>1.7.25</version>
+	</dependency>
+	<dependency>
 		  <groupId>junit</groupId>
 		  <artifactId>junit</artifactId>
 		  <version>4.12</version>
-	  </dependency>
+	</dependency>
   </dependencies> 
 </project>

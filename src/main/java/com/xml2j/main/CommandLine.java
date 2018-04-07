@@ -1,10 +1,14 @@
 package com.xml2j.main;
 
+import org.slf4j.LoggerFactory;
+
 /**
  * Command line options.
  **/
 
 class CommandLine {
+    private static Notification logger = new Notification(LoggerFactory.getLogger(CommandLine.class));
+
 
     // @formatter:off
     /** command line parameters */
@@ -23,7 +27,7 @@ class CommandLine {
 
     /** print command line usage */
     static void usage() {
-        Notification.message(usage);
+        logger.message(usage);
     }
 
     static String headerFile = null;
@@ -41,7 +45,7 @@ class CommandLine {
                 try {
                     Options.UID = Long.parseLong(arg.substring(2));
                 } catch (Exception e) {
-                    Notification.message("Warning: option -s ignored (not an integral number)");
+                    logger.message("Warning: option -s ignored (not an integral number)");
                 }
             } else if (arg.equals("-p")) {
                 Options.printMethods = true;

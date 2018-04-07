@@ -1,5 +1,7 @@
 package com.xml2j.main;
 
+import org.slf4j.Logger;
+
 /********************************************************************************
  * Copyright 2016, 2017 Lolke B. Dijkstra
  * 
@@ -18,12 +20,30 @@ package com.xml2j.main;
 
 public class Notification {
 
-	static void error(final String err) {
-		System.err.println("ERROR: " + err);
+	public Notification(Logger logger) {
+		this.logger = logger;
+	}
+
+	Logger logger;
+
+	public void fatal(final String err) {
+		logger.error(err);
 		System.exit(-1);
 	}
 
-	static void message(final String msg) {
+	public void error(final String err) {
+		logger.error(err);
+	}
+
+	public void info(final String msg) {
+		logger.info(msg);
+	}
+
+	public void warn(final String msg) {
+		logger.warn(msg);
+	}
+
+	public void message(final String msg) {
 		System.out.println(msg);
 	}
 }

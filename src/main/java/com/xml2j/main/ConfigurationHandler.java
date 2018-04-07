@@ -28,6 +28,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 
@@ -37,6 +38,9 @@ import com.xml2j.Xml2jInterface;
 import com.xml2j.Xml2jModule;
 
 public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
+
+	private static Notification logger = new Notification(LoggerFactory.getLogger(ConfigurationHandler.class));
+
 
 	final static String BASE = "base";
 	final static String NAME = "name";

@@ -2,17 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <!--
     XML2J XSD to Java code generator
-    This POM file was generated using XML2J code generator.
-    Generation date: Mon Mar 26 21:41:06 CEST 2018
+    This (module) POM file was generated using XML2J code generator.
+    Generation date: Sat Apr 07 21:18:34 CEST 2018
 -->
-   <properties>
-      <slf4j.version>1.7.21</slf4j.version>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <src.dir>${project.basedir}/src/main/java</src.dir>
-      <dependency.locations.enabled>false</dependency.locations.enabled>
-   </properties>
    <modelVersion>4.0.0</modelVersion>
-   <groupId>com.xml2j.tutorial</groupId>
+   <parent>
+      <groupId>com.xml2j.tutorial</groupId>
+      <artifactId>tutorial</artifactId>
+      <version>1.0</version>
+   </parent>
    <artifactId>zoo</artifactId>
    <version>1.0</version>
    <name>zoo</name>
@@ -22,7 +20,7 @@
       <plugins>
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.3</version>
+            <version>3.7.0</version>
             <configuration>
                <source>1.8</source>
                <target>1.8</target>
@@ -31,7 +29,7 @@
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-shade-plugin</artifactId>
-            <version>2.4.3</version>
+            <version>3.1.0</version>
             <executions>
                <execution>
                   <phase>package</phase>
@@ -73,22 +71,4 @@
          </plugin>
       </plugins>
    </build>
-   <dependencies>
-      <dependency>
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-         <version>4.12</version>
-         <scope>test</scope>
-      </dependency>
-      <dependency>
-         <groupId>org.slf4j</groupId>
-         <artifactId>slf4j-log4j12</artifactId>
-         <version>1.7.14</version>
-      </dependency>
-      <dependency>
-         <groupId>com.xml2j</groupId>
-         <artifactId>xml2j-core</artifactId>
-         <version>2.4.0</version>
-      </dependency>
-   </dependencies>
 </project>

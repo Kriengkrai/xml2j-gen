@@ -22,6 +22,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Project root: https://sourceforge.net/projects/xml2j/
 ********************************************************************************/
 
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -43,6 +45,8 @@ public class Transformation {
 	String styleSheet;
 	byte[] xb = null;
 	private final Map<String, String> param;
+
+	private static Notification logger = new Notification(LoggerFactory.getLogger(Transformation.class));
 
 	ByteArrayOutputStream executeStep(final InputStream input, final String inSystemId) {
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
@@ -71,6 +75,7 @@ public class Transformation {
 			try {
 				is.close();
 			} catch (IOException e) {
+				logger.warn(e.getMessage());
 			}
 		}
 		return bos;
@@ -83,7 +88,7 @@ public class Transformation {
 		try {
 			xb = raw(xsl).toByteArray();
 		} catch (IOException e1) {
-			Notification.error(e1.getMessage());
+			logger.error(e1.getMessage());
 		}
 
 	}
@@ -120,7 +125,7 @@ public class Transformation {
 
 			t.transform(source, new StreamResult(output));
 		} catch (TransformerException e) {
-			Notification.error("Configuration error. Possible cause: typo in 'input-path'");
+			logger.fatal("Configuration error. Check configuration file.");
 		}
 	}
 

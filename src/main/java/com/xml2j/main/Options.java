@@ -1,5 +1,7 @@
 package com.xml2j.main;
 
+import org.slf4j.LoggerFactory;
+
 public class Options {
     static String author = "XML2J-Generator";
     static String configFileName = null;
@@ -14,17 +16,19 @@ public class Options {
     static boolean removeOldCode = false;
     static boolean pom = false;
 
+    private static Notification logger = new Notification(LoggerFactory.getLogger(Options.class));
+
     static void print() {
-        Notification.message("author: " + Options.author);
-        Notification.message("configFileName: " + Options.configFileName);
-        Notification.message("workingDirectory: " + Options.workingDirectory);
-        Notification.message("printMethods: " + Options.printMethods);
-        Notification.message("printLicense: " + Options.printLicense);
-        Notification.message("printVersion: " + Options.printVersion);
-        Notification.message("serialization: " + Options.serialization);
-        Notification.message("UID: " + Options.UID);
-        Notification.message("intermediate: " + Options.intermediate);
-        Notification.message("remove old code: " + Options.removeOldCode);
-        Notification.message("pom: " + Options.pom);
+        logger.message("author: " + Options.author);
+        logger.message("configFileName: " + Options.configFileName);
+        logger.message("workingDirectory: " + Options.workingDirectory);
+        logger.message("printMethods: " + Options.printMethods);
+        logger.message("printLicense: " + Options.printLicense);
+        logger.message("printVersion: " + Options.printVersion);
+        logger.message("serialization: " + Options.serialization);
+        logger.message("UID: " + Options.UID);
+        logger.message("intermediate: " + Options.intermediate);
+        logger.message("remove old code: " + Options.removeOldCode);
+        logger.message("pom: " + Options.pom);
     }
 }

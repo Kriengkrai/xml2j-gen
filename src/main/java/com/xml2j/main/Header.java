@@ -1,10 +1,13 @@
 package com.xml2j.main;
 
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
 class Header {
+    private static Notification logger = new Notification(LoggerFactory.getLogger(Header.class));
     static String customHeader = null;
 
     static String readHeader(final String fileName) {
@@ -24,12 +27,12 @@ class Header {
                     input = input + "\n" + line;
             }
         } catch (IOException e) {
-            Notification.error("Unable to read: " + fileName);
+            logger.warn("Unable to read: " + fileName);
         } finally {
             try {
                 br.close();
             } catch (Exception e) {
-                Notification.error(e.getMessage());
+                logger.warn(e.getMessage());
             }
         }
         return customHeader = input;

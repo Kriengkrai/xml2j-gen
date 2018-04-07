@@ -32,11 +32,14 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 
+import org.slf4j.LoggerFactory;
 import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 public class ConfigurationValidator {
+	private static Notification logger = new Notification(LoggerFactory.getLogger(ConfigurationValidator.class));
+
 
 	static public class Exception extends SAXException {
 		/**
