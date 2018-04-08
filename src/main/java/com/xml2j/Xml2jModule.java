@@ -46,7 +46,7 @@ public class Xml2jModule {
 	}
 
 	public void print(final PrintStream s) {
-		s.println("\nxml2j-module" + "\nname: " + name + "\ninput_path: " + input_path + "\noutput_path: " + output_path);
+		s.println("\nxml2j-module" + "\nname: " + name + "\ninput-path: " + input_path + "\noutput-path: " + output_path);
 
 		for (Xml2jInterface i : intl) {
 			i.print(s);

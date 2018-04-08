@@ -6,6 +6,7 @@
  		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
  		<!-- the module name is used as an extension for generation of the package-name -->
  		<!-- all paths are either relative to the working directory or absolute -->
+		<!-- module.root is used for POM generation in multi-module mode -->
 		<module name="choice" 
 				input-path="schema" 
 				output-path="src/main/java"> 

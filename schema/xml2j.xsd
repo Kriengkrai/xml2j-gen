@@ -27,8 +27,8 @@
     	</xsd:sequence>
    		<xsd:attribute name="name" type="xsd:string" use="required"/>
    		<xsd:attribute name="description" type="xsd:string" use="optional"/>
-   		<xsd:attribute name="input-path" type="xsd:string" use="required"/>
-   		<xsd:attribute name="output-path" type="xsd:string" use="required"/>
+		<xsd:attribute name="input-path" type="xsd:string" use="required"/>
+		<xsd:attribute name="output-path" type="xsd:string" use="required"/>
     </xsd:complexType>
     
     <xsd:complexType name="xml2j-interface">

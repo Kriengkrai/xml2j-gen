@@ -237,6 +237,7 @@ public class Xml2jGenerator {
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
 		param.put(MESSAGE_HANDLER_NAME, iface.message_handler_name);
 		param.put(MESSAGE_HANDLER_PACKAGE, modulePackage + ".handlers");
+//		param.put(SOURCE_PATH, Options.workingDirectory + "/" + domain.name + "/" + module.name + "/" + module.output_path);
 		param.put(SOURCE_PATH, Options.workingDirectory + "/" + module.output_path);
 		param.put(PRINTING, Options.printMethods ? "1" : "0");
 		param.put(SERIALIZATION, Options.serialization ? "1" : "0");
@@ -440,7 +441,6 @@ public class Xml2jGenerator {
 
 	private static void writeFile(byte[] bytes, final String pom) {
 		try (FileOutputStream f = new FileOutputStream(pom)) {
-			logger.info("Creating POM file: " + pom);
 			f.write(bytes);
 			f.flush();
 		} catch (IOException e) {
@@ -465,6 +465,7 @@ public class Xml2jGenerator {
 		InputStream input = new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8));
 		ByteArrayOutputStream output = t.executeStep(input, null);
 
+		logger.info("Creating (master) POM file: " + pom);
 		writeFile(output.toByteArray(), pom);
 
 		closeStream(input);
@@ -496,15 +497,19 @@ public class Xml2jGenerator {
 		ByteArrayOutputStream output = t.executeStep(input, null);
 
         String pomFile = null;
+        String type = null;
         switch (step) {
             case MODULE_POM:
                 pomFile = Options.workingDirectory + "/" + module.name + "/pom.xml";
+                type = "(module)";
             break;
             case DEFAULT_POM:
                 pomFile = Options.workingDirectory + "/pom.xml";
+                type = "(default)";
             break;
         }
- 		writeFile(output.toByteArray(), pomFile);
+		logger.info(format("Creating %s POM file: %s", type, pomFile));
+		writeFile(output.toByteArray(), pomFile);
 
 		closeStream(input);
 		closeStream(output);
