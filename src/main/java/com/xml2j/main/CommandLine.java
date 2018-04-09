@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 class CommandLine {
     private static Notification logger = new Notification(LoggerFactory.getLogger(CommandLine.class));
 
-
     // @formatter:off
     /** command line parameters */
     static final String usage = "Error: Must provide configuration file. Option: -c"
@@ -33,7 +32,6 @@ class CommandLine {
     static String headerFile = null;
 
     static void parse(final String[] args) {
-
         for (String arg : args) {
             if (arg.startsWith("-a") && arg.length() > 2) {
                 Options.author = arg.substring(2);

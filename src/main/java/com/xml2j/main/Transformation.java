@@ -41,22 +41,30 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
-public class Transformation {
-	String styleSheet;
-	byte[] xb = null;
+class Transformation {
+	private String styleSheet;
 	private final Map<String, String> param;
 
 	private static Notification logger = new Notification(LoggerFactory.getLogger(Transformation.class));
 
 	ByteArrayOutputStream executeStep(final InputStream input, final String inSystemId) {
-		ByteArrayOutputStream output = new ByteArrayOutputStream();
-		InputStream currentXsl = new ByteArrayInputStream(this.xb);
-		Transformation.execute(input, output, currentXsl, param, inSystemId);
-		return output;
+		try {
+			byte[] xb = raw(styleSheet).toByteArray();
+			ByteArrayOutputStream output = new ByteArrayOutputStream();
+			InputStream currentXsl = new ByteArrayInputStream(xb);
+			execute(input, output, currentXsl, param, inSystemId);
+			return output;
+		} catch (Exception e1) {
+			logger.error(e1.getMessage());
+		}
+		return null;
 	}
 
-	static ByteArrayOutputStream raw(final String input) throws IOException {
-		InputStream is = new FileInputStream(Xml2jGenerator.HOME + "/xslt/" + input + ".xsl");
+	private ByteArrayOutputStream raw(final String input) throws IOException {
+		if (input == null)
+			throw new IllegalArgumentException("parameter input cannot be null");
+
+		InputStream is = new FileInputStream(styleSheet);
 
 		ByteArrayOutputStream bos = null;
 		try {
@@ -81,16 +89,10 @@ public class Transformation {
 		return bos;
 	}
 
-	Transformation(final String xsl, final Map<String, String> param) {
-		this.styleSheet = xsl;
+	Transformation(final String xslSheet, final Map<String, String> param) {
+		assert(xslSheet != null && param != null);
+		this.styleSheet = Xml2jGenerator.HOME + "/xslt/" + xslSheet + ".xsl";
 		this.param = param;
-
-		try {
-			xb = raw(xsl).toByteArray();
-		} catch (IOException e1) {
-			logger.error(e1.getMessage());
-		}
-
 	}
 
 	/**
@@ -101,17 +103,17 @@ public class Transformation {
 	 * @param p
 	 *            parameters
 	 */
-	static void setParameters(final Transformer t, final Map<String, String> p) {
+	private void setParameters(final Transformer t, final Map<String, String> p) {
 		if (p != null && !p.isEmpty()) {
 			Set<?> keys = p.keySet();
-			for (Iterator<?> i = keys.iterator(); i.hasNext();) {
-				String key = (String) i.next();
+			for (Object key1 : keys) {
+				String key = (String) key1;
 				t.setParameter(key, p.get(key));
 			}
 		}
 	}
 
-	static void execute(final InputStream input, final OutputStream output, final InputStream style, final Map<String, String> p, final String inSystemId) {
+	private void execute(final InputStream input, final OutputStream output, final InputStream style, final Map<String, String> p, final String inSystemId) {
 		try {
 			TransformerFactory f = TransformerFactory.newInstance();
 			Transformer t = f.newTransformer(new StreamSource(style));

@@ -290,9 +290,7 @@ public class Xml2jGenerator {
 		Transformation t = new Transformation(steps.get(step), param);
 
 		String inSystemId = Step.STEP_ONE == step ? moduleRoot + iface.name : null;
-		ByteArrayOutputStream output = t.executeStep(input, inSystemId);
-
-		return output;
+		return t.executeStep(input, inSystemId);
 	}
 
 	private static InputStream getInputStream() {
@@ -314,7 +312,8 @@ public class Xml2jGenerator {
 
 	private static void closeStream(final Closeable stream) {
 		try {
-			stream.close();
+			if (stream != null)
+				stream.close();
 		} catch (IOException e) {
 			logger.error(e.getMessage());
 		}
@@ -364,36 +363,40 @@ public class Xml2jGenerator {
 				&& iface.message_handler_application_task == null)
 			iface.message_handler_application_task = iface.message_handler_application + "Task";
 
-		/* transformation steps */
-		InputStream input = getInputStream();
-		ByteArrayOutputStream output;
+		try {
+			/* transformation steps */
+			InputStream input = getInputStream();
+			ByteArrayOutputStream output;
 
-		Step step = Step.STEP_ONE;
-		output = performStep(step, input);
-		if (Options.intermediate)
-			writeTransformationResultFile(iface.name, output.toByteArray(), step);
-		closeStream(input);
+			Step step = Step.STEP_ONE;
+			output = performStep(step, input);
+			if (Options.intermediate)
+				writeTransformationResultFile(iface.name, output.toByteArray(), step);
+			closeStream(input);
 
-		step = Step.STEP_TWO;
-		input = toInputStream(output);
-        closeStream(output);
-		output = performStep(step, input);
-		if (Options.intermediate)
-			writeTransformationResultFile(iface.name, output.toByteArray(), step);
-		closeStream(input);
+			step = Step.STEP_TWO;
+			input = toInputStream(output);
+			closeStream(output);
+			output = performStep(step, input);
+			if (Options.intermediate)
+				writeTransformationResultFile(iface.name, output.toByteArray(), step);
+			closeStream(input);
 
-		step = Step.STEP_THREE;
-		input = toInputStream(output);
-        closeStream(output);
-		output = performStep(step, input);
-		if (Options.intermediate)
-			writeTransformationResultFile(iface.name, output.toByteArray(), step);
-		closeStream(input);
+			step = Step.STEP_THREE;
+			input = toInputStream(output);
+			closeStream(output);
+			output = performStep(step, input);
+			if (Options.intermediate)
+				writeTransformationResultFile(iface.name, output.toByteArray(), step);
+			closeStream(input);
 
-		input = toInputStream(output);
-		output = performStep(Step.GENERATE_JAVA, input);
-        closeStream(output);
-        closeStream(input);
+			input = toInputStream(output);
+			output = performStep(Step.GENERATE_JAVA, input);
+			closeStream(output);
+			closeStream(input);
+		} catch (RuntimeException e) {
+			logger.fatal("Configuration error: reinstall.");
+		}
 	}
 
 
@@ -449,6 +452,7 @@ public class Xml2jGenerator {
 	}
 
 	private static void generateMasterPom() {
+		final Step step = Step.MASTER_POM;
 		final String empty = "<?xml version=\"1.0\" encoding=\"utf-8\"?><modules>";
 
 		StringBuilder stringBuilder = new StringBuilder(empty);
@@ -457,7 +461,7 @@ public class Xml2jGenerator {
 		}
 		stringBuilder.append("</modules>");
 
-		final Step step = Step.MASTER_POM;
+		try {
 		Transformation t = new Transformation(steps.get(step), getParam(step));
 
 		final String xml = stringBuilder.toString();
@@ -469,10 +473,14 @@ public class Xml2jGenerator {
 		writeFile(output.toByteArray(), pom);
 
 		closeStream(input);
-		closeStream(output);
+		closeStream(output);} catch( RuntimeException e) {
+			logger.fatal("Configuration error: reinstall.");
+		}
 	}
 
 	private static void generateModulePom(Xml2jModule m, boolean child) {
+		final Step step = child ? Step.MODULE_POM : Step.DEFAULT_POM;
+
 		if (m.interfaces().isEmpty()) {
 			logger.warn(format("Module has no interfaces. POM cannot be generated for module %s.", m.name));
 			return;
@@ -480,8 +488,6 @@ public class Xml2jGenerator {
 
 		final String empty = "<?xml version=\"1.0\" encoding=\"utf-8\"?><document xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"/>";
 		InputStream input = new ByteArrayInputStream(empty.getBytes(StandardCharsets.UTF_8));
-
-		final Step step = child ? Step.MODULE_POM : Step.DEFAULT_POM;
 
 		if (module.interfaces().size() > 1) {
 			logger.warn(format("Module %s has more than 1 interface. Settings of first interface are used for module POM.", module.name));
@@ -493,21 +499,20 @@ public class Xml2jGenerator {
 		iface = module.interfaces().get(0);
 
 		Transformation t = new Transformation(steps.get(step), getParam(step));
-
 		ByteArrayOutputStream output = t.executeStep(input, null);
 
-        String pomFile = null;
-        String type = null;
-        switch (step) {
-            case MODULE_POM:
-                pomFile = Options.workingDirectory + "/" + module.name + "/pom.xml";
-                type = "(module)";
-            break;
-            case DEFAULT_POM:
-                pomFile = Options.workingDirectory + "/pom.xml";
-                type = "(default)";
-            break;
-        }
+		String pomFile = null;
+		String type = null;
+		switch (step) {
+			case MODULE_POM:
+				pomFile = Options.workingDirectory + "/" + module.name + "/pom.xml";
+				type = "(module)";
+				break;
+			case DEFAULT_POM:
+				pomFile = Options.workingDirectory + "/pom.xml";
+				type = "(default)";
+				break;
+		}
 		logger.info(format("Creating %s POM file: %s", type, pomFile));
 		writeFile(output.toByteArray(), pomFile);
 
