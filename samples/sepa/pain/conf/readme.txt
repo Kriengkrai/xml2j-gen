@@ -1,0 +1,1 @@
+These configuration files are used by the code generator and illustrate the different settings that can be used to control code generation.

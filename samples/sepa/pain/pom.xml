@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+    XML2J XSD to Java code generator
+    This (master) POM file was generated using XML2J code generator.
+    Generation date: Sat Apr 14 12:17:44 CEST 2018
+-->
+   <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <dependency.locations.enabled>false</dependency.locations.enabled>
+   </properties>
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.xml2j.sepa2016.pain</groupId>
+   <artifactId>pain</artifactId>
+   <version>1.0</version>
+   <name>pain</name>
+   <description>[domain-description]</description>
+   <packaging>pom</packaging>
+   <modules>
+      <module>pain001</module>
+      <module>pain002</module>
+      <module>pain007</module>
+      <module>pain008</module>
+      <module>pain013</module>
+      <module>pain014</module>
+   </modules>
+   <dependencies>
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.12</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-log4j12</artifactId>
+         <version>1.7.25</version>
+      </dependency>
+      <dependency>
+         <groupId>com.xml2j</groupId>
+         <artifactId>xml2j-core</artifactId>
+         <version>2.4.1</version>
+      </dependency>
+   </dependencies>
+</project>
