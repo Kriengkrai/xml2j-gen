@@ -35,9 +35,9 @@ public class Xml2jInterface {
 	public String message_handler_application = null;
 
 	public void print(final PrintStream s) {
-		s.println("\nxml2j-interface" + "\nname: " + name + "\nmessage_handler_root: " + message_handler_root + "\nmessage_handler_name: "
-				+ message_handler_name + "\nroot_type_rename: " + root_type_rename + "\nmessage_handler_processor: " + message_handler_processor
-				+ "\nmessage_handler_runnable: " + message_handler_runnable + "\nmessage_handler_application_task: " + message_handler_application_task
-				+ "\nmessage_handler_application: " + message_handler_application);
+		s.println("\nxml2j-interface" + "\n\tname: " + name + "\n\tmessage_handler_root: " + message_handler_root + "\n\tmessage_handler_name: "
+				+ message_handler_name + "\n\troot_type_rename: " + root_type_rename + "\n\tmessage_handler_processor: " + message_handler_processor
+				+ "\n\tmessage_handler_runnable: " + message_handler_runnable + "\n\tmessage_handler_application_task: " + message_handler_application_task
+				+ "\n\tmessage_handler_application: " + message_handler_application);
 	}
 }

@@ -296,19 +296,26 @@ public class Xml2jGenerator {
 		final Map<String, String> param = getParam(step);
 		Transformation t = new Transformation(steps.get(step), param);
 
-		String inSystemId = Step.STEP_ONE == step ? moduleRoot + iface.name : null;
+		String inSystemId = Step.STEP_ONE == step ? getSchemaFileName(iface) : null;
 		return t.executeStep(input, inSystemId);
+	}
+
+	private static String getSchemaFileName(Xml2jInterface i) {
+		String name = module.input_path != null ? module.name  + "/" + module.input_path : (domain.input_path != null ? domain.input_path : "schema");
+		return moduleRoot + "/" + name + "/" + i.name;
 	}
 
 	private static InputStream getInputStream() {
 		InputStream input = null;
 		try {
-			if (Options.verbose)
-				logger.info(moduleRoot + "/" + module.name  + "/" + module.input_path + "/" + iface.name);
+			String name = getSchemaFileName(iface);
 
-			input = new FileInputStream(moduleRoot + "/" + module.name  + "/" + module.input_path + "/" + iface.name);
+			if (Options.verbose)
+				logger.info(name);
+
+			input = new FileInputStream(name);
 		} catch (FileNotFoundException e) {
-			logger.error(format("%s DETAIL: module '%s' input_path, name = { %s, %s }", e.getMessage(), module.name, module.input_path, iface.name));
+			logger.error(e.getMessage());
 		}
 		return input;
 	}
@@ -327,6 +334,9 @@ public class Xml2jGenerator {
 	}
 
 	private static void generateCodeForDomain(final Xml2jDomain d) {
+		if (Options.verbose)
+			d.print(System.out);
+
 		List<Xml2jModule> modules = d.modules();
 		for (Xml2jModule m : modules) {
 			generateCodeForModule(m);
@@ -347,12 +357,12 @@ public class Xml2jGenerator {
 		modulePackage = generatorSettings.domainpackage + "." + module.name;
 
 		if (Options.verbose)
-			logger.info(format("\n%s : %s, %s : %s", MODULE_NAME, module.name, PACKAGE_NAME, modulePackage));
+			module.print(System.out);
 
 		/* for all interfaces in module generate code */
 		List<Xml2jInterface> interfaces = m.interfaces();
 		for (Xml2jInterface i : interfaces) {
-            logger.info(moduleRoot + "/" + module.name  + "/" + module.input_path + "/" + i.name);
+            logger.info(getSchemaFileName(i));
 			generateCodeForInterface(i);
 		}
 	}

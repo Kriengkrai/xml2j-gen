@@ -80,6 +80,7 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 			Xml2jDomain domain = new Xml2jDomain();
 			domain.base = atts.getValue(BASE);
 			domain.name = atts.getValue(NAME);
+			domain.input_path = atts.getValue(INPUT_PATH);
 			configuration.add(domain);
 
 		} else if (qName.equals("module")) {

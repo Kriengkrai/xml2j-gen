@@ -23,11 +23,11 @@ CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
 	xmlns="urn:xml2j.sourceforge.io">
  	<domain 
 		base="com.xml2j.sepa2016"		
-		name="pain">
+		name="pain"
+		input-path="schema">
  		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
  		<!-- the module name is used as an extension for generation of the package-name -->
 		<module name="pain001" 
-				input-path="schema" 
 				output-path="src/main/java"> 
  			<!-- 
 				for each XSD the root type to be handled and the name of the handler class are specified 
@@ -45,7 +45,6 @@ CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
 				message-handler-application="CustomerCreditTransferInitiationV07Application"/>
 		</module>
 		<module name="pain002" 
-				input-path="schema" 
 				output-path="src/main/java"> 
 				
 			<!-- CustomerPaymentStatusReportV07				pain.002.001.07	-->			
@@ -60,7 +59,6 @@ CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
 				
 		</module>
 		<module name="pain007" 
-				input-path="schema" 
 				output-path="src/main/java"> 
 				
 			<!-- CustomerPaymentReversalV06					pain.007.001.06	-->			
@@ -75,7 +73,6 @@ CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
 				
 		</module>
 		<module name="pain008" 
-				input-path="schema" 
 				output-path="src/main/java"> 
 				
 			<!-- CustomerDirectDebitInitiationV06			pain.008.001.06	-->			
@@ -90,7 +87,6 @@ CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
 				
 		</module>
 		<module name="pain013" 
-				input-path="schema" 
 				output-path="src/main/java"> 
 				
 			<!-- CreditorPaymentActivationRequestV05		pain.013.001.05 -->				
@@ -105,7 +101,6 @@ CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05			CBI				N/A
 				
 		</module>
 		<module name="pain014" 
-				input-path="schema" 
 				output-path="src/main/java"> 
 				
 			<!-- CreditorPaymentActivationRequestStatusReportV05	pain.014.001.05	-->			

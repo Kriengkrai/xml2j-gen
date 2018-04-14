@@ -29,6 +29,7 @@ import java.util.List;
 public class Xml2jDomain {
 	public String base = null;
 	public String name = null;
+	public String input_path = null;
 	private int currModule = -1;
 
 	private List<Xml2jModule> modules = new ArrayList<Xml2jModule>();
@@ -48,7 +49,7 @@ public class Xml2jDomain {
 	}
 
 	public void print(final PrintStream s) {
-		s.println("\nxml2j-domain" + "\nname: " + name + "\nbase: " + base);
+		s.println("\nxml2j-domain" + "\n\tname: " + name + "\n\tbase: " + base + "\n\tinput_path: " + input_path);
 
 		for (Xml2jModule m : modules) {
 			m.print(s);
