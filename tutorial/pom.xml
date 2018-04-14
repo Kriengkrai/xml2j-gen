@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+    XML2J XSD to Java code generator
+    This (master) POM file was generated using XML2J code generator.
+    Generation date: Thu Apr 12 19:34:42 CEST 2018
+-->
+   <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <src.dir>${project.basedir}/./src</src.dir>
+      <dependency.locations.enabled>false</dependency.locations.enabled>
+   </properties>
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>com.xml2j.tutorial</groupId>
+   <artifactId>tutorial</artifactId>
+   <version>1.0</version>
+   <name>tutorial</name>
+   <description>[domain-description]</description>
+   <packaging>pom</packaging>
+   <modules>
+      <module>choice</module>
+      <module>ext</module>
+      <module>group</module>
+      <module>reserved</module>
+      <module>seq1</module>
+      <module>seq2</module>
+      <module>seq3</module>
+      <module>seq4</module>
+      <module>subst</module>
+      <module>subst2</module>
+      <module>zoo</module>
+   </modules>
+   <dependencies>
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.12</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-log4j12</artifactId>
+         <version>1.7.25</version>
+      </dependency>
+      <dependency>
+         <groupId>com.xml2j</groupId>
+         <artifactId>xml2j-core</artifactId>
+         <version>2.4.0</version>
+      </dependency>
+   </dependencies>
+</project>
