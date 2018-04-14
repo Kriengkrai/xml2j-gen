@@ -12,7 +12,7 @@ package com.xml2j.tutorial.seq2.handlers;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: SEQ2 
-  Generation date: Thu Apr 12 19:34:41 CEST 2018 
+  Generation date: Sat Apr 14 12:01:31 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/

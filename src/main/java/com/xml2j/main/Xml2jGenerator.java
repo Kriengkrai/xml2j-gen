@@ -237,8 +237,7 @@ public class Xml2jGenerator {
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
 		param.put(MESSAGE_HANDLER_NAME, iface.message_handler_name);
 		param.put(MESSAGE_HANDLER_PACKAGE, modulePackage + ".handlers");
-//		param.put(SOURCE_PATH, Options.workingDirectory + "/" + domain.name + "/" + module.name + "/" + module.output_path);
-		param.put(SOURCE_PATH, Options.workingDirectory + "/" + module.output_path);
+		param.put(SOURCE_PATH, Options.workingDirectory + "/" + module.name + "/" + module.output_path);
 		param.put(PRINTING, Options.printMethods ? "1" : "0");
 		param.put(SERIALIZATION, Options.serialization ? "1" : "0");
 		param.put(SERIALVERSION_UID, format("%dL", Options.UID));
@@ -256,8 +255,16 @@ public class Xml2jGenerator {
         param.put(MODULE_NAME, module.name);
         param.put(MODULE_DESCRIPTION, module.description);
 		param.put(MODULE_PACKAGE, modulePackage);
+		param.put(SOURCE_PATH, module.output_path);
 		param.put(APPLICATION_NAME, iface.message_handler_application);
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
+
+		if (Options.verbose) {
+			logger.info(
+					format("\n\tGROUP_ID: %s, \n\tDOMAIN_NAME: %s, \n\tMODULE_NAME: %s, \n\tMODULE_DESCRIPTION: %s, \n\tMODULE_PACKAGE: %s, \n\tSOURCE_PATH: %s, \n\tAPPLICATION_NAME: %s \n\tAPPLICATION_PACKAGE: %s",
+							param.get(GROUP_ID), param.get(DOMAIN_NAME), param.get(MODULE_NAME), param.get(MODULE_DESCRIPTION), param.get(MODULE_PACKAGE), param.get(SOURCE_PATH), param.get(APPLICATION_NAME), param.get(APPLICATION_PACKAGE))
+			);
+		}
 
 		return param;
 	}
@@ -297,11 +304,11 @@ public class Xml2jGenerator {
 		InputStream input = null;
 		try {
 			if (Options.verbose)
-				logger.info(moduleRoot + iface.name);
+				logger.info(moduleRoot + "/" + module.name  + "/" + module.input_path + "/" + iface.name);
 
-			input = new FileInputStream(moduleRoot + iface.name);
+			input = new FileInputStream(moduleRoot + "/" + module.name  + "/" + module.input_path + "/" + iface.name);
 		} catch (FileNotFoundException e) {
-			logger.error(format("%s \nDETAIL: module '%s' input_path, name = { %s, %s }", e.getMessage(), module.name, module.input_path, iface.name));
+			logger.error(format("%s DETAIL: module '%s' input_path, name = { %s, %s }", e.getMessage(), module.name, module.input_path, iface.name));
 		}
 		return input;
 	}
@@ -336,7 +343,7 @@ public class Xml2jGenerator {
 
 		/* setting parameters for code generation */
 		module = m;
-		moduleRoot = Options.workingDirectory + "/" + module.input_path + "/";
+		moduleRoot = Options.workingDirectory;
 		modulePackage = generatorSettings.domainpackage + "." + module.name;
 
 		if (Options.verbose)
@@ -345,6 +352,7 @@ public class Xml2jGenerator {
 		/* for all interfaces in module generate code */
 		List<Xml2jInterface> interfaces = m.interfaces();
 		for (Xml2jInterface i : interfaces) {
+            logger.info(moduleRoot + "/" + module.name  + "/" + module.input_path + "/" + i.name);
 			generateCodeForInterface(i);
 		}
 	}
@@ -355,8 +363,6 @@ public class Xml2jGenerator {
 		/* print configuration parameters */
 		if (Options.verbose)
 			iface.print(System.out);
-		else
-			logger.info(moduleRoot + iface.name);
 
 		if (iface.message_handler_application != null
 				&& iface.message_handler_runnable == null
@@ -462,18 +468,19 @@ public class Xml2jGenerator {
 		stringBuilder.append("</modules>");
 
 		try {
-		Transformation t = new Transformation(steps.get(step), getParam(step));
+			Transformation t = new Transformation(steps.get(step), getParam(step));
 
-		final String xml = stringBuilder.toString();
-		final String pom = Options.workingDirectory + "/pom.xml";
-		InputStream input = new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8));
-		ByteArrayOutputStream output = t.executeStep(input, null);
+			final String xml = stringBuilder.toString();
+			final String pom = Options.workingDirectory + "/pom.xml";
+			InputStream input = new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8));
+			ByteArrayOutputStream output = t.executeStep(input, null);
 
-		logger.info("Creating (master) POM file: " + pom);
-		writeFile(output.toByteArray(), pom);
+			logger.info("Creating (master) POM file: " + pom);
+			writeFile(output.toByteArray(), pom);
 
-		closeStream(input);
-		closeStream(output);} catch( RuntimeException e) {
+			closeStream(input);
+			closeStream(output);
+		} catch (RuntimeException e) {
 			logger.fatal("Configuration error: reinstall.");
 		}
 	}

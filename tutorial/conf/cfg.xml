@@ -5,11 +5,15 @@
  	<domain 
 		base="com.xml2j"
 		name="tutorial">
- 		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
+		
  		<!-- the module name is used as an extension for generation of the package-name -->
+		<!-- the domain's base is the working directory (e.g. tutorial) -->
+		<!-- for a module its base is relative to the domain's (e.g. tutorial/choice) -->
+		<!-- paths are relative to the module (e.g. schema <-> tutorial/choice/schema) -->
+		
 		<module name="choice" 
-				input-path="choice/schema" 
-				output-path="choice/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -20,8 +24,8 @@
 				message-handler-application="ChoiceApplication"/>
  		</module>
 		<module name="ext" 
-				input-path="ext/schema" 
-				output-path="ext/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -32,8 +36,8 @@
 				message-handler-application="ExtApplication"/>
  		</module>
 		<module name="group" 
-				input-path="group/schema" 
-				output-path="group/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -45,8 +49,8 @@
 
  		</module>
 		<module name="reserved" 
-				input-path="reserved/schema" 
-				output-path="reserved/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -58,8 +62,8 @@
 				
  		</module>
 		<module name="seq1" 
-				input-path="seq1/schema" 
-				output-path="seq1/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -70,8 +74,8 @@
 				message-handler-application="SeqApplication"/>
  		</module>
 		<module name="seq2" 
-				input-path="seq2/schema" 
-				output-path="seq2/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -82,8 +86,8 @@
 				message-handler-application="SeqApplication"/>
  		</module>
 		<module name="seq3" 
-				input-path="seq3/schema" 
-				output-path="seq3/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -94,8 +98,8 @@
 				message-handler-application="SeqApplication"/>
  		</module>
 		<module name="seq4" 
-				input-path="seq4/schema" 
-				output-path="seq4/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -106,8 +110,8 @@
 				message-handler-application="SeqApplication"/>
  		</module>
 		<module name="subst" 
-				input-path="subst/schema" 
-				output-path="subst/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -118,8 +122,8 @@
 				message-handler-application="SubstApplication"/>
  		</module>
 		<module name="subst2" 
-				input-path="subst2/schema" 
-				output-path="subst2/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 
@@ -130,8 +134,8 @@
 				message-handler-application="Subst2Application"/>
  		</module>
 		<module name="zoo" 
-				input-path="zoo/schema" 
-				output-path="zoo/src/main/java">
+				input-path="schema" 
+				output-path="src/main/java">
  			<!-- for each XSD the root type to be handled and the name of the handler 
  			     class are specified -->	
  			<interface 

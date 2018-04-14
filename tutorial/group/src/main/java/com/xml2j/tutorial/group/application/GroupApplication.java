@@ -11,7 +11,7 @@ package com.xml2j.tutorial.group.application;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: GROUP 
-  Generation date: Thu Apr 12 19:34:41 CEST 2018 
+  Generation date: Sat Apr 14 12:01:30 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/

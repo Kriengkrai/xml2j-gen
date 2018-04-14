@@ -3,7 +3,7 @@
 <!--
     XML2J XSD to Java code generator
     This (module) POM file was generated using XML2J code generator.
-    Generation date: Mon Apr 09 19:49:47 CEST 2018
+    Generation date: Sat Apr 14 12:01:31 CEST 2018
 -->
    <modelVersion>4.0.0</modelVersion>
    <parent>
@@ -11,6 +11,9 @@
       <artifactId>tutorial</artifactId>
       <version>1.0</version>
    </parent>
+   <properties>
+      <src.dir>src/main/java</src.dir>
+   </properties>
    <artifactId>seq4</artifactId>
    <version>1.0</version>
    <name>seq4</name>

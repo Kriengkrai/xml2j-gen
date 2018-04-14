@@ -119,7 +119,10 @@ Generator:
 			<artifactId><xsl:value-of select="$domain"/></artifactId>
 			<version><xsl:value-of select="$version"/></version>
 		</parent>
-
+		<properties>
+			<src.dir><xsl:value-of select="$source-path"/></src.dir>
+		</properties>
+		
 		<artifactId><xsl:value-of select="$module"/></artifactId>
 		<version><xsl:value-of select="$version"/></version>
 		<name><xsl:value-of select="$module"/></name>
