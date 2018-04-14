@@ -44,7 +44,7 @@ Generator:
   exclude-result-prefixes="Date">
 
 
-<xsl:param name="xml2j-version" select="'2.4.0'"/>
+<xsl:param name="xml2j-version" select="'2.4.1'"/>
 
 <!-- group-id -->
 <xsl:param name="group-id" select="''" />

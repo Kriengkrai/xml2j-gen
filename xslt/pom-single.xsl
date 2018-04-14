@@ -44,7 +44,7 @@ Generator:
   exclude-result-prefixes="Date">
 
 
-<xsl:param name="xml2j-version" select="'2.4.0'"/>
+<xsl:param name="xml2j-version" select="'2.4.1'"/>
 
 <!-- group-id -->
 <xsl:param name="group-id" select="''" />
@@ -191,7 +191,7 @@ Generator:
 			<dependency>
 				<groupId>com.xml2j</groupId>
 				<artifactId>xml2j-core</artifactId>
-				<version>2.4.0</version>
+				<version><xsl:value-of select="$xml2j-version"/></version>
 			</dependency>
 		</dependencies>
 	</project>
