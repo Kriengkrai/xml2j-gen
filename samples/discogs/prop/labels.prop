@@ -1,0 +1,13 @@
+#XML2J-PROPERTIES
+#
+# process message
+#
+labels/@process=false
+#
+# make sure to detach release from parent because there are way too many to fit into memory
+labels/label/@process=true
+labels/label/@detach=true
+
+
+
+

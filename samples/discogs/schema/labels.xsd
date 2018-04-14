@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="labels" type="labelsType"/>
+  <xs:complexType name="imageType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:short" name="width" use="optional"/>
+        <xs:attribute type="xs:string" name="uri150" use="optional"/>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="uri" use="optional"/>
+        <xs:attribute type="xs:short" name="height" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="imagesType">
+    <xs:sequence>
+      <xs:element type="imageType" name="image" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="urlsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="url" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sublabelsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="label" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="labelType">
+    <xs:sequence>
+      <xs:element type="imagesType" name="images" minOccurs="0"/>
+      <xs:element type="xs:short" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="contactinfo" minOccurs="0"/>
+      <xs:element type="xs:string" name="profile" minOccurs="0"/>
+      <xs:element type="xs:string" name="parentLabel" minOccurs="0"/>
+      <xs:element type="xs:string" name="data_quality"/>
+      <xs:element type="urlsType" name="urls" minOccurs="0"/>
+      <xs:element type="sublabelsType" name="sublabels" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="labelsType">
+    <xs:sequence>
+      <xs:element type="labelType" name="label" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

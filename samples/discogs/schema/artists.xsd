@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+<!-- 
+	https://devutilsonline.com/xsd-xml/generate-xsd-from-xml
+	venetian blind design
+-->
+  <xs:element name="artists" type="artistsType"/>
+  <xs:complexType name="imageType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:short" name="width" use="optional"/>
+        <xs:attribute type="xs:string" name="uri150" use="optional"/>
+        <xs:attribute type="xs:string" name="type" use="optional"/>
+        <xs:attribute type="xs:string" name="uri" use="optional"/>
+        <xs:attribute type="xs:short" name="height" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="imagesType">
+    <xs:sequence>
+      <xs:element type="imageType" name="image" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="namevariationsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="aliasesType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="artistType">
+    <xs:sequence>
+      <xs:element type="imagesType" name="images" minOccurs="0"/>
+      <xs:element type="xs:short" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="realname" minOccurs="0"/>
+      <xs:element type="xs:string" name="profile"/>
+      <xs:element type="xs:string" name="data_quality"/>
+      <xs:element type="urlsType" name="urls" minOccurs="0"/>
+      <xs:element type="namevariationsType" name="namevariations" minOccurs="0"/>
+      <xs:element type="aliasesType" name="aliases" minOccurs="0"/>
+      <xs:element type="membersType" name="members" minOccurs="0"/>
+      <xs:element type="groupsType" name="groups" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="membersType">
+    <xs:choice maxOccurs="unbounded" minOccurs="0">
+      <xs:element type="xs:int" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="urlsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="url" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="groupsType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="artistsType">
+    <xs:sequence>
+      <xs:element type="artistType" name="artist" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

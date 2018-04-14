@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Example 
+	
+source: discogs
+
+========================
+Message Type : 	releases	
+========================
+
+-->
+<xml2j-generator 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="urn:xml2j.sourceforge.io">
+ 	<domain 
+		base="com.xml2j"		
+		name="discogs"
+		input-path="schema">
+ 		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
+ 		<!-- the module name is used as an extension for generation of the package-name -->
+		<module name="releases"
+				output-path="src/main/java"> 
+ 			<!-- 
+				for each XSD the root type to be handled and the name of the handler class are specified 
+				e.g. releases
+			-->	
+			
+			<!-- releases -->
+ 			<interface 
+ 				name="releases.xsd" 
+ 				message-handler-root="releases" 	
+ 				root-type-rename="Releases"
+ 				message-handler-name="ReleasesMessageHandler"
+				message-handler-processor="ReleasesProcessor"
+				message-handler-application-task="ReleasesApplicationTask"
+				message-handler-application="ReleasesApplication"/>
+
+ 		</module>
+		<module name="labels"
+				output-path="src/main/java"> 
+ 			<!-- 
+				for each XSD the root type to be handled and the name of the handler class are specified 
+				e.g. labels
+			-->	
+			
+			<!-- labels -->
+ 			<interface 
+ 				name="labels.xsd" 
+ 				message-handler-root="labels" 	
+ 				root-type-rename="Labels"
+ 				message-handler-name="LabelsMessageHandler"
+				message-handler-processor="LabelsProcessor"
+				message-handler-runnable="LabelsRunnable"/>
+				
+ 		</module>
+		<module name="artists"
+				output-path="src/main/java"> 
+ 			<!-- 
+				for each XSD the root type to be handled and the name of the handler class are specified 
+				e.g. artists
+			-->	
+			
+			<!-- artists -->
+ 			<interface 
+ 				name="artists.xsd" 
+ 				message-handler-root="artists" 	
+ 				root-type-rename="Artists"
+ 				message-handler-name="ArtistsMessageHandler"
+				message-handler-processor="ArtistsProcessor"
+				message-handler-runnable="ArtistsRunnable"
+				message-handler-application="ArtistsApplication"/>
+				
+ 		</module>
+
+		</domain>
+</xml2j-generator>
