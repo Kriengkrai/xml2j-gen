@@ -8,16 +8,14 @@ package com.xml2j.discogs.labels;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sat Apr 14 18:02:47 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
-
-import com.xml2j.util.Printer;
 
 import com.xml2j.util.Compare;
 
@@ -317,70 +315,4 @@ public class LabelType extends ComplexDataType {
 
   
   
-  
-	/**
-	 *	Printing method, prints the XML element to a Printer.
-	 *  This method prints an XML fragment starting from labelType.
-	 *
-	 *  @param out the Printer that the element is printed to
-	 *  @see com.xml2j.util.Printer
-	 */
-	protected void printElements(Printer out) {
-		super.printElements(out);
-  
-		if (m_images != null)
-			m_images.print(out);
-		else {
-			// out.print("<images>null</images>");
-		}
-		
-		if (m_id != null) {
-			out.print("\n<id>");
-			out.print(m_id);
-			out.print("</id>\n");
-		}
-		
-		if (m_name != null) {
-			out.print("\n<name>");
-			out.print(m_name);
-			out.print("</name>\n");
-		}
-		
-		if (m_contactinfo != null) {
-			out.print("\n<contactinfo>");
-			out.print(m_contactinfo);
-			out.print("</contactinfo>\n");
-		}
-		
-		if (m_profile != null) {
-			out.print("\n<profile>");
-			out.print(m_profile);
-			out.print("</profile>\n");
-		}
-		
-		if (m_parentLabel != null) {
-			out.print("\n<parentLabel>");
-			out.print(m_parentLabel);
-			out.print("</parentLabel>\n");
-		}
-		
-		if (m_data_quality != null) {
-			out.print("\n<data_quality>");
-			out.print(m_data_quality);
-			out.print("</data_quality>\n");
-		}
-		
-		if (m_urls != null)
-			m_urls.print(out);
-		else {
-			// out.print("<urls>null</urls>");
-		}
-		
-		if (m_sublabels != null)
-			m_sublabels.print(out);
-		else {
-			// out.print("<sublabels>null</sublabels>");
-		}
-		
-	}
 }

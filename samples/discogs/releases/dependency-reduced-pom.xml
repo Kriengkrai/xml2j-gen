@@ -10,6 +10,7 @@
   <name>releases</name>
   <version>1.0</version>
   <build>
+    <sourceDirectory>${src.dir}</sourceDirectory>
     <resources>
       <resource>
         <directory>src/main/resources</directory>
@@ -84,5 +85,8 @@
       </exclusions>
     </dependency>
   </dependencies>
+  <properties>
+    <src.dir>src/main/java</src.dir>
+  </properties>
 </project>
 

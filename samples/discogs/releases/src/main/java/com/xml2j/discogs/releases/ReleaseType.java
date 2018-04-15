@@ -8,16 +8,14 @@ package com.xml2j.discogs.releases;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: RELEASES 
-  Generation date: Sat Apr 14 18:02:46 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
-
-import com.xml2j.util.Printer;
 
 import com.xml2j.util.Compare;
 
@@ -34,14 +32,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Any complex data structure can be navigated by using the element getter methods.
  * 
  */
-@Document (collection = "Releases")
+@Document (collection = "Releases2")
 public class ReleaseType extends ComplexDataType {
 
 	/**
 	 * serial version UID 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * Constructor for ReleaseType.
 	 *
@@ -52,12 +49,13 @@ public class ReleaseType extends ComplexDataType {
 		super(elementName, parent);
 	}
 
-	long id = 0L;
-	public void setId(long id) {
-		this.id = id;
-	}
+    private long id = 0L;
 
-	/**
+    public void setId(long id) {
+	    this.id = id;
+    }
+
+    /**
 	 * Allocator class.	
 	 *
 	 * This class implements the generic allocator interface that is used by the framework.
@@ -553,118 +551,4 @@ public class ReleaseType extends ComplexDataType {
 		setAttr("status", data);
 	}
   
-  
-	/**
-	 *	Printing method, prints the XML element to a Printer.
-	 *  This method prints an XML fragment starting from releaseType.
-	 *
-	 *  @param out the Printer that the element is printed to
-	 *  @see com.xml2j.util.Printer
-	 */
-	protected void printElements(Printer out) {
-		super.printElements(out);
-  
-		if (m_images != null)
-			m_images.print(out);
-		else {
-			// out.print("<images>null</images>");
-		}
-		
-		if (m_artists != null)
-			m_artists.print(out);
-		else {
-			// out.print("<artists>null</artists>");
-		}
-		
-		if (m_title != null) {
-			out.print("\n<title>");
-			out.print(m_title);
-			out.print("</title>\n");
-		}
-		
-		if (m_labels != null)
-			m_labels.print(out);
-		else {
-			// out.print("<labels>null</labels>");
-		}
-		
-		if (m_extraartists != null)
-			m_extraartists.print(out);
-		else {
-			// out.print("<extraartists>null</extraartists>");
-		}
-		
-		if (m_formats != null)
-			m_formats.print(out);
-		else {
-			// out.print("<formats>null</formats>");
-		}
-		
-		if (m_genres != null)
-			m_genres.print(out);
-		else {
-			// out.print("<genres>null</genres>");
-		}
-		
-		if (m_styles != null)
-			m_styles.print(out);
-		else {
-			// out.print("<styles>null</styles>");
-		}
-		
-		if (m_country != null) {
-			out.print("\n<country>");
-			out.print(m_country);
-			out.print("</country>\n");
-		}
-		
-		if (m_released != null) {
-			out.print("\n<released>");
-			out.print(m_released);
-			out.print("</released>\n");
-		}
-		
-		if (m_notes != null) {
-			out.print("\n<notes>");
-			out.print(m_notes);
-			out.print("</notes>\n");
-		}
-		
-		if (m_master_id != null) {
-			out.print("\n<master_id>");
-			out.print(m_master_id);
-			out.print("</master_id>\n");
-		}
-		
-		if (m_data_quality != null) {
-			out.print("\n<data_quality>");
-			out.print(m_data_quality);
-			out.print("</data_quality>\n");
-		}
-		
-		if (m_tracklist != null)
-			m_tracklist.print(out);
-		else {
-			// out.print("<tracklist>null</tracklist>");
-		}
-		
-		if (m_identifiers != null)
-			m_identifiers.print(out);
-		else {
-			// out.print("<identifiers>null</identifiers>");
-		}
-		
-		if (m_videos != null)
-			m_videos.print(out);
-		else {
-			// out.print("<videos>null</videos>");
-		}
-		
-		if (m_companies != null)
-			m_companies.print(out);
-		else {
-			// out.print("<companies>null</companies>");
-		}
-		
-	}
 }

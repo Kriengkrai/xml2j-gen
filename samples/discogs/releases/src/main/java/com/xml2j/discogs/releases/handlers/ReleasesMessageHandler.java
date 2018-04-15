@@ -8,11 +8,11 @@ package com.xml2j.discogs.releases.handlers;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: RELEASES 
-  Generation date: Sat Apr 14 18:02:46 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/

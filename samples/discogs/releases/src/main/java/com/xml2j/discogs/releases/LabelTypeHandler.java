@@ -8,11 +8,11 @@ package com.xml2j.discogs.releases;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: RELEASES 
-  Generation date: Sat Apr 14 18:02:46 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -129,25 +129,8 @@ public class LabelTypeHandler extends XMLFragmentHandler<LabelType> {
 	@Override
 	public void endElement(String uri, String localName, String name)
 		throws SAXException {
-		
 		if (localName.equals(getXMLElementName())) {
-				
-			// return control to parent handler..
-			this.deactivate();
-			
-			// get content of this item..
-			getData().setContent(this.getValue());
-			
-			// attach data to parent (if parent data setter is found)..
-			DataSetter setter = getParentDataSetter();
-			if (setter != null) {
-				setter.set(getData());
-			} 
-			
-			// process data if required..
-			if (doProcess()) {
-				process(XMLEvent.END);
-			}
+			handleElement();
 		}
 		
 	}	

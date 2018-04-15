@@ -8,11 +8,11 @@ package com.xml2j.discogs.artists;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: ARTISTS 
-  Generation date: Sat Apr 14 18:02:47 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -135,23 +135,7 @@ public class UrlsTypeHandler extends XMLFragmentHandler<UrlsType> {
 			getData().setUrl(getValue());
 			getContents().reset();
 		} else if (localName.equals(getXMLElementName())) {
-				
-			// return control to parent handler..
-			this.deactivate();
-			
-			// get content of this item..
-			getData().setContent(this.getValue());
-			
-			// attach data to parent (if parent data setter is found)..
-			DataSetter setter = getParentDataSetter();
-			if (setter != null) {
-				setter.set(getData());
-			} 
-			
-			// process data if required..
-			if (doProcess()) {
-				process(XMLEvent.END);
-			}
+			handleElement();
 		}
 		
 	}	

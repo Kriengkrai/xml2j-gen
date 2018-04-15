@@ -8,16 +8,14 @@ package com.xml2j.discogs.releases;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: RELEASES 
-  Generation date: Sat Apr 14 18:02:46 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
-
-import com.xml2j.util.Printer;
 
 import com.xml2j.util.Compare;
 
@@ -221,46 +219,4 @@ public class TrackType extends ComplexDataType {
 
   
   
-  
-	/**
-	 *	Printing method, prints the XML element to a Printer.
-	 *  This method prints an XML fragment starting from trackType.
-	 *
-	 *  @param out the Printer that the element is printed to
-	 *  @see com.xml2j.util.Printer
-	 */
-	protected void printElements(Printer out) {
-		super.printElements(out);
-  
-		if (m_position != null) {
-			out.print("\n<position>");
-			out.print(m_position);
-			out.print("</position>\n");
-		}
-		
-		if (m_title != null) {
-			out.print("\n<title>");
-			out.print(m_title);
-			out.print("</title>\n");
-		}
-		
-		if (m_duration != null) {
-			out.print("\n<duration>");
-			out.print(m_duration);
-			out.print("</duration>\n");
-		}
-		
-		if (m_artists != null)
-			m_artists.print(out);
-		else {
-			// out.print("<artists>null</artists>");
-		}
-		
-		if (m_extraartists != null)
-			m_extraartists.print(out);
-		else {
-			// out.print("<extraartists>null</extraartists>");
-		}
-		
-	}
 }

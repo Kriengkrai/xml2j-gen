@@ -8,16 +8,14 @@ package com.xml2j.discogs.labels;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sat Apr 14 18:02:47 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
-
-import com.xml2j.util.Printer;
 
 import com.xml2j.xml.core.ComplexDataType;
 
@@ -193,16 +191,4 @@ public class ImageType extends ComplexDataType {
 		setAttr("height", data);
 	}
   
-  
-	/**
-	 *	Printing method, prints the XML element to a Printer.
-	 *  This method prints an XML fragment starting from imageType.
-	 *
-	 *  @param out the Printer that the element is printed to
-	 *  @see com.xml2j.util.Printer
-	 */
-	protected void printElements(Printer out) {
-		super.printElements(out);
-  
-	}
 }

@@ -3,7 +3,7 @@
 <!--
     XML2J XSD to Java code generator
     This (module) POM file was generated using XML2J code generator.
-    Generation date: Sat Apr 14 18:02:47 CEST 2018
+    Generation date: Sun Apr 15 13:02:55 CEST 2018
 -->
    <modelVersion>4.0.0</modelVersion>
    <parent>
@@ -11,12 +11,15 @@
       <artifactId>discogs</artifactId>
       <version>1.0</version>
    </parent>
+   <properties>
+      <src.dir>src/main/java</src.dir>
+   </properties>
    <artifactId>releases</artifactId>
    <version>1.0</version>
    <name>releases</name>
    <description/>
-   
    <build>
+      <sourceDirectory>${src.dir}</sourceDirectory>
       <plugins>
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -80,6 +83,6 @@
 					</include>
 				</includes>
 			</resource>
-		</resources>       
-	  </build>
- </project>
+		</resources>       	  
+   </build>
+</project>

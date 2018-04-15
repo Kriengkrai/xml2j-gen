@@ -8,16 +8,14 @@ package com.xml2j.discogs.releases;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
+  Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: RELEASES 
-  Generation date: Sat Apr 14 18:02:46 CEST 2018 
+  Generation date: Sun Apr 15 13:02:55 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
-
-import com.xml2j.util.Printer;
 
 import com.xml2j.util.Compare;
 
@@ -245,52 +243,4 @@ public class ArtistType extends ComplexDataType {
 
   
   
-  
-	/**
-	 *	Printing method, prints the XML element to a Printer.
-	 *  This method prints an XML fragment starting from artistType.
-	 *
-	 *  @param out the Printer that the element is printed to
-	 *  @see com.xml2j.util.Printer
-	 */
-	protected void printElements(Printer out) {
-		super.printElements(out);
-  
-		if (m_id != null) {
-			out.print("\n<id>");
-			out.print(m_id);
-			out.print("</id>\n");
-		}
-		
-		if (m_name != null) {
-			out.print("\n<name>");
-			out.print(m_name);
-			out.print("</name>\n");
-		}
-		
-		if (m_anv != null) {
-			out.print("\n<anv>");
-			out.print(m_anv);
-			out.print("</anv>\n");
-		}
-		
-		if (m_join != null) {
-			out.print("\n<join>");
-			out.print(m_join);
-			out.print("</join>\n");
-		}
-		
-		if (m_role != null) {
-			out.print("\n<role>");
-			out.print(m_role);
-			out.print("</role>\n");
-		}
-		
-		if (m_tracks != null) {
-			out.print("\n<tracks>");
-			out.print(m_tracks);
-			out.print("</tracks>\n");
-		}
-		
-	}
 }
