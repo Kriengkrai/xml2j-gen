@@ -80,6 +80,9 @@
 				<includes>
 					<include>
 						spring-config.xml
+                    </include>
+                    <include>
+                        log4j.properties
 					</include>
 				</includes>
 			</resource>
