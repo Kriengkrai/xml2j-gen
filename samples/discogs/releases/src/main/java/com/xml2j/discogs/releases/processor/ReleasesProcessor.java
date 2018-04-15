@@ -35,9 +35,13 @@ public class ReleasesProcessor implements MessageProcessor {
 	static private Logger logger = LoggerFactory.getLogger(ReleasesProcessor.class);
 	final String path = new ClassPathResource("spring-config.xml").getPath();
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(path);
-
 	ReleasesTypeRepo repo = context.getBean(ReleasesTypeRepo.class);
 
+	private int count = 0;
+
+	public int getCount() {
+		return count;
+	}
 	public void closeContext() {
 		context.close();
 	}
@@ -54,6 +58,12 @@ public class ReleasesProcessor implements MessageProcessor {
 	}
 
 	private void process(ReleaseType data) {
+		if (logger.isInfoEnabled()) {
+			count++;
+			if (0==(count % 1000)){
+				logger.info("\rWritten: {}", count );
+			}
+		}
 		try {
 			long id = Long.parseLong(data.getId());
 			data.setId(id);

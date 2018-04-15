@@ -121,6 +121,7 @@ com\xml2j\discogs\releases\StylesTypeHandler$1.class
 com\xml2j\discogs\releases\StylesTypeHandler.class
 com\xml2j\discogs\releases\FormatsTypeHandler$Proxy$Allocator.class
 com\xml2j\discogs\releases\GenresType$Allocator.class
+com\xml2j\discogs\releases\repo\ReleasesTypeRepo.class
 com\xml2j\discogs\releases\handlers\ReleasesMessageHandler.class
 com\xml2j\discogs\releases\ReleaseTypeHandler$VideosSetter.class
 com\xml2j\discogs\releases\StylesType.class

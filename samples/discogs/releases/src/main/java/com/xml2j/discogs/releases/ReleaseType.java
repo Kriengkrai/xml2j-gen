@@ -32,7 +32,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Any complex data structure can be navigated by using the element getter methods.
  * 
  */
-@Document (collection = "Releases2")
+@Document (collection = "Releases")
 public class ReleaseType extends ComplexDataType {
 
 	/**

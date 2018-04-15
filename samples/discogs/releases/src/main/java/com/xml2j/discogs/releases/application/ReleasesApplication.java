@@ -20,6 +20,8 @@ package com.xml2j.discogs.releases.application;
 //----------------------- 		IO		-----------------------//
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.GZIPInputStream;
 //-----------------------    LOGGING	-----------------------//
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -45,7 +47,7 @@ import com.xml2j.discogs.releases.processor.ReleasesProcessor;
  * you can connect any class derived from java.io.InputStream.
  */
 public class ReleasesApplication {
-	
+
 	/** command line parameters */
 	private final static String usage = "parameters:\n\t(1): xml input \n\t(2): config \n\t(3): schema";
 
@@ -65,7 +67,7 @@ public class ReleasesApplication {
 		}
 
 		// get program arguments
-		final String xml = args[0];
+		final String input = args[0];
 		final String config = args[1];
 		final String schema = args.length >= 3 ? args[2] : null;
 		
@@ -86,20 +88,33 @@ public class ReleasesApplication {
 			*/
 			// create the application object
 			ParserTask app = new ReleasesApplicationTask(configuration);
+
+			InputStream inputStream = null;
+			if (input.endsWith(".gz")) {
+				log.info("Assuming gz format.");
+				inputStream = new GZIPInputStream(new FileInputStream(input));
+			} else if (input.endsWith(".xml")) {
+				log.info("Assuming regular xml format.");
+				inputStream = new FileInputStream(input);
+			} else {
+				log.error("Unsupported file format. File must be either gz compressed xml or plain xml");
+				System.exit(0);
+			}
 			
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", xml, schema);
-				app.validateXML(new FileInputStream(xml), new FileInputStream(schema));
+				log.info("Validating {} against {}", input, schema);
+				app.validateXML(inputStream, new FileInputStream(schema));
 			}
 			
 			// process the XML file
-			log.info("Start Processing..");	
-			app.prepareStart( new FileInputStream(xml), new ReleasesProcessor());
+			log.info("Start Processing..");
+			ReleasesProcessor p = new ReleasesProcessor();
+			app.prepareStart( inputStream, p);
 			app.processXML();
-			
-			log.info("Processing complete.");
-			
+
+			p.closeContext();
+			log.info("Processing complete. Written {} releases.", p.getCount());
 		} catch (ProcessorException e) {
 			log.error("Execution aborted due to PROCESSING error (\n\tmessage: {}\n\tcause: {})"
 						, e.getMessage()
