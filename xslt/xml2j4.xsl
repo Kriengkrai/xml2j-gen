@@ -720,8 +720,6 @@ import org.xml.sax.XMLReader;
 import <xsl:value-of select="$import"/>.DataSetter;<xsl:text />
 <xsl:if test="elementList/element[@base='complex']">
 import <xsl:value-of select="$import"/>.ComplexDataType;</xsl:if>
-<xsl:if test="$doExtend='false'">
-import <xsl:value-of select="$import"/>.XMLEvent;</xsl:if>
 import <xsl:value-of select="$import"/>.XMLFragmentHandler;<xsl:text/>
 import com.xml2j.xml.parser.ParserTask;<xsl:text/>
 
