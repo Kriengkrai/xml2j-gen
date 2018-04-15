@@ -42,7 +42,7 @@ import org.slf4j.LoggerFactory;
 
 
 public class Xml2jGenerator {
-	private static final String VERSION = "VERSION: 2.4.2";
+	private static final String VERSION = "2.4.2";
 	private static Notification logger = new Notification(LoggerFactory.getLogger(Xml2jGenerator.class));
 
 		// @formatter:off
@@ -106,6 +106,7 @@ public class Xml2jGenerator {
 	static final private String SERIALVERSION_UID = "serialversion-uid";
 
 	static final private String XML2J_VERSION = "xml2j-version";
+	static final private String XML2J_VERSION_NUMBER = VERSION;
 
 
     private static Xml2jDomain domain;
@@ -243,6 +244,7 @@ public class Xml2jGenerator {
 		param.put(SERIALVERSION_UID, format("%dL", Options.UID));
 		param.put(AUTHOR, Options.author);
 		param.put(CUSTOMHEADER, Header.customHeader);
+		param.put(XML2J_VERSION, XML2J_VERSION_NUMBER);
 
 		return param;
 	}
@@ -258,6 +260,7 @@ public class Xml2jGenerator {
 		param.put(SOURCE_PATH, module.output_path);
 		param.put(APPLICATION_NAME, iface.message_handler_application);
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
+		param.put(XML2J_VERSION, XML2J_VERSION_NUMBER);
 
 		if (Options.verbose) {
 			logger.info(

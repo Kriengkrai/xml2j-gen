@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 /********************************************************************************
-Copyright 2016, 2017 Lolke B. Dijkstra
+Copyright 2016, 2017, 2018 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -26,7 +26,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <!--
 	step4 (4/5) Java code generation 
 	
-	version:		2.4.1		
+	version:		2.4.2		
 	
 	changelog:
 		support for
@@ -42,7 +42,7 @@ Project root: https://sourceforge.net/projects/xml2j/
   xmlns:Date="java:java.util.Date">
 
 
-<xsl:param name="xml2j-version" select="'2.4.1'"/>
+<xsl:param name="xml2j-version" select="'[xml2j-version]'"/>
 
 <!-- import = framework import -->
 <xsl:param name="import" select="'com.xml2j.xml.core'"/>
@@ -947,30 +947,9 @@ public class <xsl:value-of select="$classname"/>Handler <xsl:choose>
 		</xsl:for-each>		
 		<xsl:choose>
 		<xsl:when test="$doExtend='false'">
-			<xsl:choose>
-				<xsl:when test="elementList/element[@base!='complex']">
-		} else if (localName.equals(getXMLElementName())) {
-				</xsl:when>
-				<xsl:otherwise>
-		if (localName.equals(getXMLElementName())) {
-				</xsl:otherwise>
-			</xsl:choose>
-			// return control to parent handler..
-			this.deactivate();
-			
-			// get content of this item..
-			getData().setContent(this.getValue());
-			
-			// attach data to parent (if parent data setter is found)..
-			DataSetter setter = getParentDataSetter();
-			if (setter != null) {
-				setter.set(getData());
-			} <xsl:text />
-			
-			// process data if required..
-			if (doProcess()) {
-				process(XMLEvent.END);
-			}
+		<xsl:if test="elementList/element[@base!='complex']">
+		} else </xsl:if>if (localName.equals(getXMLElementName())) {
+			handleElement();
 		}
 		</xsl:when>
 		<xsl:otherwise>

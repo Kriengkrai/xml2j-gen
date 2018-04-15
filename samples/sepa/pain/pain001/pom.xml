@@ -3,7 +3,7 @@
 <!--
     XML2J XSD to Java code generator
     This (module) POM file was generated using XML2J code generator.
-    Generation date: Sat Apr 14 13:51:07 CEST 2018
+    Generation date: Sun Apr 15 12:25:10 CEST 2018
 -->
    <modelVersion>4.0.0</modelVersion>
    <parent>

@@ -29,7 +29,7 @@ Generator:
 <!--
 	step5 (5/5) generate pom.xml 
 	
-	version:		2.4.1		
+	version:		2.4.2		
 
 	description:
 		generate pom file based on generator configuration file  
@@ -44,7 +44,7 @@ Generator:
   exclude-result-prefixes="Date">
 
 
-<xsl:param name="xml2j-version" select="'2.4.1'"/>
+<xsl:param name="xml2j-version" select="'[xml2j-version]'"/>
 
 <!-- group-id -->
 <xsl:param name="group-id" select="''" />
