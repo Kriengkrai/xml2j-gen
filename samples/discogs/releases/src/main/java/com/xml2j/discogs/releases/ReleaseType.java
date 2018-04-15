@@ -34,7 +34,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Any complex data structure can be navigated by using the element getter methods.
  * 
  */
-@Document (collection = "releases")
+@Document (collection = "Releases")
 public class ReleaseType extends ComplexDataType {
 
 	/**
@@ -51,7 +51,12 @@ public class ReleaseType extends ComplexDataType {
 	public ReleaseType(String elementName, ComplexDataType parent) {
 		super(elementName, parent);
 	}
-  
+
+	long id = 0L;
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	/**
 	 * Allocator class.	
 	 *

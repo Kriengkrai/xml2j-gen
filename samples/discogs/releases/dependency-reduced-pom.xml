@@ -10,13 +10,12 @@
   <name>releases</name>
   <version>1.0</version>
   <build>
-    <sourceDirectory>${src.dir}</sourceDirectory>
     <resources>
       <resource>
-        <directory>$resources.dir</directory>
-      </resource>
-      <resource>
-        <directory>$src.dir</directory>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>spring-config.xml</include>
+        </includes>
       </resource>
     </resources>
     <plugins>
@@ -85,9 +84,5 @@
       </exclusions>
     </dependency>
   </dependencies>
-  <properties>
-    <src.dir>src/main/java</src.dir>
-    <resources.dir>src/main/resources</resources.dir>
-  </properties>
 </project>
 

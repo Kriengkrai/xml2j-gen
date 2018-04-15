@@ -46,11 +46,6 @@ public class ReleasesProcessor implements MessageProcessor {
 	public void process(XMLEvent evt, ComplexDataType data)
 			throws ProcessorException {
 
-		/*
-		 *	TODO Auto-generated method stub	implement your own handling here.
-		 * 	Use the runtime configuration file to determine which events are to be sent to the processor.
-		 */	
-			
 		if (evt == XMLEvent.END) {
 			if( data instanceof ReleaseType) {
 				process((ReleaseType)data);
@@ -59,6 +54,12 @@ public class ReleasesProcessor implements MessageProcessor {
 	}
 
 	private void process(ReleaseType data) {
-		data.print( ConsoleWriter.out );
+		try {
+			long id = Long.parseLong(data.getId());
+			data.setId(id);
+			repo.save(data);
+		} catch (NumberFormatException e) {
+
+		}
 	}
 }

@@ -11,17 +11,12 @@
       <artifactId>discogs</artifactId>
       <version>1.0</version>
    </parent>
-   <properties>
-	  <resources.dir>src/main/resources</resources.dir> 	
-      <src.dir>src/main/java</src.dir>
-   </properties>
    <artifactId>releases</artifactId>
    <version>1.0</version>
    <name>releases</name>
    <description/>
    
    <build>
-      <sourceDirectory>${src.dir}</sourceDirectory>
       <plugins>
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -75,13 +70,16 @@
             <version>2.9</version>
          </plugin>
       </plugins>
+	  <!-- manually added -->
 		<resources>
 			<resource>
-				<directory>$resources.dir</directory>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>
+						spring-config.xml
+					</include>
+				</includes>
 			</resource>
-			<resource>
-				<directory>$src.dir</directory>
-			</resource>        
 		</resources>       
 	  </build>
  </project>
