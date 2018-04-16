@@ -12,7 +12,7 @@ package com.xml2j.discogs.labels;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -24,7 +24,6 @@ import org.xml.sax.XMLReader;
 /* Framework dependencies */
 import com.xml2j.xml.core.DataSetter;
 import com.xml2j.xml.core.ComplexDataType;
-import com.xml2j.xml.core.XMLEvent;
 import com.xml2j.xml.core.XMLFragmentHandler;
 import com.xml2j.xml.parser.ParserTask;
 
@@ -94,6 +93,24 @@ public class LabelTypeHandler extends XMLFragmentHandler<LabelType> {
 		/** {@inheritDoc} */
 		public void set(ComplexDataType data) {
 			pHandler.getData().setImages((ImagesType) data);	
+		}
+	}	
+	/** Data setter class for parentLabel element. */
+	private class ParentLabelSetter implements DataSetter {
+		/** data target. */
+		private LabelTypeHandler pHandler = null;
+		
+		/**
+		 * Constructor.
+		 * @param pHandler parent that needs to be updated
+		 */
+		public ParentLabelSetter(LabelTypeHandler pHandler) {
+			this.pHandler = pHandler;
+		}
+
+		/** {@inheritDoc} */
+		public void set(ComplexDataType data) {
+			pHandler.getData().setParentLabel((ParentLabelType) data);	
 		}
 	}	
 	/** Data setter class for sublabels element. */
@@ -168,6 +185,18 @@ public class LabelTypeHandler extends XMLFragmentHandler<LabelType> {
 				);
   
 		registerHandler(
+			new ParentLabelTypeHandler.Proxy(
+				application
+				, reader	// XML reader
+				, this	// 'this' is parent of parentLabelTypeHandler
+				, "parentLabel" // XML element name
+				, doLink("parentLabel") // linking to parent
+					? new ParentLabelSetter(this) // ON
+					: null // OFF
+				, doProcess("parentLabel")) // processing active or not
+				);
+  
+		registerHandler(
 			new SublabelsTypeHandler.Proxy(
 				application
 				, reader	// XML reader
@@ -234,9 +263,6 @@ public class LabelTypeHandler extends XMLFragmentHandler<LabelType> {
 			getContents().reset();
 		} else if (localName.equals("name")) {
 			getData().setName(getValue());
-			getContents().reset();
-		} else if (localName.equals("parentLabel")) {
-			getData().setParentLabel(getValue());
 			getContents().reset();
 		} else if (localName.equals("profile")) {
 			getData().setProfile(getValue());

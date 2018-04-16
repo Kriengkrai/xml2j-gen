@@ -11,7 +11,7 @@ package com.xml2j.discogs.artists.runnable;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: ARTISTS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:50:19 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/

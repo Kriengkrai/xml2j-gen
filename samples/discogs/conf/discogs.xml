@@ -18,14 +18,9 @@ Message Type : 	releases
 		input-path="schema">
  		<!-- all XSDs of one module are supposed to be placed in the same folder --> 
  		<!-- the module name is used as an extension for generation of the package-name -->
+<!--		
 		<module name="releases"
 				output-path="src/main/java"> 
- 			<!-- 
-				for each XSD the root type to be handled and the name of the handler class are specified 
-				e.g. releases
-			-->	
-			
-			<!-- releases -->
  			<interface 
  				name="releases.xsd" 
  				message-handler-root="releases" 	
@@ -34,43 +29,40 @@ Message Type : 	releases
 				message-handler-processor="ReleasesProcessor"
 				message-handler-application-task="ReleasesApplicationTask"
 				message-handler-application="ReleasesApplication"/>
-
  		</module>
+-->		
 		<module name="labels"
 				output-path="src/main/java"> 
- 			<!-- 
-				for each XSD the root type to be handled and the name of the handler class are specified 
-				e.g. labels
-			-->	
-			
-			<!-- labels -->
  			<interface 
  				name="labels.xsd" 
  				message-handler-root="labels" 	
  				root-type-rename="Labels"
  				message-handler-name="LabelsMessageHandler"
 				message-handler-processor="LabelsProcessor"
-				message-handler-runnable="LabelsRunnable"/>
-				
+				message-handler-application-task="LabelsApplicationTask"
+				message-handler-application="LabelsApplication"/>
  		</module>
 		<module name="artists"
 				output-path="src/main/java"> 
- 			<!-- 
-				for each XSD the root type to be handled and the name of the handler class are specified 
-				e.g. artists
-			-->	
-			
-			<!-- artists -->
  			<interface 
  				name="artists.xsd" 
  				message-handler-root="artists" 	
  				root-type-rename="Artists"
  				message-handler-name="ArtistsMessageHandler"
 				message-handler-processor="ArtistsProcessor"
-				message-handler-runnable="ArtistsRunnable"
+				message-handler-application-task="ArtistsApplicationTask"
 				message-handler-application="ArtistsApplication"/>
-				
  		</module>
-
-		</domain>
+		<module name="masters"
+				output-path="src/main/java"> 
+ 			<interface 
+ 				name="masters.xsd" 
+ 				message-handler-root="masters" 	
+ 				root-type-rename="Masters"
+ 				message-handler-name="MastersMessageHandler"
+				message-handler-processor="MastersProcessor"
+				message-handler-application-task="MastersApplicationTask"
+				message-handler-application="MastersApplication"/>
+ 		</module>
+	</domain>
 </xml2j-generator>

@@ -12,7 +12,7 @@ package com.xml2j.discogs.labels;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -23,7 +23,7 @@ import org.xml.sax.XMLReader;
 
 /* Framework dependencies */
 import com.xml2j.xml.core.DataSetter;
-import com.xml2j.xml.core.XMLEvent;
+import com.xml2j.xml.core.ComplexDataType;
 import com.xml2j.xml.core.XMLFragmentHandler;
 import com.xml2j.xml.parser.ParserTask;
 
@@ -76,7 +76,25 @@ public class SublabelsTypeHandler extends XMLFragmentHandler<SublabelsType> {
 			super(task, reader, parentH, elementName, pSetter, new Allocator(), doProcess);
 		}
 	}
+	
+	/** Data setter class for label element. */
+	private class LabelSetter implements DataSetter {
+		/** data target. */
+		private SublabelsTypeHandler pHandler = null;
+		
+		/**
+		 * Constructor.
+		 * @param pHandler parent that needs to be updated
+		 */
+		public LabelSetter(SublabelsTypeHandler pHandler) {
+			this.pHandler = pHandler;
+		}
 
+		/** {@inheritDoc} */
+		public void set(ComplexDataType data) {
+			pHandler.getData().setLabel((LabelType) data);	
+		}
+	}
 
 
 	/**
@@ -98,7 +116,20 @@ public class SublabelsTypeHandler extends XMLFragmentHandler<SublabelsType> {
 			, DataSetter pSetter
 			, boolean doProcess) {
 		super(application, reader, parentH, elementName, allocator, pSetter, doProcess);
-	}
+
+		// code for linking children..
+		registerHandler(
+			new LabelTypeHandler.Proxy(
+				application
+				, reader	// XML reader
+				, this	// 'this' is parent of labelTypeHandler
+				, "label" // XML element name
+				, doLink("label") // linking to parent
+					? new LabelSetter(this) // ON
+					: null // OFF
+				, doProcess("label")) // processing active or not
+				);
+  	}
 
 
 	/**
@@ -129,12 +160,7 @@ public class SublabelsTypeHandler extends XMLFragmentHandler<SublabelsType> {
 	@Override
 	public void endElement(String uri, String localName, String name)
 		throws SAXException {
-		
-		// collect data from children..
-		if (localName.equals("label")) {
-			getData().setLabel(getValue());
-			getContents().reset();
-		} else if (localName.equals(getXMLElementName())) {
+		if (localName.equals(getXMLElementName())) {
 			handleElement();
 		}
 		

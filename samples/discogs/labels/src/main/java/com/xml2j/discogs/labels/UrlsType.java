@@ -12,7 +12,7 @@ package com.xml2j.discogs.labels;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/

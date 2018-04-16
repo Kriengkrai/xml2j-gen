@@ -12,17 +12,22 @@ package com.xml2j.discogs.labels;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
+
+import com.xml2j.util.StringList;
+
+import java.util.List;
+import java.util.ArrayList;
 
 import com.xml2j.util.Compare;
 
 import com.xml2j.xml.core.ComplexDataType;
 
 import com.xml2j.xml.core.TypeAllocator;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
 /**
@@ -32,6 +37,7 @@ import com.xml2j.xml.core.TypeAllocator;
  * Any complex data structure can be navigated by using the element getter methods.
  * 
  */
+@Document (collection = "Labels")
 public class LabelType extends ComplexDataType {
 
 	/**
@@ -83,193 +89,193 @@ public class LabelType extends ComplexDataType {
 	
   	
   
-	/** element item for images element. 
+	/** list of images element. 
 	 *  @serial
 	 */	
-	private ImagesType m_images = null;
+	private List<ImagesType> m_imagesList = new ArrayList<ImagesType>();
 	
-	/** element item for id element. 
+	/** list of id element. 
 	 *  @serial
 	 */	
-	private String m_id = null;
+	private StringList m_idList = new StringList("id");
 	
-	/** element item for name element. 
+	/** list of name element. 
 	 *  @serial
 	 */	
-	private String m_name = null;
+	private StringList m_nameList = new StringList("name");
 	
-	/** element item for contactinfo element. 
+	/** list of contactinfo element. 
 	 *  @serial
 	 */	
-	private String m_contactinfo = null;
+	private StringList m_contactinfoList = new StringList("contactinfo");
 	
-	/** element item for profile element. 
+	/** list of profile element. 
 	 *  @serial
 	 */	
-	private String m_profile = null;
+	private StringList m_profileList = new StringList("profile");
 	
-	/** element item for parentLabel element. 
+	/** list of data_quality element. 
 	 *  @serial
 	 */	
-	private String m_parentLabel = null;
+	private StringList m_data_qualityList = new StringList("data_quality");
 	
-	/** element item for data_quality element. 
+	/** list of urls element. 
 	 *  @serial
 	 */	
-	private String m_data_quality = null;
+	private List<UrlsType> m_urlsList = new ArrayList<UrlsType>();
 	
-	/** element item for urls element. 
+	/** list of parentLabel element. 
 	 *  @serial
 	 */	
-	private UrlsType m_urls = null;
+	private List<ParentLabelType> m_parentLabelList = new ArrayList<ParentLabelType>();
 	
-	/** element item for sublabels element. 
+	/** list of sublabels element. 
 	 *  @serial
 	 */	
-	private SublabelsType m_sublabels = null;
+	private List<SublabelsType> m_sublabelsList = new ArrayList<SublabelsType>();
 	
 	/**
-	 * Get the embedded Images element.
-	 * @return the item.
+	 * Get the embedded list of Images elements.
+	 * @return list of items.
 	 */
-	public ImagesType getImages() {
-		return m_images;
+	public List<ImagesType> getImagess() {
+		return m_imagesList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Images.
+	 * This method adds data to the list of Images.
 	 * @param data the item that needs to be added.
 	 */
 	void setImages(ImagesType data) {
-		m_images = data;
+		m_imagesList.add(data);
 	}
-		
+			
 	/**
-	 * Get the embedded Id element.
-	 * @return the item.
+	 * Get the embedded list of Id elements.
+	 * @return list of items.
 	 */
-	public String getId() {
-		return m_id;
+	public StringList getIds() {
+		return m_idList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Id.
+	 * This method adds data to the list of Id.
 	 * @param data the item that needs to be added.
 	 */
 	void setId(String data) {
-		m_id = data;
+		m_idList.add(data);
 	}
-		
+			
 	/**
-	 * Get the embedded Name element.
-	 * @return the item.
+	 * Get the embedded list of Name elements.
+	 * @return list of items.
 	 */
-	public String getName() {
-		return m_name;
+	public StringList getNames() {
+		return m_nameList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Name.
+	 * This method adds data to the list of Name.
 	 * @param data the item that needs to be added.
 	 */
 	void setName(String data) {
-		m_name = data;
+		m_nameList.add(data);
 	}
-		
+			
 	/**
-	 * Get the embedded Contactinfo element.
-	 * @return the item.
+	 * Get the embedded list of Contactinfo elements.
+	 * @return list of items.
 	 */
-	public String getContactinfo() {
-		return m_contactinfo;
+	public StringList getContactinfos() {
+		return m_contactinfoList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Contactinfo.
+	 * This method adds data to the list of Contactinfo.
 	 * @param data the item that needs to be added.
 	 */
 	void setContactinfo(String data) {
-		m_contactinfo = data;
+		m_contactinfoList.add(data);
 	}
-		
+			
 	/**
-	 * Get the embedded Profile element.
-	 * @return the item.
+	 * Get the embedded list of Profile elements.
+	 * @return list of items.
 	 */
-	public String getProfile() {
-		return m_profile;
+	public StringList getProfiles() {
+		return m_profileList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Profile.
+	 * This method adds data to the list of Profile.
 	 * @param data the item that needs to be added.
 	 */
 	void setProfile(String data) {
-		m_profile = data;
+		m_profileList.add(data);
 	}
-		
+			
 	/**
-	 * Get the embedded ParentLabel element.
-	 * @return the item.
+	 * Get the embedded list of Data_quality elements.
+	 * @return list of items.
 	 */
-	public String getParentLabel() {
-		return m_parentLabel;
+	public StringList getData_qualitys() {
+		return m_data_qualityList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element ParentLabel.
-	 * @param data the item that needs to be added.
-	 */
-	void setParentLabel(String data) {
-		m_parentLabel = data;
-	}
-		
-	/**
-	 * Get the embedded Data_quality element.
-	 * @return the item.
-	 */
-	public String getData_quality() {
-		return m_data_quality;
-	}
-		
-	/**
-	 * This method sets (overwrites) the element Data_quality.
+	 * This method adds data to the list of Data_quality.
 	 * @param data the item that needs to be added.
 	 */
 	void setData_quality(String data) {
-		m_data_quality = data;
+		m_data_qualityList.add(data);
 	}
 		
 	/**
-	 * Get the embedded Urls element.
-	 * @return the item.
+	 * Get the embedded list of Urls elements.
+	 * @return list of items.
 	 */
-	public UrlsType getUrls() {
-		return m_urls;
+	public List<UrlsType> getUrlss() {
+		return m_urlsList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Urls.
+	 * This method adds data to the list of Urls.
 	 * @param data the item that needs to be added.
 	 */
 	void setUrls(UrlsType data) {
-		m_urls = data;
+		m_urlsList.add(data);
 	}
 		
 	/**
-	 * Get the embedded Sublabels element.
-	 * @return the item.
+	 * Get the embedded list of ParentLabel elements.
+	 * @return list of items.
 	 */
-	public SublabelsType getSublabels() {
-		return m_sublabels;
+	public List<ParentLabelType> getParentLabels() {
+		return m_parentLabelList;
 	}
 		
 	/**
-	 * This method sets (overwrites) the element Sublabels.
+	 * This method adds data to the list of ParentLabel.
+	 * @param data the item that needs to be added.
+	 */
+	void setParentLabel(ParentLabelType data) {
+		m_parentLabelList.add(data);
+	}
+		
+	/**
+	 * Get the embedded list of Sublabels elements.
+	 * @return list of items.
+	 */
+	public List<SublabelsType> getSublabelss() {
+		return m_sublabelsList;
+	}
+		
+	/**
+	 * This method adds data to the list of Sublabels.
 	 * @param data the item that needs to be added.
 	 */
 	void setSublabels(SublabelsType data) {
-		m_sublabels = data;
+		m_sublabelsList.add(data);
 	}
 		
   
@@ -283,36 +289,55 @@ public class LabelType extends ComplexDataType {
       
 	 	LabelType t = (LabelType)that;
 	 
-		if (!Compare.equals(m_images, t.m_images))
+		if (!Compare.equals(m_imagesList, t.m_imagesList))
 			return false;
 		
-		if (!Compare.equals(m_id, t.m_id))
+		if (!Compare.equals(m_idList, t.m_idList))
 			return false;
 		
-		if (!Compare.equals(m_name, t.m_name))
+		if (!Compare.equals(m_nameList, t.m_nameList))
 			return false;
 		
-		if (!Compare.equals(m_contactinfo, t.m_contactinfo))
+		if (!Compare.equals(m_contactinfoList, t.m_contactinfoList))
 			return false;
 		
-		if (!Compare.equals(m_profile, t.m_profile))
+		if (!Compare.equals(m_profileList, t.m_profileList))
 			return false;
 		
-		if (!Compare.equals(m_parentLabel, t.m_parentLabel))
+		if (!Compare.equals(m_data_qualityList, t.m_data_qualityList))
 			return false;
 		
-		if (!Compare.equals(m_data_quality, t.m_data_quality))
+		if (!Compare.equals(m_urlsList, t.m_urlsList))
 			return false;
 		
-		if (!Compare.equals(m_urls, t.m_urls))
+		if (!Compare.equals(m_parentLabelList, t.m_parentLabelList))
 			return false;
 		
-		if (!Compare.equals(m_sublabels, t.m_sublabels))
+		if (!Compare.equals(m_sublabelsList, t.m_sublabelsList))
 			return false;
 		
 		return true;
 	}	
 
   
+  
+
+	/**
+	 * Get 'id' attribute.
+	 * @return the item.
+	 */
+//	public String getId() {
+//		return getAttr("id");
+//	}
+
+	/**
+	 * Set 'id' attribute.
+	 * 
+	 * Set (overwrite) the attribute data.
+	 * @param data the item that needs to be added.
+	 */
+//	public void setId(String data) {
+//		setAttr("id", data);
+//	}
   
 }

@@ -12,7 +12,7 @@ package com.xml2j.discogs.artists;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: ARTISTS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -24,7 +24,6 @@ import org.xml.sax.XMLReader;
 /* Framework dependencies */
 import com.xml2j.xml.core.DataSetter;
 import com.xml2j.xml.core.ComplexDataType;
-import com.xml2j.xml.core.XMLEvent;
 import com.xml2j.xml.core.XMLFragmentHandler;
 import com.xml2j.xml.parser.ParserTask;
 

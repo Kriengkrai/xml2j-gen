@@ -61,7 +61,7 @@ public class ReleasesProcessor implements MessageProcessor {
 		if (logger.isInfoEnabled()) {
 			count++;
 			if (0==(count % 1000)){
-				logger.info("\rWritten: {}", count );
+				logger.info("Written: {}", count );
 			}
 		}
 		try {

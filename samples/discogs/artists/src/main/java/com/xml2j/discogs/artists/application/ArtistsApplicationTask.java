@@ -1,4 +1,4 @@
-package com.xml2j.discogs.labels.runnable;
+package com.xml2j.discogs.artists.application;
 
 /******************************************************************************
   -----------------------------------------------------------------------------
@@ -10,65 +10,70 @@ package com.xml2j.discogs.labels.runnable;
   Version: 2.4.2 
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
-  Module: LABELS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Module: ARTISTS 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
 
+//----------------------- 		IO		-----------------------//
 import java.io.IOException;
-
 //-----------------------    	SAX		-----------------------//
-import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
+import org.xml.sax.ErrorHandler;
 //-----------------------    	XML2J		-----------------------//
 import com.xml2j.xml.core.MessageHandler;
 import com.xml2j.xml.core.ParserConfiguration;
 import com.xml2j.xml.core.ParserConfigurationException;
-import com.xml2j.xml.parser.ParserRunnable;
-
-import com.xml2j.discogs.labels.handlers.LabelsMessageHandler;
+import com.xml2j.xml.parser.ParserTask;
+import com.xml2j.discogs.artists.handlers.ArtistsMessageHandler;
 
 /**
- * An example implementation of a task.
- * Adapt this to meet your specific requirements.
- * Use XML parser tasks with threads.
+ * An example implementation of a parser application.
+ * You will need to adapt this to meet your specific requirements.
+ * This example demonstrates:
+ * - the glue code that connects reader and processor
+ * - how you can customize error handling
+ *
+ * The application uses arguments passed on the command line, however
+ * you can connect any class derived from java.io.InputStream.
  */
-public class LabelsRunnable extends ParserRunnable {
+public class ArtistsApplicationTask extends ParserTask {
 	
 	/**
-	 * Constructor of the task.
+	 * Constructor of the application.
 	 * @param configuration the runtime configuration 
 	 * @throws org.xml.sax.SAXException
 	 * @throws ParserConfigurationException 
 	 * @throws IOException 
 	 */
-	public LabelsRunnable(ParserConfiguration configuration) 
+	public ArtistsApplicationTask(ParserConfiguration configuration) 
 			throws SAXException, ParserConfigurationException, IOException {
 
-		// To use a custom ErrorHandler:
-		// a) implement the interface org.xml.sax.ErrorHandler, 
-		// b) instantiate the custom ErrorHandler and pass it to the super constructor.
+ 	 // To use a custom ErrorHandler:
+	 // a) implement the interface org.xml.sax.ErrorHandler, 
+	 // b) instantiate the custom ErrorHandler and pass it to the super constructor.
 		super(configuration);
 	}
 	
 	/**
-	 * Constructor of the task.
+	 * Constructor of the application.
 	 * @param configuration the runtime configuration 
 	 * @param errorHandler the custom error handler 
 	 * @throws org.xml.sax.SAXException
 	 * @throws ParserConfigurationException 
 	 * @throws IOException 
 	 */
-	public LabelsRunnable(ParserConfiguration configuration, ErrorHandler errorHandler)
+	public ArtistsApplicationTask(ParserConfiguration configuration, ErrorHandler errorHandler)
 			throws SAXException, ParserConfigurationException, IOException {
 		super(configuration, errorHandler);
 	}
+	
 
 	@Override
 	protected MessageHandler getMessageHandler(XMLReader reader) {
-		return new LabelsMessageHandler(this, reader);
+		return new ArtistsMessageHandler(this, reader);
 	}
-	
+
 }

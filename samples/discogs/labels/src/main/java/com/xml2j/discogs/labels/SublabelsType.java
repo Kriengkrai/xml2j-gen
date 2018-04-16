@@ -12,12 +12,13 @@ package com.xml2j.discogs.labels;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: LABELS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
 
-import com.xml2j.util.StringList;
+import java.util.List;
+import java.util.ArrayList;
 
 import com.xml2j.util.Compare;
 
@@ -88,13 +89,13 @@ public class SublabelsType extends ComplexDataType {
 	/** list of label element. 
 	 *  @serial
 	 */	
-	private StringList m_labelList = new StringList("label");
-		
+	private List<LabelType> m_labelList = new ArrayList<LabelType>();
+	
 	/**
 	 * Get the embedded list of Label elements.
 	 * @return list of items.
 	 */
-	public StringList getLabels() {
+	public List<LabelType> getLabels() {
 		return m_labelList;
 	}
 		
@@ -102,7 +103,7 @@ public class SublabelsType extends ComplexDataType {
 	 * This method adds data to the list of Label.
 	 * @param data the item that needs to be added.
 	 */
-	void setLabel(String data) {
+	void setLabel(LabelType data) {
 		m_labelList.add(data);
 	}
 		

@@ -20,6 +20,7 @@
       <module>releases</module>
       <module>labels</module>
       <module>artists</module>
+      <module>masters</module>
    </modules>
    <dependencies>
       <dependency>

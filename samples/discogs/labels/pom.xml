@@ -3,7 +3,7 @@
 <!--
     XML2J XSD to Java code generator
     This (module) POM file was generated using XML2J code generator.
-    Generation date: Sun Apr 15 13:02:55 CEST 2018
+    Generation date: Sun Apr 15 21:06:19 CEST 2018
 -->
    <modelVersion>4.0.0</modelVersion>
    <parent>
@@ -42,7 +42,7 @@
                   <configuration>
                      <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                           <mainClass>com.xml2j.discogs.labels.application.</mainClass>
+                           <mainClass>com.xml2j.discogs.labels.application.LabelsApplication</mainClass>
                         </transformer>
                      </transformers>
                   </configuration>
@@ -73,5 +73,19 @@
             <version>2.9</version>
          </plugin>
       </plugins>
+      <!-- manually added -->
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+               <include>
+                  spring-config.xml
+               </include>
+               <include>
+                  log4j.properties
+               </include>
+            </includes>
+         </resource>
+      </resources>
    </build>
 </project>

@@ -12,7 +12,7 @@ package com.xml2j.discogs.artists;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: ARTISTS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -22,7 +22,7 @@ import com.xml2j.util.Compare;
 import com.xml2j.xml.core.ComplexDataType;
 
 import com.xml2j.xml.core.TypeAllocator;
-
+import org.springframework.data.mongodb.core.mapping.Document;
 
 
 /**
@@ -32,6 +32,7 @@ import com.xml2j.xml.core.TypeAllocator;
  * Any complex data structure can be navigated by using the element getter methods.
  * 
  */
+@Document (collection = "Artists")
 public class ArtistType extends ComplexDataType {
 
 	/**

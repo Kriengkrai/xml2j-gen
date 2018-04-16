@@ -593,9 +593,9 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
 	 * Get '<xsl:value-of select="@name"/>' attribute.
 	 * @return the item.
 	 */
-	public <xsl:value-of select="$localClassName"/> get<xsl:value-of select="$lName"/>() {
-		return getAttr("<xsl:value-of select="@name"/>");
-	}
+//	public <xsl:value-of select="$localClassName"/> get<xsl:value-of select="$lName"/>() {
+//		return getAttr("<xsl:value-of select="@name"/>");
+//	}
 
 	/**
 	 * Set '<xsl:value-of select="@name"/>' attribute.
@@ -603,9 +603,9 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
 	 * Set (overwrite) the attribute data.
 	 * @param data the item that needs to be added.
 	 */
-	public void set<xsl:value-of select="$lName" />(<xsl:value-of select="$localClassName"/> data) {
-		setAttr("<xsl:value-of select="@name"/>", data);
-	}
+//	public void set<xsl:value-of select="$lName" />(<xsl:value-of select="$localClassName"/> data) {
+//		setAttr("<xsl:value-of select="@name"/>", data);
+//	}
   </xsl:for-each><xsl:text/>
   <xsl:if test="$with-printing='1'">
   <!-- printing method for debugging purposes -->
@@ -1087,7 +1087,7 @@ public class <xsl:value-of select="$runnable-name"/> extends ParserRunnable {
 </xsl:document>
 </xsl:template>
 
-<!-- GENERATE APPLICATION -->
+<!-- GENERATE APPLICATION TASK -->
 <xsl:template name="generate-application-task">
 	<xsl:param name="path"/>
 	
@@ -1175,6 +1175,8 @@ public class <xsl:value-of select="$application-task-name"/> extends ParserTask 
 //----------------------- 		IO		-----------------------//
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.GZIPInputStream;
 //-----------------------    LOGGING	-----------------------//
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -1229,7 +1231,7 @@ public class <xsl:value-of select="$classname"/> {
 		}
 
 		// get program arguments
-		final String xml = args[0];
+		final String input = args[0];
 		final String config = args[1];
 		final String schema = args.length &gt;= 3 ? args[2] : null;
 		
@@ -1253,12 +1255,12 @@ public class <xsl:value-of select="$classname"/> {
 
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", xml, schema);
-				task.validateXML(new FileInputStream(xml), new FileInputStream(schema));
+				log.info("Validating {} against {}", input, schema);
+				task.validateXML(new FileInputStream(input), new FileInputStream(schema));
 			}
 
 			// prepare the XML parser
-			task.prepareStart(new FileInputStream(xml), new <xsl:value-of select="$processor-name"/>());
+			task.prepareStart(new FileInputStream(input), new <xsl:value-of select="$processor-name"/>());
 				
 			// add the task to list of tasks
 			manager.addTask("<xsl:value-of select="$runnable-name"/>", task);
@@ -1268,21 +1270,33 @@ public class <xsl:value-of select="$classname"/> {
 		</xsl:when>
 		<xsl:otherwise>
 			/*	
-				single threaded mode. to use multiple processors simultaneously specify message-handler-runnable.
+				single threaded (default) mode. to use multiple processors simultaneously specify message-handler-runnable.
 				see: documentation version 2.3.0
 			*/
 			// create the application object
 			ParserTask app = new <xsl:value-of select="$application-task-name"/>(configuration);
-			
+
+			InputStream inputStream = null;
+			if (input.endsWith(".gz")) {
+				log.info("Assuming gz format.");
+				inputStream = new GZIPInputStream(new FileInputStream(input));
+			} else if (input.endsWith(".xml")) {
+				log.info("Assuming regular xml format.");
+				inputStream = new FileInputStream(input);
+			} else {
+				log.error("Unsupported file format. File must be either gz compressed xml or plain xml");
+				System.exit(0);
+			}
+
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", xml, schema);
-				app.validateXML(new FileInputStream(xml), new FileInputStream(schema));
+				log.info("Validating {} against {}", input, schema);
+				app.validateXML(inputStream, new FileInputStream(schema));
 			}
 			
 			// process the XML file
 			log.info("Start Processing..");	
-			app.prepareStart( new FileInputStream(xml), new <xsl:value-of select="$processor-name"/>());
+			app.prepareStart(inputStream, new <xsl:value-of select="$processor-name"/>());
 			app.processXML();
 		</xsl:otherwise>
 	</xsl:choose>	

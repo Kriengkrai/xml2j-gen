@@ -12,7 +12,7 @@ package com.xml2j.discogs.artists;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: ARTISTS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -101,9 +101,9 @@ public class ImageType extends ComplexDataType {
 	 * Get 'width' attribute.
 	 * @return the item.
 	 */
-	public String getWidth() {
-		return getAttr("width");
-	}
+//	public String getWidth() {
+//		return getAttr("width");
+//	}
 
 	/**
 	 * Set 'width' attribute.
@@ -111,18 +111,18 @@ public class ImageType extends ComplexDataType {
 	 * Set (overwrite) the attribute data.
 	 * @param data the item that needs to be added.
 	 */
-	public void setWidth(String data) {
-		setAttr("width", data);
-	}
+//	public void setWidth(String data) {
+//		setAttr("width", data);
+//	}
   
 
 	/**
 	 * Get 'uri150' attribute.
 	 * @return the item.
 	 */
-	public String getUri150() {
-		return getAttr("uri150");
-	}
+//	public String getUri150() {
+//		return getAttr("uri150");
+//	}
 
 	/**
 	 * Set 'uri150' attribute.
@@ -130,18 +130,18 @@ public class ImageType extends ComplexDataType {
 	 * Set (overwrite) the attribute data.
 	 * @param data the item that needs to be added.
 	 */
-	public void setUri150(String data) {
-		setAttr("uri150", data);
-	}
+//	public void setUri150(String data) {
+//		setAttr("uri150", data);
+//	}
   
 
 	/**
 	 * Get 'type' attribute.
 	 * @return the item.
 	 */
-	public String getType() {
-		return getAttr("type");
-	}
+//	public String getType() {
+//		return getAttr("type");
+//	}
 
 	/**
 	 * Set 'type' attribute.
@@ -149,18 +149,18 @@ public class ImageType extends ComplexDataType {
 	 * Set (overwrite) the attribute data.
 	 * @param data the item that needs to be added.
 	 */
-	public void setType(String data) {
-		setAttr("type", data);
-	}
+//	public void setType(String data) {
+//		setAttr("type", data);
+//	}
   
 
 	/**
 	 * Get 'uri' attribute.
 	 * @return the item.
 	 */
-	public String getUri() {
-		return getAttr("uri");
-	}
+//	public String getUri() {
+//		return getAttr("uri");
+//	}
 
 	/**
 	 * Set 'uri' attribute.
@@ -168,18 +168,18 @@ public class ImageType extends ComplexDataType {
 	 * Set (overwrite) the attribute data.
 	 * @param data the item that needs to be added.
 	 */
-	public void setUri(String data) {
-		setAttr("uri", data);
-	}
+//	public void setUri(String data) {
+//		setAttr("uri", data);
+//	}
   
 
 	/**
 	 * Get 'height' attribute.
 	 * @return the item.
 	 */
-	public String getHeight() {
-		return getAttr("height");
-	}
+//	public String getHeight() {
+//		return getAttr("height");
+//	}
 
 	/**
 	 * Set 'height' attribute.
@@ -187,8 +187,8 @@ public class ImageType extends ComplexDataType {
 	 * Set (overwrite) the attribute data.
 	 * @param data the item that needs to be added.
 	 */
-	public void setHeight(String data) {
-		setAttr("height", data);
-	}
+//	public void setHeight(String data) {
+//		setAttr("height", data);
+//	}
   
 }

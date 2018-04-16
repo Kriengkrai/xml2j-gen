@@ -2,8 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51d7bca0-28f0-4b0b-9b5f-7940815a3be1" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/application/ArtistsApplicationTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/repo/ArtistsTypeRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/artists/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/artists/src/main/resources/spring-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ParentLabelType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ParentLabelTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/application/LabelsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/repo/LabelsTypeRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/src/main/resources/spring-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ArtistType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ArtistTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ArtistsType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ArtistsTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/GenresType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/GenresTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ImageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ImageTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ImagesType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/ImagesTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/MasterType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/MasterTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/Masters.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/MastersHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/StylesType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/StylesTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/VideoType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/VideoTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/VideosType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/VideosTypeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/application/MastersApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/application/MastersApplicationTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/handlers/MastersMessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/processor/MastersProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/repo/MastersTypeRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/masters/src/main/resources/spring-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schema/masters.xsd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/artists.jar" beforeDir="false" afterPath="$PROJECT_DIR$/artists/artists.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/artists/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/artists/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/AliasesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/AliasesType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/AliasesTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/AliasesTypeHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/ArtistType.java" beforeDir="false" afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/ArtistType.java" afterDir="false" />
@@ -27,9 +68,13 @@
       <change beforePath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/processor/ArtistsProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/processor/ArtistsProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/runnable/ArtistsRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/runnable/ArtistsRunnable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/artists-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/artists-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/AliasesTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$AliasesSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$AliasesSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$GroupsSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$GroupsSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$ImagesSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$ImagesSetter.class" afterDir="false" />
@@ -39,32 +84,53 @@
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$UrlsSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler$UrlsSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/Artists$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/Artists$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/Artists.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/Artists.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler$ArtistSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler$ArtistSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ArtistsHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/GroupsTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImageTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler$ImageSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler$ImageSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/ImagesTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/MembersTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/NamevariationsTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/UrlsTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/application/ArtistsApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/application/ArtistsApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/processor/ArtistsProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/classes/com/xml2j/discogs/artists/processor/ArtistsProcessor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artists/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/artists/target/original-artists-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/artists/target/original-artists-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/discogs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/discogs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/labels/dependency-reduced-pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/labels.jar" beforeDir="false" afterPath="$PROJECT_DIR$/labels/labels.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/labels/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ImageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ImageType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ImageTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ImageTypeHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ImagesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ImagesType.java" afterDir="false" />
@@ -79,39 +145,50 @@
       <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/UrlsTypeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/UrlsTypeHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/handlers/LabelsMessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/handlers/LabelsMessageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/processor/LabelsProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/processor/LabelsProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/runnable/LabelsRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/runnable/LabelsRunnable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/runnable/LabelsRunnable.java" beforeDir="false" afterPath="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/application/LabelsApplicationTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImageTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesType.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler$ImageSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler$ImageSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/ImagesTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelType.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$ImagesSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$ImagesSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$SublabelsSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$SublabelsSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$UrlsSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler$UrlsSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/Labels$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/Labels$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/Labels.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/Labels.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler$LabelSetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler$LabelSetter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/LabelsHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsTypeHandler$Proxy$Allocator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsTypeHandler$Proxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/SublabelsTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsType$Allocator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsType.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsTypeHandler$Proxy$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsTypeHandler$Proxy$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsTypeHandler$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsTypeHandler$Proxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/UrlsTypeHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/processor/LabelsProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/processor/LabelsProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/classes/com/xml2j/discogs/labels/runnable/LabelsRunnable.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/labels-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/labels-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labels/target/original-labels-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/labels/target/original-labels-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/releases/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/releases/dependency-reduced-pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/releases.jar" beforeDir="false" afterPath="$PROJECT_DIR$/releases/releases.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleaseType.java" beforeDir="false" afterPath="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleaseType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/releases/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/releases/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/ArtistType$Allocator.class" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/ArtistType$Allocator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/ArtistType.class" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/ArtistType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/ArtistTypeHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/ArtistTypeHandler.class" afterDir="false" />
@@ -181,15 +258,16 @@
       <change beforePath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/application/ReleasesApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/application/ReleasesApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/processor/ReleasesProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/classes/com/xml2j/discogs/releases/processor/ReleasesProcessor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/releases/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/releases/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/original-releases-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/original-releases-1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/releases/target/releases-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/releases/target/releases-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schema/labels.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/schema/labels.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../xslt/xml2j4.xsl" beforeDir="false" afterPath="$PROJECT_DIR$/../../xslt/xml2j4.xsl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/labels/target/" />
     <ignored path="$PROJECT_DIR$/releases/target/" />
     <ignored path="$PROJECT_DIR$/artists/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/masters/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -199,11 +277,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/releases/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MasterType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/MasterType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ReleasesProcessor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="794">
+              <caret line="74" column="1" selection-start-line="33" selection-end-line="74" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,90 +307,81 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/releases/src/main/resources/log4j.properties">
+      <file leaf-file-name="ArtistsProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/processor/ArtistsProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="21" selection-start-column="21" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReleasesApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+            <state relative-caret-position="533">
+              <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1489#1490#0" expanded="true" />
+                <element signature="e#1508#1509#0" expanded="true" />
+                <element signature="e#1538#1539#0" expanded="true" />
+                <element signature="e#1560#1561#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GZIPInputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/util/zip/GZIPInputStream.java">
+      <file leaf-file-name="ArtistsApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/application/ArtistsApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+            <state relative-caret-position="584">
+              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InflaterInputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/util/zip/InflaterInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
-            </state>
-          </provider>
+      <file leaf-file-name="log4j.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/artists/src/main/resources/log4j.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="FilterInputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/io/FilterInputStream.java">
+      <file leaf-file-name="LabelsProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/processor/LabelsProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="1435" column="19" selection-start-line="1435" selection-start-column="19" selection-end-line="1435" selection-end-column="19" />
+            <state relative-caret-position="482">
+              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
               <folding>
-                <element signature="e#56101#56102#0" expanded="true" />
-                <element signature="e#56178#56179#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1501#1502#0" expanded="true" />
+                <element signature="e#1531#1532#0" expanded="true" />
+                <element signature="e#1553#1554#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Releases.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/Releases.java">
+      <file leaf-file-name="MastersProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/processor/MastersProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+            <state relative-caret-position="531">
+              <caret line="47" column="5" selection-start-line="45" selection-end-line="47" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1302#1303#0" expanded="true" />
+                <element signature="e#1321#1322#0" expanded="true" />
+                <element signature="e#1351#1352#0" expanded="true" />
+                <element signature="e#1373#1374#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReleasesHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleasesHandler.java">
+      <file leaf-file-name="MastersApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/application/MastersApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+            <state relative-caret-position="584">
+              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LabelsApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/application/LabelsApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="584">
+              <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -322,15 +409,32 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/releases/src/main/resources/spring-config.xml" />
-        <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/repo/ReleasesTypeRepo.java" />
         <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/CompaniesTypeHandler.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleaseType.java" />
         <option value="$PROJECT_DIR$/releases/src/main/resources/log4j-config.properties" />
         <option value="$PROJECT_DIR$/releases/pom.xml" />
         <option value="$PROJECT_DIR$/releases/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java" />
         <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplication.java" />
+        <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java" />
+        <option value="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/LabelType.java" />
+        <option value="$PROJECT_DIR$/masters/pom.xml" />
+        <option value="$PROJECT_DIR$/labels/pom.xml" />
+        <option value="$PROJECT_DIR$/artists/pom.xml" />
+        <option value="$PROJECT_DIR$/artists/src/main/resources/spring-config.xml" />
+        <option value="$PROJECT_DIR$/labels/src/main/resources/spring-config.xml" />
+        <option value="$PROJECT_DIR$/masters/src/main/resources/spring-config.xml" />
+        <option value="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/repo/LabelsTypeRepo.java" />
+        <option value="$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/repo/ReleasesTypeRepo.java" />
+        <option value="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/ArtistType.java" />
+        <option value="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/repo/MastersTypeRepo.java" />
+        <option value="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/MasterType.java" />
+        <option value="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/processor/MastersProcessor.java" />
+        <option value="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/processor/ArtistsProcessor.java" />
+        <option value="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/processor/LabelsProcessor.java" />
+        <option value="$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/application/MastersApplication.java" />
+        <option value="$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/application/LabelsApplication.java" />
+        <option value="$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/application/ArtistsApplication.java" />
       </list>
     </option>
   </component>
@@ -348,9 +452,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-37" />
-    <option name="y" value="3" />
-    <option name="width" value="1940" />
+    <option name="x" value="181" />
+    <option name="y" value="77" />
+    <option name="width" value="1582" />
     <option name="height" value="992" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -359,7 +463,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -381,23 +484,50 @@
             <path>
               <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
               <item name="discogs" type="462c0819:PsiDirectoryNode" />
-              <item name="artists" type="462c0819:PsiDirectoryNode" />
+              <item name="labels" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="discogs" type="462c0819:PsiDirectoryNode" />
+              <item name="masters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="discogs" type="462c0819:PsiDirectoryNode" />
+              <item name="releases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="discogs" type="462c0819:PsiDirectoryNode" />
+              <item name="releases" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="discogs" type="462c0819:PsiDirectoryNode" />
+              <item name="releases" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
               <item name="discogs" type="462c0819:PsiDirectoryNode" />
-              <item name="artists" type="462c0819:PsiDirectoryNode" />
+              <item name="releases" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="discogs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="discogs" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,7 +627,10 @@
       <workItem from="1523795924331" duration="1059000" />
       <workItem from="1523797269655" duration="108000" />
       <workItem from="1523797557660" duration="359000" />
-      <workItem from="1523801077568" duration="1705000" />
+      <workItem from="1523801077568" duration="1913000" />
+      <workItem from="1523805226040" duration="1370000" />
+      <workItem from="1523896310724" duration="2570000" />
+      <workItem from="1523902008488" duration="2917000" />
     </task>
     <task id="LOCAL-00001" summary="updated pom (manually)&#10;added some code for persistency in mongodb in processor">
       <created>1523776377122</created>
@@ -513,15 +646,21 @@
       <option name="project" value="LOCAL" />
       <updated>1523796972480</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="gz input stream (discogs monthly dump)">
+      <created>1523802967755</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1523802967755</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11511000" />
+    <option name="totallyTimeSpent" value="18576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -557,239 +696,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated pom (manually)&#10;added some code for persistency in mongodb in processor" />
     <MESSAGE value="updated logging in pom" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated logging in pom" />
+    <MESSAGE value="gz input stream (discogs monthly dump)" />
+    <option name="LAST_COMMIT_MESSAGE" value="gz input stream (discogs monthly dump)" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleaseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/xml2j/xml2j-core-springdata/2.4.1/xml2j-core-springdata-2.4.1.jar!/com/xml2j/xml/core/XMLFragmentHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2975">
-          <caret line="175" column="22" selection-start-line="175" selection-start-column="22" selection-end-line="175" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/org/xml/sax/helpers/DefaultHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="322" column="16" selection-start-line="322" selection-start-column="16" selection-end-line="322" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleaseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/CompaniesTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="179" column="20" selection-start-line="179" selection-start-column="20" selection-end-line="179" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/repo/ReleasesTypeRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="78" selection-start-line="5" selection-start-column="78" selection-end-line="5" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplicationTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ReleaseType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.0.6.RELEASE/spring-data-mongodb-2.0.6.RELEASE.jar!/org/springframework/data/mongodb/config/spring-mongo-2.0.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11390">
-          <caret line="670" column="13" selection-start-line="670" selection-start-column="13" selection-end-line="670" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-mongodb/2.0.6.RELEASE/spring-data-mongodb-2.0.6.RELEASE.jar!/org/springframework/data/mongodb/config/spring-mongo-2.0.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11390">
-          <caret line="670" column="13" selection-start-line="670" selection-start-column="13" selection-end-line="670" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplicationTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/resources/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/org/xml/sax/helpers/DefaultHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4811">
-          <caret line="322" column="16" selection-start-line="322" selection-start-column="16" selection-end-line="322" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsTypeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/xml2j/xml2j-core-springdata/2.4.1/xml2j-core-springdata-2.4.1.jar!/com/xml2j/xml/core/XMLFragmentHandler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2482">
           <caret line="175" column="22" selection-start-line="175" selection-start-column="22" selection-end-line="175" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/repo/ReleasesTypeRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -836,20 +750,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/releases/src/main/resources/log4j-config.properties" />
-    <entry file="file://$PROJECT_DIR$/releases/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="84" column="29" selection-start-line="84" selection-start-column="29" selection-end-line="84" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/Releases.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -866,7 +766,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="23358">
           <caret line="1435" column="19" selection-start-line="1435" selection-start-column="19" selection-end-line="1435" selection-end-column="19" />
           <folding>
             <element signature="e#56101#56102#0" expanded="true" />
@@ -877,7 +777,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/util/zip/GZIPInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="731">
           <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
@@ -898,7 +798,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/src.zip!/java/io/FilterInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="374">
           <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
         </state>
       </provider>
@@ -906,29 +806,288 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java">
+    <entry file="file://$PROJECT_DIR$/releases/src/main/resources/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret column="29" selection-start-column="29" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/application/ReleasesApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ParentLabelTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/ParentLabelType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/runnable/ArtistsRunnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/application/ArtistsApplicationTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="79" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistsType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/ArtistType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/Labels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/UrlsType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/UrlsTypeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/resources/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/resources/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="62" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/masters/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="88" column="18" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/resources/LabelsTypeRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="74" lean-forward="true" selection-end-line="5" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/repo/ReleasesTypeRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="26" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/masters/src/main/resources/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/repo/ArtistsTypeRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/ArtistType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/repo/LabelsTypeRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/LabelType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4624">
+          <caret line="322" column="2" selection-start-line="322" selection-start-column="2" selection-end-line="322" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/repo/MastersTypeRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/MasterType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/src/main/java/com/xml2j/discogs/releases/processor/ReleasesProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="74" column="1" selection-start-line="33" selection-end-line="74" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/processor/LabelsProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+          <folding>
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1531#1532#0" expanded="true" />
+            <element signature="e#1553#1554#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/processor/MastersProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="47" column="5" selection-start-line="45" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1302#1303#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#1351#1352#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/masters/src/main/java/com/xml2j/discogs/masters/application/MastersApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/labels/src/main/java/com/xml2j/discogs/labels/application/LabelsApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/processor/ArtistsProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="61" column="37" selection-start-line="61" selection-start-column="37" selection-end-line="61" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="e#1508#1509#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/java/com/xml2j/discogs/artists/application/ArtistsApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/artists/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

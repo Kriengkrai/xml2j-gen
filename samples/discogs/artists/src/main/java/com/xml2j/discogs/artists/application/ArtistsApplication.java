@@ -11,7 +11,7 @@ package com.xml2j.discogs.artists.application;
   Project home: XML2J https://sourceforge.net/projects/xml2j/ 
 
   Module: ARTISTS 
-  Generation date: Sun Apr 15 13:02:55 CEST 2018 
+  Generation date: Mon Apr 16 18:56:35 CEST 2018 
   Author: XML2J-Generator
 
 ******************************************************************************/
@@ -20,6 +20,8 @@ package com.xml2j.discogs.artists.application;
 //----------------------- 		IO		-----------------------//
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.GZIPInputStream;
 //-----------------------    LOGGING	-----------------------//
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -30,11 +32,8 @@ import org.xml.sax.SAXException;
 import com.xml2j.xml.core.ParserConfiguration;
 import com.xml2j.xml.core.ProcessorException;
 
-import com.xml2j.xml.parser.ParserRunnable;
-import com.xml2j.util.DefaultThreadManager;
+import com.xml2j.xml.parser.ParserTask;
 	
-import com.xml2j.discogs.artists.runnable.ArtistsRunnable;
-
 import com.xml2j.discogs.artists.processor.ArtistsProcessor;
 
 /**
@@ -68,7 +67,7 @@ public class ArtistsApplication {
 		}
 
 		// get program arguments
-		final String xml = args[0];
+		final String input = args[0];
 		final String config = args[1];
 		final String schema = args.length >= 3 ? args[2] : null;
 		
@@ -83,27 +82,37 @@ public class ArtistsApplication {
 			log.info("Loading runtime configuration");
 			ParserConfiguration configuration = new ParserConfiguration(config);
 	
-			// create thread manager
-			DefaultThreadManager manager = new DefaultThreadManager();
+			/*	
+				single threaded (default) mode. to use multiple processors simultaneously specify message-handler-runnable.
+				see: documentation version 2.3.0
+			*/
+			// create the application object
+			ParserTask app = new ArtistsApplicationTask(configuration);
 
-			// create a task object
-			ParserRunnable task = new ArtistsRunnable(configuration);
+			InputStream inputStream = null;
+			if (input.endsWith(".gz")) {
+				log.info("Assuming gz format.");
+				inputStream = new GZIPInputStream(new FileInputStream(input));
+			} else if (input.endsWith(".xml")) {
+				log.info("Assuming regular xml format.");
+				inputStream = new FileInputStream(input);
+			} else {
+				log.error("Unsupported file format. File must be either gz compressed xml or plain xml");
+				System.exit(0);
+			}
 
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", xml, schema);
-				task.validateXML(new FileInputStream(xml), new FileInputStream(schema));
+				log.info("Validating {} against {}", input, schema);
+				app.validateXML(inputStream, new FileInputStream(schema));
 			}
-
-			// prepare the XML parser
-			task.prepareStart(new FileInputStream(xml), new ArtistsProcessor());
-				
-			// add the task to list of tasks
-			manager.addTask("ArtistsRunnable", task);
-
-			// when all tasks have been added start threads	
-			manager.startThreads();
 			
+			// process the XML file
+			log.info("Start Processing..");
+			ArtistsProcessor p = new ArtistsProcessor();
+			app.prepareStart(inputStream, p);
+			app.processXML();
+			p.closeContext();
 			log.info("Processing complete.");
 			
 		} catch (ProcessorException e) {

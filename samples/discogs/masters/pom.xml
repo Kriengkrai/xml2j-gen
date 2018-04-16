@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!--
+    XML2J XSD to Java code generator
+    This (module) POM file was generated using XML2J code generator.
+    Generation date: Sun Apr 15 21:06:19 CEST 2018
+-->
+   <modelVersion>4.0.0</modelVersion>
+   <parent>
+      <groupId>com.xml2j.discogs</groupId>
+      <artifactId>discogs</artifactId>
+      <version>1.0</version>
+   </parent>
+   <properties>
+      <src.dir>src/main/java</src.dir>
+   </properties>
+   <artifactId>masters</artifactId>
+   <version>1.0</version>
+   <name>masters</name>
+   <description/>
+   <build>
+      <sourceDirectory>${src.dir}</sourceDirectory>
+      <plugins>
+         <plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <configuration>
+               <source>1.8</source>
+               <target>1.8</target>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.1.0</version>
+            <executions>
+               <execution>
+                  <phase>package</phase>
+                  <goals>
+                     <goal>shade</goal>
+                  </goals>
+                  <configuration>
+                     <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                           <mainClass>com.xml2j.discogs.masters.application.MastersApplication</mainClass>
+                        </transformer>
+                     </transformers>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>com.coderplus.maven.plugins</groupId>
+            <artifactId>copy-rename-maven-plugin</artifactId>
+            <version>1.0.1</version>
+            <executions>
+               <execution>
+                  <id>copy-file</id>
+                  <phase>install</phase>
+                  <goals>
+                     <goal>copy</goal>
+                  </goals>
+                  <configuration>
+                     <sourceFile>${project.basedir}/target/masters-1.0.jar</sourceFile>
+                     <destinationFile>${project.basedir}/masters.jar</destinationFile>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-project-info-reports-plugin</artifactId>
+            <version>2.9</version>
+         </plugin>
+      </plugins>
+      <!-- manually added -->
+      <resources>
+         <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+               <include>
+                  spring-config.xml
+               </include>
+               <include>
+                  log4j.properties
+               </include>
+            </includes>
+         </resource>
+      </resources>
+   </build>
+</project>
