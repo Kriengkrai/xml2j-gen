@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<masters>
+    <master id="1170373">
+        <main_release>4030871</main_release>
+        <images>
+            <image width="182" type="primary" uri="" uri150="" height="181"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="465"></image>
+            <image width="598" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>292253</id>
+                <name>Cuby &#38; The Blizzards</name>
+                <anv>Cuby + Blizzards</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+            <genre>Blues</genre>
+        </genres>
+        <styles>
+            <style>Blues Rock</style>
+            <style>Rhythm &#38; Blues</style>
+            <style>Modern Electric Blues</style>
+        </styles>
+        <year>1988</year>
+        <title>Appleknockers Flophouse / Too Blind To See</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1170374">
+        <main_release>1192867</main_release>
+        <images>
+            <image width="320" type="primary" uri="" uri150="" height="320"></image>
+            <image width="320" type="secondary" uri="" uri150="" height="247"></image>
+            <image width="598" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>292253</id>
+                <name>Cuby &#38; The Blizzards</name>
+                <anv>Cuby + Blizzards</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+            <genre>Blues</genre>
+        </genres>
+        <styles>
+            <style>Blues Rock</style>
+            <style>Rhythm &#38; Blues</style>
+            <style>Modern Electric Blues</style>
+        </styles>
+        <year>1988</year>
+        <title>Simple Man / Sometimes</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1173224">
+        <main_release>193000</main_release>
+        <images>
+            <image width="538" type="primary" uri="" uri150="" height="506"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>49406</id>
+                <name>Sigma</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Electronic</genre>
+        </genres>
+        <styles>
+            <style>House</style>
+        </styles>
+        <year>0</year>
+        <title>Final Encounter</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1173478">
+        <main_release>10080948</main_release>
+        <images>
+            <image width="600" type="secondary" uri="" uri150="" height="595"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="521"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>1063935</id>
+                <name>Elin Ruth Sigvardsson</name>
+                <anv>Elin Ruth</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Folk, World, &#38; Country</genre>
+        </genres>
+        <year>2012</year>
+        <title>Queen Of Queens &#38; The Last Man Standing</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1173696">
+        <main_release>3668952</main_release>
+        <images>
+            <image width="500" type="secondary" uri="" uri150="" height="500"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>194</id>
+                <name>Various</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Funk / Soul</genre>
+        </genres>
+        <styles>
+            <style>Soul</style>
+        </styles>
+        <year>2010</year>
+        <title>Northern Soul - 20 Original Classics</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="154" src="https://www.youtube.com/watch?v=Z_5SD5Toc3k" embed="true">
+                <title>frank wilson-do i love you indeed i do (northern soul motown)</title>
+                <description>frank wilson-do i love you indeed i do (northern soul motown)</description>
+            </video>
+            <video duration="147" src="https://www.youtube.com/watch?v=ug_NpT5Io8g" embed="true">
+                <title>R. Dean Taylor - There's A Ghost In My House</title>
+                <description>R. Dean Taylor - There's A Ghost In My House</description>
+            </video>
+            <video duration="196" src="https://www.youtube.com/watch?v=viF1hDSKR58" embed="true">
+                <title>Frankie Valli and The Four Seasons - The night</title>
+                <description>Frankie Valli and The Four Seasons - The night</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1174685">
+        <main_release>3113126</main_release>
+        <images>
+            <image width="400" type="primary" uri="" uri150="" height="393"></image>
+            <image width="399" type="secondary" uri="" uri150="" height="400"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2421221</id>
+                <name>Lunar Malice</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Alternative Rock</style>
+            <style>Post-Punk</style>
+            <style>Punk</style>
+        </styles>
+        <year>1993</year>
+        <title>Gunfire In The Night/Touched By The Fire</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1175683">
+        <main_release>10244665</main_release>
+        <images>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>4161972</id>
+                <name>Stellar (4)</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <year>2016</year>
+        <title>Sting</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="213" src="https://www.youtube.com/watch?v=IIj7j7mtNS4" embed="true">
+                <title>스텔뿼(Stellar) - 찔려(Sting) MV</title>
+                <description>스텔뿼(Stellar) - 찔려(Sting) MV</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1188861">
+        <main_release>10228483</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="450"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>86094</id>
+                <name>Smokey Robinson</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Funk / Soul</genre>
+        </genres>
+        <styles>
+            <style>Rhythm &#38; Blues</style>
+            <style>Soul</style>
+        </styles>
+        <year>1981</year>
+        <title>Aqua Con Tigo / Being With You</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1191106">
+        <main_release>664711</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="604"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="604"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="281"></image>
+            <image width="186" type="secondary" uri="" uri150="" height="186"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="217"></image>
+            <image width="250" type="secondary" uri="" uri150="" height="250"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>492409</id>
+                <name>Crazy Pink Revolvers</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+            <genre>Reggae</genre>
+        </genres>
+        <styles>
+            <style>Alternative Rock</style>
+            <style>Dub</style>
+            <style>Indie Rock</style>
+        </styles>
+        <year>1987</year>
+        <title>Timeless Smiles E.P.</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1199747">
+        <main_release>2260829</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="615"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="324"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="634"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="605"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>527005</id>
+                <name>Peter Appleyard</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Jazz</genre>
+            <genre>Funk / Soul</genre>
+        </genres>
+        <styles>
+            <style>Jazz-Funk</style>
+        </styles>
+        <year>1977</year>
+        <title>Presents</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="269" src="https://www.youtube.com/watch?v=HP2ZlkLnSUc" embed="true">
+                <title>Peter Appleyard- Mambo Jambo</title>
+                <description>Peter Appleyard- Mambo Jambo</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1204592">
+        <main_release>10048835</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="589"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="615"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>194</id>
+                <name>Various</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Beat</style>
+            <style>Garage Rock</style>
+            <style>Surf</style>
+            <style>Rock &#38; Roll</style>
+        </styles>
+        <year>2017</year>
+        <title>Down at the Nightclub vol. 1</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1204593">
+        <main_release>4959766</main_release>
+        <images>
+            <image width="299" type="primary" uri="" uri150="" height="300"></image>
+            <image width="300" type="secondary" uri="" uri150="" height="300"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>487701</id>
+                <name>Miners Of Muzo</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Garage Rock</style>
+        </styles>
+        <year>2013</year>
+        <title>Really ...Is That A Fact?</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1208371">
+        <main_release>8490521</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="586"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>290025</id>
+                <name>Lee Garrett</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Funk / Soul</genre>
+            <genre>Blues</genre>
+        </genres>
+        <styles>
+            <style>Rhythm &#38; Blues</style>
+        </styles>
+        <year>0</year>
+        <title>Linda Sue</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1211424">
+        <main_release>9769781</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="594"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>442841</id>
+                <name>The Domino's</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Rock &#38; Roll</style>
+        </styles>
+        <year>0</year>
+        <title>Minor Things</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1211536">
+        <main_release>7555425</main_release>
+        <images>
+            <image width="250" type="primary" uri="" uri150="" height="252"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>697905</id>
+                <name>Mr Big</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Pop Rock</style>
+            <style>Classic Rock</style>
+            <style>Prog Rock</style>
+        </styles>
+        <year>1975</year>
+        <title>Wonderful Creation</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1220841">
+        <main_release>6841559</main_release>
+        <images>
+            <image width="315" type="primary" uri="" uri150="" height="315"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2350988</id>
+                <name>Science Bastard</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Indie Rock</style>
+        </styles>
+        <year>2009</year>
+        <title>Egg E.P.</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1223491">
+        <main_release>6782143</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="597"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>671299</id>
+                <name>Kraayeveld</name>
+                <anv>Kraaijeveld</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Blues Rock</style>
+        </styles>
+        <year>1971</year>
+        <title>Jambalaya</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="145" src="https://www.youtube.com/watch?v=9uNGH88XWAM" embed="true">
+                <title>KRAAIJEVELD Jambalaya</title>
+                <description>KRAAIJEVELD Jambalaya</description>
+            </video>
+            <video duration="225" src="https://www.youtube.com/watch?v=mtug0b_XbTM" embed="true">
+                <title>KRAAIJEVELD Lunatic</title>
+                <description>KRAAIJEVELD Lunatic</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1228839">
+        <main_release>6290545</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="619"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="594"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="602"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="598"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>1276027</id>
+                <name>Ettore Cenci</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <year>1964</year>
+        <title>Christine</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="176" src="https://www.youtube.com/watch?v=RiZ4Yj_G_aE" embed="true">
+                <title>ETTORE CENCI Christine DURIUM</title>
+                <description>ETTORE CENCI Christine DURIUM</description>
+            </video>
+            <video duration="179" src="https://www.youtube.com/watch?v=riKbSX4ymYY" embed="true">
+                <title>Ettore Cenci Guitar Trio - Christine</title>
+                <description>Ettore Cenci Guitar Trio - Christine</description>
+            </video>
+            <video duration="129" src="https://www.youtube.com/watch?v=JmqZTm-kDGA" embed="true">
+                <title>Ettore Cenci Guitar Trio - PLEASE PLEASE ME - 1963</title>
+                <description>Ettore Cenci Guitar Trio - PLEASE PLEASE ME - 1963</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1232543">
+        <main_release>10528226</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="598"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="597"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>1544</id>
+                <name>Steve Bug</name>
+                <anv></anv>
+                <join>&</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>40353</id>
+                <name>Clé</name>
+                <anv>Cle</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Electronic</genre>
+        </genres>
+        <styles>
+            <style>Tech House</style>
+        </styles>
+        <year>2017</year>
+        <title>Together</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="702" src="https://www.youtube.com/watch?v=VSUquGJX7yk" embed="true">
+                <title>Steve Bug &#38; Cle - That's Right</title>
+                <description>Steve Bug &#38; Cle - That's Right</description>
+            </video>
+            <video duration="480" src="https://www.youtube.com/watch?v=qllMfWSx9ws" embed="true">
+                <title>Steve Bug &#38; Cle - Together</title>
+                <description>Steve Bug &#38; Cle - Together</description>
+            </video>
+            <video duration="448" src="https://www.youtube.com/watch?v=IGfj_ExNe-E" embed="true">
+                <title>Steve Bug &#38; Cle - Together (Alternative Mix)</title>
+                <description>Steve Bug &#38; Cle - Together (Alternative Mix)</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1233298">
+        <main_release>10726068</main_release>
+        <images>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>3361918</id>
+                <name>The Fat Dukes Of Fuck</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Post-Punk</style>
+        </styles>
+        <year>2017</year>
+        <title>A Compendium of Desperation, Morality and Dick Jokes</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1233377">
+        <main_release>8636231</main_release>
+        <images>
+            <image width="294" type="secondary" uri="" uri150="" height="292"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2738785</id>
+                <name>Hedstiles</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+            <genre>Pop</genre>
+        </genres>
+        <year>1991</year>
+        <title>Too much smoke</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1241271">
+        <main_release>10895153</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>1397662</id>
+                <name>LIGHTS (5)</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <year>2017</year>
+        <title>Skin &#38; Earth</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="218" src="https://www.youtube.com/watch?v=3jgnfCUSL2M" embed="true">
+                <title>Lights - Skydiving (Official Music Video)</title>
+                <description>Lights - Skydiving (Official Music Video)</description>
+            </video>
+            <video duration="242" src="https://www.youtube.com/watch?v=8Wljx0Cz9-c" embed="true">
+                <title>Lights - Giants (Official Music Video)</title>
+                <description>Lights - Giants (Official Music Video)</description>
+            </video>
+            <video duration="208" src="https://www.youtube.com/watch?v=wyM8pMH2OF0" embed="true">
+                <title>Lights - Savage (Official Music Video)</title>
+                <description>Lights - Savage (Official Music Video)</description>
+            </video>
+            <video duration="259" src="https://www.youtube.com/watch?v=V7h6uakby-k" embed="true">
+                <title>Lights - New Fears (Official Music Video)</title>
+                <description>Lights - New Fears (Official Music Video)</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1244039">
+        <main_release>9764753</main_release>
+        <images>
+            <image width="600" type="secondary" uri="" uri150="" height="588"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>254429</id>
+                <name>Mark Farner</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <year>1977</year>
+        <title>You And Me Baby</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1262534">
+        <main_release>11088693</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2773670</id>
+                <name>Yan Cook</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Electronic</genre>
+        </genres>
+        <styles>
+            <style>Techno</style>
+        </styles>
+        <year>2017</year>
+        <title>Dialogue</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="331" src="https://www.youtube.com/watch?v=GcKCnbMHW6s" embed="true">
+                <title>Yan Cook - Toucan [INERTIA-7]</title>
+                <description>Yan Cook - Toucan [INERTIA-7]</description>
+            </video>
+            <video duration="364" src="https://www.youtube.com/watch?v=5DFUk1JFI4w" embed="true">
+                <title>Yan Cook - Puffin [INERTIA-7]</title>
+                <description>Yan Cook - Puffin [INERTIA-7]</description>
+            </video>
+            <video duration="322" src="https://www.youtube.com/watch?v=v2FALeVbcww" embed="true">
+                <title>Yan Cook - Dialogue [INERTIA-7]</title>
+                <description>Yan Cook - Dialogue [INERTIA-7]</description>
+            </video>
+            <video duration="334" src="https://www.youtube.com/watch?v=Mtmb2lsEqKU" embed="true">
+                <title>Yan Cook - Flamingo [INERTIA-7]</title>
+                <description>Yan Cook - Flamingo [INERTIA-7]</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1263718">
+        <main_release>951804</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="598"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="597"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="594"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="594"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>408550</id>
+                <name>Brain Donor</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Garage Rock</style>
+            <style>Hard Rock</style>
+            <style>Glam</style>
+        </styles>
+        <year>2003</year>
+        <title>My Pagan Ass / Like A Motherfucker</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1266511">
+        <main_release>6062838</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="591"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>575127</id>
+                <name>Jaap Dekker Boogie Set</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+            <genre>Children's</genre>
+        </genres>
+        <year>1972</year>
+        <title>Speelt Kinderliedjes</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1266512">
+        <main_release>9978022</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="595"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="622"></image>
+            <image width="555" type="secondary" uri="" uri150="" height="566"></image>
+            <image width="549" type="secondary" uri="" uri150="" height="572"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>575127</id>
+                <name>Jaap Dekker Boogie Set</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Blues</genre>
+            <genre>Pop</genre>
+        </genres>
+        <year>1974</year>
+        <title>Honky Tonk Train Blues</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="209" src="https://www.youtube.com/watch?v=5cxGHPS1sF4" embed="true">
+                <title>JAAP DEKKER BOOGIE SET (Holl.) - Honky Tonk Train Blues (instr.)</title>
+                <description>JAAP DEKKER BOOGIE SET (Holl.) - Honky Tonk Train Blues (instr.)</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1267036">
+        <main_release>9534199</main_release>
+        <images>
+            <image width="225" type="primary" uri="" uri150="" height="204"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>368757</id>
+                <name>Tol Hansse</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <year>1989</year>
+        <title>Hello Lovers</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1278764">
+        <main_release>14096</main_release>
+        <images>
+            <image width="300" type="secondary" uri="" uri150="" height="300"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>84882</id>
+                <name>Aardvarck</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Electronic</genre>
+        </genres>
+        <styles>
+            <style>Techno</style>
+            <style>Broken Beat</style>
+        </styles>
+        <year>2000</year>
+        <title>Non Spoken</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1280091">
+        <main_release>11250819</main_release>
+        <images>
+            <image width="596" type="secondary" uri="" uri150="" height="591"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>6068933</id>
+                <name>Deadly Vipers (2)</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Stoner Rock</style>
+        </styles>
+        <year>2017</year>
+        <title>Fueltronaut</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="336" src="https://www.youtube.com/watch?v=Hpj8MSCWcKE" embed="true">
+                <title>Deadly Vipers - Universe</title>
+                <description>Deadly Vipers - Universe</description>
+            </video>
+            <video duration="339" src="https://www.youtube.com/watch?v=_DVqFWeqsF8" embed="true">
+                <title>DEADLY VIPERS - Supernova Official Music Video</title>
+                <description>DEADLY VIPERS - Supernova Official Music Video</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1281538">
+        <main_release>5362834</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="598"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="468"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="595"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>231400</id>
+                <name>James McNally</name>
+                <anv>James MćNally</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+            <genre>Folk, World, &#38; Country</genre>
+        </genres>
+        <year>1996</year>
+        <title>Everybreath</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="355" src="https://www.youtube.com/watch?v=zjoI0QTKcg4" embed="true">
+                <title>Irish Low Flute - James McNally - Black is the color</title>
+                <description>Irish Low Flute - James McNally - Black is the color</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1284949">
+        <main_release>6895845</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>1260577</id>
+                <name>Greg Loren</name>
+                <anv>Gregory Loren</anv>
+                <join>,</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>1659297</id>
+                <name>The Ralph Carmichael Orchestra and Chorus</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Folk, World, &#38; Country</genre>
+        </genres>
+        <styles>
+            <style>Gospel</style>
+        </styles>
+        <year>1960</year>
+        <title>How Big Is God?</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1284951">
+        <main_release>2726751</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="603"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="609"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="590"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="589"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>1659297</id>
+                <name>The Ralph Carmichael Orchestra And Chorus</name>
+                <anv>Ralph Carmichael Orchestra And Chorus</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+            <genre>Folk, World, &#38; Country</genre>
+        </genres>
+        <year>1976</year>
+        <title>Christmas Joys</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1285702">
+        <main_release>847180</main_release>
+        <images>
+            <image width="587" type="primary" uri="" uri150="" height="600"></image>
+            <image width="587" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="595"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>669957</id>
+                <name>Jupiter Black</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Electronic</genre>
+        </genres>
+        <styles>
+            <style>Electro</style>
+            <style>Disco</style>
+        </styles>
+        <year>2006</year>
+        <title>We Like Moroder</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="371" src="https://www.youtube.com/watch?v=L6F4v1GsVJE" embed="true">
+                <title>Jupiter Black - We Like Moroder (Elitechnique Remix)</title>
+                <description>Jupiter Black - We Like Moroder (Elitechnique Remix)</description>
+            </video>
+            <video duration="427" src="https://www.youtube.com/watch?v=BuBxdQY7OXY" embed="true">
+                <title>Jupiter Black - We Like Moroder (Divider Remix)</title>
+                <description>Jupiter Black - We Like Moroder (Divider Remix)</description>
+            </video>
+            <video duration="423" src="https://www.youtube.com/watch?v=9ji41z3k3BM" embed="true">
+                <title>Jupiter Black We Like Moroder Original</title>
+                <description>Jupiter Black We Like Moroder Original</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1288788">
+        <main_release>11232626</main_release>
+        <images>
+            <image width="600" type="secondary" uri="" uri150="" height="360"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="360"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2066622</id>
+                <name>I Meteors</name>
+                <anv>The Meteors</anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>Beat</style>
+        </styles>
+        <year>1966</year>
+        <title>Vi Sembra Giusto</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="146" src="https://www.youtube.com/watch?v=-fK2CCtnzsU" embed="true">
+                <title>I Meteors Vi Sembra Giusto Pieretti Gianco 1967</title>
+                <description>I Meteors Vi Sembra Giusto Pieretti Gianco 1967</description>
+            </video>
+            <video duration="144" src="https://www.youtube.com/watch?v=Moczoy1MvgQ" embed="true">
+                <title>Meteors - vi sembra giusto (1966)</title>
+                <description>Meteors - vi sembra giusto (1966)</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1291934">
+        <main_release>4200073</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="599"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="599"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="598"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="598"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>514936</id>
+                <name>Louis van Dijk</name>
+                <anv>Louis van Dyke</anv>
+                <join>,</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>458065</id>
+                <name>Thijs van Leer</name>
+                <anv></anv>
+                <join>,</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>287929</id>
+                <name>Rogier van Otterloo</name>
+                <anv></anv>
+                <join>,</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>167748</id>
+                <name>Chris Hinze</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Jazz</genre>
+            <genre>Classical</genre>
+        </genres>
+        <year>1973</year>
+        <title>Metamorphose</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1292037">
+        <main_release>4124658</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="610"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="609"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="605"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>772533</id>
+                <name>Peter Goalby</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <year>1975</year>
+        <title>Ain't It Funny</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1292052">
+        <main_release>652648</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="597"></image>
+            <image width="596" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>479547</id>
+                <name>Sue Saad And The Next</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
+        <styles>
+            <style>New Wave</style>
+            <style>Pop Rock</style>
+        </styles>
+        <year>1980</year>
+        <title>Prisoner</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1292054">
+        <main_release>10742975</main_release>
+        <images>
+            <image width="504" type="secondary" uri="" uri150="" height="505"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>479536</id>
+                <name>Sue Saad</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Rock</genre>
+            <genre>Pop</genre>
+        </genres>
+        <year>1987</year>
+        <title>Guilty Pleasure</title>
+        <data_quality>Correct</data_quality>
+        <videos>
+            <video duration="227" src="https://www.youtube.com/watch?v=NRfyPGE38Cc" embed="true">
+                <title>Sue Saad - Guilty Pleasures (Radioactive Dreams OST - Track 10)</title>
+                <description>Sue Saad - Guilty Pleasures (Radioactive Dreams OST - Track 10)</description>
+            </video>
+            <video duration="126" src="https://www.youtube.com/watch?v=oxNVgElKhv8" embed="true">
+                <title>Sue Saad - She's a fire</title>
+                <description>Sue Saad - She's a fire</description>
+            </video>
+            <video duration="319" src="https://www.youtube.com/watch?v=z5EU7GKeKow" embed="true">
+                <title>Sue Saad - Radioactive Dreams (Radioactive Dreams OST - Track 03)</title>
+                <description>Sue Saad - Radioactive Dreams (Radioactive Dreams OST - Track 03)</description>
+            </video>
+        </videos>
+    </master>
+    <master id="1294737">
+        <main_release>7179746</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>4241390</id>
+                <name>Chance (26)</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Folk, World, &#38; Country</genre>
+        </genres>
+        <styles>
+            <style>Country</style>
+        </styles>
+        <year>1985</year>
+        <title>To Be Lovers / Call It What You Want To (It's Still Love)</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1300703">
+        <main_release>4308844</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="604"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="470"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>479037</id>
+                <name>Anton Bruckner</name>
+                <anv>Bruckner</anv>
+                <join>/</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>547971</id>
+                <name>The Cleveland Orchestra</name>
+                <anv></anv>
+                <join>,</join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+            <artist>
+                <id>834229</id>
+                <name>Christoph von Dohnányi</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Classical</genre>
+        </genres>
+        <styles>
+            <style>Romantic</style>
+        </styles>
+        <year>1993</year>
+        <title>Symphony No. 5</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1300710">
+        <main_release>11437684</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="599"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="600"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2082991</id>
+                <name>Hollysiz</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <styles>
+            <style>Indie Pop</style>
+        </styles>
+        <year>2018</year>
+        <title>Rather Than Talking</title>
+        <data_quality>Correct</data_quality>
+    </master>
+    <master id="1300713">
+        <main_release>11437511</main_release>
+        <images>
+            <image width="600" type="primary" uri="" uri150="" height="600"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="450"></image>
+            <image width="600" type="secondary" uri="" uri150="" height="450"></image>
+        </images>
+        <artists>
+            <artist>
+                <id>2082991</id>
+                <name>Hollysiz</name>
+                <anv></anv>
+                <join></join>
+                <role></role>
+                <tracks></tracks>
+            </artist>
+        </artists>
+        <genres>
+            <genre>Pop</genre>
+        </genres>
+        <styles>
+            <style>Indie Pop</style>
+        </styles>
+        <year>2013</year>
+        <title>Come Back To Me</title>
+        <data_quality>Correct</data_quality>
+    </master>
+</masters>

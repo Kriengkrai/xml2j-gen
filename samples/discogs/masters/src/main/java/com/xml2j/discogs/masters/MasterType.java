@@ -49,7 +49,15 @@ public class MasterType extends ComplexDataType {
 	public MasterType(String elementName, ComplexDataType parent) {
 		super(elementName, parent);
 	}
-  
+
+	long id = 0L;
+	public void setId(long id) {
+		this.id = id;
+	}
+	public long getId() {
+		return this.id;
+	}
+
 	/**
 	 * Allocator class.	
 	 *
