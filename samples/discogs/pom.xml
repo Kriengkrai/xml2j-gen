@@ -21,6 +21,8 @@
       <module>labels</module>
       <module>artists</module>
       <module>masters</module>
+      <module>masters_ss</module>
+      <module>masters_rd</module>
    </modules>
    <dependencies>
       <dependency>

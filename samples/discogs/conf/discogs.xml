@@ -30,7 +30,7 @@ Message Type : 	releases
 				message-handler-application-task="ReleasesApplicationTask"
 				message-handler-application="ReleasesApplication"/>
  		</module>
--->		
+	
 		<module name="labels"
 				output-path="src/main/java"> 
  			<interface 
@@ -53,12 +53,24 @@ Message Type : 	releases
 				message-handler-application-task="ArtistsApplicationTask"
 				message-handler-application="ArtistsApplication"/>
  		</module>
-		<module name="masters"
+-->			
+		<module name="masters-ss"
 				output-path="src/main/java"> 
  			<interface 
- 				name="masters.xsd" 
+ 				name="masters-ss.xsd" 
  				message-handler-root="masters" 	
- 				root-type-rename="Masters"
+ 				root-type-rename="MastersType"
+ 				message-handler-name="MastersMessageHandler"
+				message-handler-processor="MastersProcessor"
+				message-handler-application-task="MastersApplicationTask"
+				message-handler-application="MastersApplication"/>
+ 		</module>
+		<module name="masters-rd"
+				output-path="src/main/java"> 
+ 			<interface 
+ 				name="masters-rd.xsd" 
+ 				message-handler-root="masters" 	
+ 				root-type-rename="MastersType"
  				message-handler-name="MastersMessageHandler"
 				message-handler-processor="MastersProcessor"
 				message-handler-application-task="MastersApplicationTask"

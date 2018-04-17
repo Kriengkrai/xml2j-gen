@@ -78,14 +78,14 @@ public class ConfigurationHandler extends org.xml.sax.helpers.DefaultHandler {
 			//
 		} else if (qName.equals("domain")) {
 			Xml2jDomain domain = new Xml2jDomain();
-			domain.base = atts.getValue(BASE);
-			domain.name = atts.getValue(NAME);
+			domain.base = atts.getValue(BASE).replace('-', '_');
+			domain.name = atts.getValue(NAME).replace('-', '_');;
 			domain.input_path = atts.getValue(INPUT_PATH);
 			configuration.add(domain);
 
 		} else if (qName.equals("module")) {
 			Xml2jModule module = new Xml2jModule();
-			module.name = atts.getValue(NAME);
+			module.name = atts.getValue(NAME).replace('-', '_');;
 			module.description = atts.getValue(DESCRIPTION);
 			module.input_path = atts.getValue(INPUT_PATH);
 			module.output_path = atts.getValue(OUTPUT_PATH);
