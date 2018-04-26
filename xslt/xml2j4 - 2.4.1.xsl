@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!-- 
 /********************************************************************************
-Copyright 2016, 2017, 2018 Lolke B. Dijkstra
+Copyright 2016, 2017 Lolke B. Dijkstra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of 
 this software and associated documentation files (the "Software"), to deal in the
@@ -26,7 +26,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <!--
 	step4 (4/5) Java code generation 
 	
-	version:		2.4.2		
+	version:		2.4.1		
 	
 	changelog:
 		support for
@@ -42,7 +42,7 @@ Project root: https://sourceforge.net/projects/xml2j/
   xmlns:Date="java:java.util.Date">
 
 
-<xsl:param name="xml2j-version" select="'[xml2j-version]'"/>
+<xsl:param name="xml2j-version" select="'2.4.1'"/>
 
 <!-- import = framework import -->
 <xsl:param name="import" select="'com.xml2j.xml.core'"/>
@@ -589,23 +589,23 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
     <xsl:variable name="lName" select="concat(translate(substring($tName,1,1),$lowercase,$uppercase),substring($tName,2))"/>
   	<xsl:variable name="localClassName" select="'String'" />
 
-//	/**
-//	 * Get '<xsl:value-of select="@name"/>' attribute.
-//	 * @return the item.
-//	 */
-//	public <xsl:value-of select="$localClassName"/> get<xsl:value-of select="$lName"/>() {
-//		return getAttr("<xsl:value-of select="@name"/>");
-//	}
+	/**
+	 * Get '<xsl:value-of select="@name"/>' attribute.
+	 * @return the item.
+	 */
+	public <xsl:value-of select="$localClassName"/> get<xsl:value-of select="$lName"/>() {
+		return getAttr("<xsl:value-of select="@name"/>");
+	}
 
-//	/**
-//	 * Set '<xsl:value-of select="@name"/>' attribute.
-//	 * 
-//	 * Set (overwrite) the attribute data.
-//	 * @param data the item that needs to be added.
-//	 */
-//	public void set<xsl:value-of select="$lName" />(<xsl:value-of select="$localClassName"/> data) {
-//		setAttr("<xsl:value-of select="@name"/>", data);
-//	}
+	/**
+	 * Set '<xsl:value-of select="@name"/>' attribute.
+	 * 
+	 * Set (overwrite) the attribute data.
+	 * @param data the item that needs to be added.
+	 */
+	public void set<xsl:value-of select="$lName" />(<xsl:value-of select="$localClassName"/> data) {
+		setAttr("<xsl:value-of select="@name"/>", data);
+	}
   </xsl:for-each><xsl:text/>
   <xsl:if test="$with-printing='1'">
   <!-- printing method for debugging purposes -->
@@ -646,21 +646,27 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
 	
 	<xsl:choose>	
 		<xsl:when test="@base='complex' and @ismulti='false'">
-		if (<xsl:value-of select="$elementName" /> != null) {
+		if (<xsl:value-of select="$elementName" /> != null)
 			<xsl:value-of select="$elementName" />.print(out);
-		}	
+		else {
+			// out.print("&lt;<xsl:value-of select="@name" />&gt;null&lt;/<xsl:value-of select="@name" />&gt;");
+		}
 		</xsl:when>
 		<xsl:when test="@base='complex' and @ismulti='true'">
-		if (<xsl:value-of select="$elementName" /> != null) {
+		if (<xsl:value-of select="$elementName" /> != null)
 			for(<xsl:value-of select="$localClassName" /><xsl:text> </xsl:text><xsl:value-of select="$lName" /> : <xsl:value-of select="$elementName" />) {
 				<xsl:value-of select="$lName" />.print(out);
 			}
-		}	
+		else {
+			// out.print("&lt;<xsl:value-of select="@name" />&gt;null&lt;/<xsl:value-of select="@name" />&gt;");
+		}
 		</xsl:when>
 		<xsl:when test="@base='simple' and @ismulti='true'">
-		if (<xsl:value-of select="$elementName" /> != null) {
+		if (<xsl:value-of select="$elementName" /> != null)
 			<xsl:value-of select="$elementName" />.print(out);
-		}	
+		else {
+			// out.print("&lt;<xsl:value-of select="@name" />&gt;null&lt;/<xsl:value-of select="@name" />&gt;");
+		}
 		</xsl:when>
 		<xsl:otherwise>
 		if (<xsl:value-of select="$elementName" /> != null) {
@@ -714,6 +720,8 @@ import org.xml.sax.XMLReader;
 import <xsl:value-of select="$import"/>.DataSetter;<xsl:text />
 <xsl:if test="elementList/element[@base='complex']">
 import <xsl:value-of select="$import"/>.ComplexDataType;</xsl:if>
+<xsl:if test="$doExtend='false'">
+import <xsl:value-of select="$import"/>.XMLEvent;</xsl:if>
 import <xsl:value-of select="$import"/>.XMLFragmentHandler;<xsl:text/>
 import com.xml2j.xml.parser.ParserTask;<xsl:text/>
 
@@ -939,9 +947,30 @@ public class <xsl:value-of select="$classname"/>Handler <xsl:choose>
 		</xsl:for-each>		
 		<xsl:choose>
 		<xsl:when test="$doExtend='false'">
-		<xsl:if test="elementList/element[@base!='complex']">
-		} else </xsl:if>if (localName.equals(getXMLElementName())) {
-			handleElement();
+			<xsl:choose>
+				<xsl:when test="elementList/element[@base!='complex']">
+		} else if (localName.equals(getXMLElementName())) {
+				</xsl:when>
+				<xsl:otherwise>
+		if (localName.equals(getXMLElementName())) {
+				</xsl:otherwise>
+			</xsl:choose>
+			// return control to parent handler..
+			this.deactivate();
+			
+			// get content of this item..
+			getData().setContent(this.getValue());
+			
+			// attach data to parent (if parent data setter is found)..
+			DataSetter setter = getParentDataSetter();
+			if (setter != null) {
+				setter.set(getData());
+			} <xsl:text />
+			
+			// process data if required..
+			if (doProcess()) {
+				process(XMLEvent.END);
+			}
 		}
 		</xsl:when>
 		<xsl:otherwise>
@@ -1081,7 +1110,7 @@ public class <xsl:value-of select="$runnable-name"/> extends ParserRunnable {
 </xsl:document>
 </xsl:template>
 
-<!-- GENERATE APPLICATION TASK -->
+<!-- GENERATE APPLICATION -->
 <xsl:template name="generate-application-task">
 	<xsl:param name="path"/>
 	
@@ -1169,8 +1198,6 @@ public class <xsl:value-of select="$application-task-name"/> extends ParserTask 
 //----------------------- 		IO		-----------------------//
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.zip.GZIPInputStream;
 //-----------------------    LOGGING	-----------------------//
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -1225,7 +1252,7 @@ public class <xsl:value-of select="$classname"/> {
 		}
 
 		// get program arguments
-		final String input = args[0];
+		final String xml = args[0];
 		final String config = args[1];
 		final String schema = args.length &gt;= 3 ? args[2] : null;
 		
@@ -1249,12 +1276,12 @@ public class <xsl:value-of select="$classname"/> {
 
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", input, schema);
-				task.validateXML(new FileInputStream(input), new FileInputStream(schema));
+				log.info("Validating {} against {}", xml, schema);
+				task.validateXML(new FileInputStream(xml), new FileInputStream(schema));
 			}
 
 			// prepare the XML parser
-			task.prepareStart(new FileInputStream(input), new <xsl:value-of select="$processor-name"/>());
+			task.prepareStart(new FileInputStream(xml), new <xsl:value-of select="$processor-name"/>());
 				
 			// add the task to list of tasks
 			manager.addTask("<xsl:value-of select="$runnable-name"/>", task);
@@ -1264,33 +1291,21 @@ public class <xsl:value-of select="$classname"/> {
 		</xsl:when>
 		<xsl:otherwise>
 			/*	
-				single threaded (default) mode. to use multiple processors simultaneously specify message-handler-runnable.
+				single threaded mode. to use multiple processors simultaneously specify message-handler-runnable.
 				see: documentation version 2.3.0
 			*/
 			// create the application object
 			ParserTask app = new <xsl:value-of select="$application-task-name"/>(configuration);
-
-			InputStream inputStream = null;
-			if (input.endsWith(".gz")) {
-				log.info("Assuming gz format.");
-				inputStream = new GZIPInputStream(new FileInputStream(input));
-			} else if (input.endsWith(".xml")) {
-				log.info("Assuming regular xml format.");
-				inputStream = new FileInputStream(input);
-			} else {
-				log.error("Unsupported file format. File must be either gz compressed xml or plain xml");
-				System.exit(0);
-			}
-
+			
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", input, schema);
-				app.validateXML(inputStream, new FileInputStream(schema));
+				log.info("Validating {} against {}", xml, schema);
+				app.validateXML(new FileInputStream(xml), new FileInputStream(schema));
 			}
 			
 			// process the XML file
 			log.info("Start Processing..");	
-			app.prepareStart(inputStream, new <xsl:value-of select="$processor-name"/>());
+			app.prepareStart( new FileInputStream(xml), new <xsl:value-of select="$processor-name"/>());
 			app.processXML();
 		</xsl:otherwise>
 	</xsl:choose>	
