@@ -139,7 +139,6 @@ public class Xml2jGenerator {
 			configFileName = cli.getConfigfileName();
 		}
 
-
 		if (cli.hasVerbose()) {
 			logger.info("workingDirectory: " + workingDirectory);
 			logger.info("configFileName: " + configFileName);

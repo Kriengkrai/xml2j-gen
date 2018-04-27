@@ -34,7 +34,7 @@ class CLIParser {
                 .addOption("r", "remove", false, "remove old code before generating code")
                 .addOption("version", false, "prints version")
                 .addOption("pom", "pom",false, "generate POM files (defaults to none)")
-                .addOption("a", "author", false, format("author (defaults to %s)", APPLICATION))
+                .addOption("a", "author", true, format("author (defaults to %s)", APPLICATION))
                 .addOption("c", "configuration", true, "(mandatory) configuration file used by generator");
     }
 
@@ -42,6 +42,7 @@ class CLIParser {
         if (commandLine == null)
             throw new NullPointerException("Commandline has not been parsed. Must use parse first");
 
+        boolean hasOpt = commandLine.hasOption(opt);
         return commandLine.hasOption(opt);
     }
 
@@ -61,8 +62,7 @@ class CLIParser {
     }
 
     String getAuthor() {
-        String author = getValue("a");
-        return author == null ? APPLICATION : author;
+        return hasAuthor() ? getValue("a") : APPLICATION;
     }
 
     String getConfigfileName() {
@@ -100,6 +100,9 @@ class CLIParser {
         return serialDefaultVersionUID;
     }
 
+    boolean hasAuthor() {
+        return isOptionSet("a");
+    }
     boolean hasConfig() {
         return isOptionSet("c");
     }
