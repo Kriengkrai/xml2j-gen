@@ -84,7 +84,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <xsl:param name="source-path" select="'./src'"/>
 
 <!-- project-root -->
-<xsl:param name="project-root" select="'XML2J https://sourceforge.net/projects/xml2j/'"/>
+<xsl:param name="project-root" select="'XML2J https://github.com/lolkedijkstra/'"/>
 
 <!-- author -->
 <xsl:param name="author" select="'XML2J Generator'"/>
