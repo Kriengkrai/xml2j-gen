@@ -588,13 +588,8 @@ public class Xml2jGenerator {
 			return;
 		}
 
-		if (cli.doPrintHelp()) {
+		if (cli.doPrintHelp() || !cli.hasConfig()) {
 			cli.printHelp();
-			return;
-		}
-
-		if (!cli.hasConfig()) {
-			logger.message("Missing mandatory argument config -c --config");
 			return;
 		}
 
