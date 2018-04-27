@@ -30,6 +30,8 @@ import java.util.List;
 import java.util.Map;
 import static java.lang.String.format;
 
+//import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.ParseException;
 import org.xml.sax.SAXException;
 
 import com.xml2j.Xml2jConfiguration;
@@ -37,16 +39,16 @@ import com.xml2j.Xml2jDomain;
 import com.xml2j.Xml2jInterface;
 import com.xml2j.Xml2jModule;
 
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
 public class Xml2jGenerator {
-	private static final String VERSION = "2.4.2";
+	private static final String VERSION = "2.5.0";
 	private static Notification logger = new Notification(LoggerFactory.getLogger(Xml2jGenerator.class));
+	private static CLIParser cli = new CLIParser();
 
 		// @formatter:off
-	private static String license = "\n\r---------------------------------------------------------------------------------------"
+	private static String LICENSE = "\n\r---------------------------------------------------------------------------------------"
 			+ "\nCopyright 2016-2018 Lolke B. Dijkstra " + "\nPermission is hereby granted, free of charge, to any person obtaining a copy"
 			+ "\nof this software and associated documentation files (the \"Software\"), to deal"
 			+ "\nin the Software without restriction, including without limitation the rights to "
@@ -97,7 +99,6 @@ public class Xml2jGenerator {
 	static final private String RUNNABLE_PACKAGE = "runnable-package";
 
 	static final private String PRINTING = "with-printing";
-	static final private String LICENSE = "license";
 	static final private String SOURCE_PATH = "source-path";
 	static final private String AUTHOR = "author";
 	static final private String CUSTOMHEADER = "custom-header";
@@ -115,27 +116,36 @@ public class Xml2jGenerator {
 	private static String moduleRoot;
 	private static String modulePackage;
 	private static Xml2jGeneratorSettings generatorSettings;
-	private static Xml2jDomain d;
 
 	/* basic settings */
 	private static final String XML2J_HOME = "XML2J_HOME";
 	static final String HOME = System.getenv(XML2J_HOME);
 	private static final String SCHEMA = HOME + "/schema/xml2j.xsd";
 
+	static String configFileName;
+	static String workingDirectory = ".";
 
 	private static final String SAX_PARSER_FACTORY = "org.apache.xerces.jaxp.SAXParserFactoryImpl";
 
-	private static void initialize() {
-		if (!Options.workingDirectory.equals("."))
-			Options.configFileName = Options.workingDirectory + "/" + Options.configFileName;
+	private static void initialize(CLIParser cli) {
+		workingDirectory = cli.getWorkingDirectory();
+		if (workingDirectory == null)
+			workingDirectory = ".";
 
-		if (Options.verbose) {
-			logger.info("workingDirectory: " + Options.workingDirectory);
-			logger.info("configFileName: " + Options.configFileName);
+		if (!workingDirectory.equals(".")) {
+			configFileName = cli.getWorkingDirectory() + "/" + cli.getConfigfileName();
+		}
+		else {
+			configFileName = cli.getConfigfileName();
 		}
 
-		if (CommandLine.headerFile != null) {
-			Header.readHeader(CommandLine.headerFile);
+		if (cli.hasVerbose()) {
+			logger.info("workingDirectory: " + workingDirectory);
+			logger.info("configFileName: " + configFileName);
+		}
+
+		if (cli.hasHeader()) {
+			Header.readHeader(cli.getHeader());
 		}
 
 		setParserFactory();
@@ -150,9 +160,9 @@ public class Xml2jGenerator {
 
 		ConfigurationValidator validator = new ConfigurationValidator(SCHEMA);
 		try {
-			validator.validateDocument(Options.configFileName);
+			validator.validateDocument(configFileName);
 		} catch (IOException e) {
-			logger.warn("Cannot find or read file: " + Options.configFileName);
+			logger.warn("Cannot find or read file: " + configFileName);
 			System.exit(0);
 		} catch (SAXException e) {
 			logger.warn("Incorrect configuration file. \n" + e.getMessage());
@@ -165,9 +175,9 @@ public class Xml2jGenerator {
 
 		ConfigurationHandler handler = new ConfigurationHandler();
 		try {
-			handler.parseDocument(Options.configFileName);
+			handler.parseDocument(configFileName);
 		} catch (IOException e) {
-			logger.warn("Cannot find or read file: " + Options.configFileName);
+			logger.warn("Cannot find or read file: " + configFileName);
 			System.exit(0);
 		} catch (Exception e) {
 			logger.fatal("Invalid or missing data. Reinstall XML2J Generator.");
@@ -238,11 +248,11 @@ public class Xml2jGenerator {
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
 		param.put(MESSAGE_HANDLER_NAME, iface.message_handler_name);
 		param.put(MESSAGE_HANDLER_PACKAGE, modulePackage + ".handlers");
-		param.put(SOURCE_PATH, Options.workingDirectory + "/" + module.name + "/" + module.output_path);
-		param.put(PRINTING, Options.printMethods ? "1" : "0");
-		param.put(SERIALIZATION, Options.serialization ? "1" : "0");
-		param.put(SERIALVERSION_UID, format("%dL", Options.UID));
-		param.put(AUTHOR, Options.author);
+		param.put(SOURCE_PATH, workingDirectory + "/" + module.name + "/" + module.output_path);
+		param.put(PRINTING, cli.hasPrint() ? "1" : "0");
+		param.put(SERIALIZATION, cli.hasSerialize() ? "1" : "0");
+		param.put(SERIALVERSION_UID, format("%dL", cli.getSerialize()));
+		param.put(AUTHOR, cli.getAuthor());
 		param.put(CUSTOMHEADER, Header.customHeader);
 		param.put(XML2J_VERSION, XML2J_VERSION_NUMBER);
 
@@ -262,7 +272,7 @@ public class Xml2jGenerator {
 		param.put(APPLICATION_PACKAGE, modulePackage + ".application");
 		param.put(XML2J_VERSION, XML2J_VERSION_NUMBER);
 
-		if (Options.verbose) {
+		if (cli.hasVerbose()) {
 			logger.info(
 					format("\n\tGROUP_ID: %s, \n\tDOMAIN_NAME: %s, \n\tMODULE_NAME: %s, \n\tMODULE_DESCRIPTION: %s, \n\tMODULE_PACKAGE: %s, \n\tSOURCE_PATH: %s, \n\tAPPLICATION_NAME: %s \n\tAPPLICATION_PACKAGE: %s",
 							param.get(GROUP_ID), param.get(DOMAIN_NAME), param.get(MODULE_NAME), param.get(MODULE_DESCRIPTION), param.get(MODULE_PACKAGE), param.get(SOURCE_PATH), param.get(APPLICATION_NAME), param.get(APPLICATION_PACKAGE))
@@ -313,7 +323,7 @@ public class Xml2jGenerator {
 		try {
 			String name = getSchemaFileName(iface);
 
-			if (Options.verbose)
+			if (cli.hasVerbose())
 				logger.info(name);
 
 			input = new FileInputStream(name);
@@ -337,7 +347,7 @@ public class Xml2jGenerator {
 	}
 
 	private static void generateCodeForDomain(final Xml2jDomain d) {
-		if (Options.verbose)
+		if (cli.hasVerbose())
 			d.print(System.out);
 
 		List<Xml2jModule> modules = d.modules();
@@ -348,18 +358,18 @@ public class Xml2jGenerator {
 
 	private static void generateCodeForModule(final Xml2jModule m) {
 		/* remove old code? */
-		if (Options.removeOldCode) {
-			String sourcePath = Options.workingDirectory + "/" + m.output_path;
+		if (cli.hasRemove()) {
+			String sourcePath = workingDirectory + "/" + m.output_path;
 			logger.info("Removing directory: " + sourcePath);
 			fileDelRecursive(new File(sourcePath));
 		}
 
 		/* setting parameters for code generation */
 		module = m;
-		moduleRoot = Options.workingDirectory;
+		moduleRoot = workingDirectory;
 		modulePackage = generatorSettings.domainpackage + "." + module.name;
 
-		if (Options.verbose)
+		if (cli.hasVerbose())
 			module.print(System.out);
 
 		/* for all interfaces in module generate code */
@@ -374,7 +384,7 @@ public class Xml2jGenerator {
 		iface = i;
 
 		/* print configuration parameters */
-		if (Options.verbose)
+		if (cli.hasVerbose())
 			iface.print(System.out);
 
 		if (iface.message_handler_application != null
@@ -389,7 +399,7 @@ public class Xml2jGenerator {
 
 			Step step = Step.STEP_ONE;
 			output = performStep(step, input);
-			if (Options.intermediate)
+			if (cli.hasIntermediate())
 				writeTransformationResultFile(iface.name, output.toByteArray(), step);
 			closeStream(input);
 
@@ -397,7 +407,7 @@ public class Xml2jGenerator {
 			input = toInputStream(output);
 			closeStream(output);
 			output = performStep(step, input);
-			if (Options.intermediate)
+			if (cli.hasIntermediate())
 				writeTransformationResultFile(iface.name, output.toByteArray(), step);
 			closeStream(input);
 
@@ -405,7 +415,7 @@ public class Xml2jGenerator {
 			input = toInputStream(output);
 			closeStream(output);
 			output = performStep(step, input);
-			if (Options.intermediate)
+			if (cli.hasIntermediate())
 				writeTransformationResultFile(iface.name, output.toByteArray(), step);
 			closeStream(input);
 
@@ -484,7 +494,7 @@ public class Xml2jGenerator {
 			Transformation t = new Transformation(steps.get(step), getParam(step));
 
 			final String xml = stringBuilder.toString();
-			final String pom = Options.workingDirectory + "/pom.xml";
+			final String pom = workingDirectory + "/pom.xml";
 			InputStream input = new ByteArrayInputStream(xml.getBytes(StandardCharsets.UTF_8));
 			ByteArrayOutputStream output = t.executeStep(input, null);
 
@@ -525,11 +535,11 @@ public class Xml2jGenerator {
 		String type = null;
 		switch (step) {
 			case MODULE_POM:
-				pomFile = Options.workingDirectory + "/" + module.name + "/pom.xml";
+				pomFile = workingDirectory + "/" + module.name + "/pom.xml";
 				type = "(module)";
 				break;
 			case DEFAULT_POM:
-				pomFile = Options.workingDirectory + "/pom.xml";
+				pomFile = workingDirectory + "/pom.xml";
 				type = "(default)";
 				break;
 		}
@@ -552,44 +562,45 @@ public class Xml2jGenerator {
 		}
 	}
 
+
+
 	public static void main(final String[] args) {
 		if (HOME == null) {
 			logger.fatal("Configuration error. Missing environment variable: XML2J_HOME.");
 		}
 
-		if (args.length < 1) {
-			CommandLine.usage();
+		/* set command line options */
+		try {
+			cli.parse(args);
+		} catch (ParseException e) {
+			logger.message(e.getMessage());
 			return;
 		}
 
-		/* set command line options */
-		CommandLine.parse(args);
-
 		/* exit conditions */
-		if (Options.printVersion) {
+		if (cli.doPrintVersion()) {
 			logger.message(VERSION);
 			return;
 		}
 
-		if (Options.printLicense) {
-			logger.message("LICENSE: " + license);
+		if (cli.doPrintLicense()) {
+			logger.message(LICENSE);
 			return;
 		}
 
-		if (Options.configFileName == null) {
-			CommandLine.usage();
+		if (cli.doPrintHelp() || !cli.hasConfig()) {
+			cli.printHelp();
 			return;
 		}
 
-		Xml2jGenerator.initialize();
-
+		/* initialization */
+		Xml2jGenerator.initialize(cli);
 		validateConfiguration();
-
 		parseConfiguration();
 
 		/* load configuration */
 		Xml2jConfiguration configuration = Xml2jConfiguration.instance();
-		generatorSettings = new Xml2jGeneratorSettings(configuration, Options.workingDirectory);
+		generatorSettings = new Xml2jGeneratorSettings(configuration, workingDirectory);
 		domain = configuration.getDomain();
 
 		/* start transformation */
@@ -598,7 +609,7 @@ public class Xml2jGenerator {
 		/* generate code */
 		generateCodeForDomain(configuration.getDomain());
 
-		if (Options.pom) {
+		if (cli.hasPom()) {
 			generatePomFiles(configuration.getDomain());
 		}
 	}

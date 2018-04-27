@@ -38,9 +38,9 @@ public class MastersProcessor implements MessageProcessor {
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(path);
 	MastersTypeRepo repo = context.getBean(MastersTypeRepo.class);
 
-	private int count = 0;
+	private long count = 0;
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 	public void closeContext() {
@@ -65,12 +65,12 @@ public class MastersProcessor implements MessageProcessor {
 				logger.info("Written: {}", count );
 			}
 		}
-		repo.save(data);
-//		try {
-//			long id = Long.parseLong(data.getId());
-//			data.setId(id);
-//		} catch (NumberFormatException e) {
-//			logger.error("Could not create Master with id {}", data.getId());
-//		}
+		try {
+			long id = Long.parseLong(data.getAttr("id"));
+			data.setId(id);
+			repo.save(data);
+		} catch (NumberFormatException e) {
+			logger.error("Could not create Master with id {}", data.getId());
+		}
 	}
 }

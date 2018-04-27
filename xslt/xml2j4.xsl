@@ -84,7 +84,7 @@ Project root: https://sourceforge.net/projects/xml2j/
 <xsl:param name="source-path" select="'./src'"/>
 
 <!-- project-root -->
-<xsl:param name="project-root" select="'XML2J https://sourceforge.net/projects/xml2j/'"/>
+<xsl:param name="project-root" select="'XML2J https://github.com/lolkedijkstra/'"/>
 
 <!-- author -->
 <xsl:param name="author" select="'XML2J Generator'"/>
@@ -589,20 +589,20 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
     <xsl:variable name="lName" select="concat(translate(substring($tName,1,1),$lowercase,$uppercase),substring($tName,2))"/>
   	<xsl:variable name="localClassName" select="'String'" />
 
-	/**
-	 * Get '<xsl:value-of select="@name"/>' attribute.
-	 * @return the item.
-	 */
+//	/**
+//	 * Get '<xsl:value-of select="@name"/>' attribute.
+//	 * @return the item.
+//	 */
 //	public <xsl:value-of select="$localClassName"/> get<xsl:value-of select="$lName"/>() {
 //		return getAttr("<xsl:value-of select="@name"/>");
 //	}
 
-	/**
-	 * Set '<xsl:value-of select="@name"/>' attribute.
-	 * 
-	 * Set (overwrite) the attribute data.
-	 * @param data the item that needs to be added.
-	 */
+//	/**
+//	 * Set '<xsl:value-of select="@name"/>' attribute.
+//	 * 
+//	 * Set (overwrite) the attribute data.
+//	 * @param data the item that needs to be added.
+//	 */
 //	public void set<xsl:value-of select="$lName" />(<xsl:value-of select="$localClassName"/> data) {
 //		setAttr("<xsl:value-of select="@name"/>", data);
 //	}
@@ -646,27 +646,21 @@ public class <xsl:value-of select="$classname"/> extends <xsl:value-of select="$
 	
 	<xsl:choose>	
 		<xsl:when test="@base='complex' and @ismulti='false'">
-		if (<xsl:value-of select="$elementName" /> != null)
+		if (<xsl:value-of select="$elementName" /> != null) {
 			<xsl:value-of select="$elementName" />.print(out);
-		else {
-			// out.print("&lt;<xsl:value-of select="@name" />&gt;null&lt;/<xsl:value-of select="@name" />&gt;");
-		}
+		}	
 		</xsl:when>
 		<xsl:when test="@base='complex' and @ismulti='true'">
-		if (<xsl:value-of select="$elementName" /> != null)
+		if (<xsl:value-of select="$elementName" /> != null) {
 			for(<xsl:value-of select="$localClassName" /><xsl:text> </xsl:text><xsl:value-of select="$lName" /> : <xsl:value-of select="$elementName" />) {
 				<xsl:value-of select="$lName" />.print(out);
 			}
-		else {
-			// out.print("&lt;<xsl:value-of select="@name" />&gt;null&lt;/<xsl:value-of select="@name" />&gt;");
-		}
+		}	
 		</xsl:when>
 		<xsl:when test="@base='simple' and @ismulti='true'">
-		if (<xsl:value-of select="$elementName" /> != null)
+		if (<xsl:value-of select="$elementName" /> != null) {
 			<xsl:value-of select="$elementName" />.print(out);
-		else {
-			// out.print("&lt;<xsl:value-of select="@name" />&gt;null&lt;/<xsl:value-of select="@name" />&gt;");
-		}
+		}	
 		</xsl:when>
 		<xsl:otherwise>
 		if (<xsl:value-of select="$elementName" /> != null) {
