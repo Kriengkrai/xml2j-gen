@@ -28,7 +28,7 @@ From the xml2j-gen directory issue the following command: `mvn install:install-f
 
 **Code Generation** 
 
-`java -jar xml2j.jar -wtutorials/choice -ccfg/cfg.xml -i -p -pom` 
+`java -jar xml2j.jar -w tutorials/choice -c conf/cfg.xml -i -p -pom` 
 
 In the example above:
 * -w is the working directory for the choice project
@@ -38,7 +38,7 @@ In the example above:
 
 To see possible arguments (help):
  
-`java -jar xml2j.jar`
+`java -jar xml2j.jar -?`
 
 **Tutorial**
 
