@@ -12,8 +12,8 @@ I have no appetite for maintaining the ant build files. Instead I have opted to 
 
 The code generator relies on the Saxon XSLT and XQuery Processor (SAXON 6.5.5), which is included in the libs subdirectory. You can also get it from here: http://prdownloads.sourceforge.net/saxon/saxon6-5-5.zip
 
-If you need to generate an XSD from XML, I recommend: https://devutilsonline.com/xsd-xml/generate-xsd-from-xml
-This service allows you to generate an XSD using various options, of which the default works very well (Venetian Blind Design). To make sure your XSD covers the optional elements as well, paste in a sufficiently large XML sample.
+If you need to generate an XSD from XML, you may want to have a look at: https://devutilsonline.com/xsd-xml/generate-xsd-from-xml
+This service allows you to generate an XSD using various options, of which the default works very well in most of the cases (Venetian Blind Design). To make sure your XSD covers the optional elements as well, paste in a sufficiently large XML sample.
 
 **First Use**
 * Add XML2J_HOME to your environment (home directory of the XML2J Generator)
@@ -49,7 +49,7 @@ For example:
 	
 From within this folder:
 	
-	java -jar ../../xml2j.jar -cconf/cfg.xml -p -pom
+	java -jar ../../xml2j.jar -c conf/cfg.xml -p -pom
 	
 	mvn clean install
 	
@@ -59,11 +59,25 @@ Note that the build step (mvn clean install) fails if the XML2J-CORE project is 
 	
 Alternatively you can generate code from the XML2J_HOME directory.	
 	
-	java -jar xml2j.jar -wtutorials/zoo -cconf/cfg.xml -p -pom
+	java -jar xml2j.jar -w tutorials/zoo -c conf/cfg.xml -p -pom
 
 There are quite a few examples there, just try them out. Also experiment with different properties files (typically inside the prop subdirectory).
 See the user manual for more information.
+
+You can also generate code for all tutorials:
+
+	java -jar xml2j.jar -w tutorials -c conf/cfg.xml -p -pom
 	
+And subsequently compile the code from the tutorials directory:
+	
+	cd tutorials
+	mvn clean install 
+	
+If you get build errors, you probably forgot to first build xml2j-core. From within the core directory:
+
+    mvn clean install
+    
+
 **Samples**
 
 I have added a samples directory with among others SEPA. In here I am also using Spring Data with MongoDB to persists transactions to Mongo. You will need to have [xml2j-springdata](https://github.com/lolkedijkstra/xml2j-springdata.git) as well if you want to use these samples.
