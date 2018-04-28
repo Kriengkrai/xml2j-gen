@@ -145,7 +145,7 @@ public class Xml2jGenerator {
 		}
 
 		if (cli.hasHeader()) {
-			Header.readHeader(cli.getHeader());
+			Header.readHeader(workingDirectory + '/'+ cli.getHeader());
 		}
 
 		setParserFactory();
