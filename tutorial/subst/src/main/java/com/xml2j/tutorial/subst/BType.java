@@ -8,12 +8,12 @@ package com.xml2j.tutorial.subst;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SUBST 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -33,11 +33,6 @@ import com.xml2j.xml.core.ComplexDataType;
  * 
  */
 public class BType extends AType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for BType.
@@ -84,7 +79,7 @@ public class BType extends AType {
   	
   
 	/** element item for belement element. 
-	 *  @serial
+	
 	 */	
 	private String m_belement = null;
 	

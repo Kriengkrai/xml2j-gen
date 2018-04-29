@@ -8,12 +8,12 @@ package com.xml2j.tutorial.reserved;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: RESERVED 
-  Generation date: Sat Apr 14 12:01:30 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -35,11 +35,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class AType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for AType.
@@ -86,47 +81,47 @@ public class AType extends ComplexDataType {
   	
   
 	/** element item for int element. 
-	 *  @serial
+	
 	 */	
 	private String m_int = null;
 	
 	/** element item for long element. 
-	 *  @serial
+	
 	 */	
 	private String m_long = null;
 	
 	/** element item for short element. 
-	 *  @serial
+	
 	 */	
 	private String m_short = null;
 	
 	/** element item for try element. 
-	 *  @serial
+	
 	 */	
 	private String m_try = null;
 	
 	/** element item for catch element. 
-	 *  @serial
+	
 	 */	
 	private String m_catch = null;
 	
 	/** element item for while element. 
-	 *  @serial
+	
 	 */	
 	private String m_while = null;
 	
 	/** element item for do element. 
-	 *  @serial
+	
 	 */	
 	private String m_do = null;
 	
 	/** element item for finally element. 
-	 *  @serial
+	
 	 */	
 	private String m_finally = null;
 	
 	/** element item for final element. 
-	 *  @serial
+	
 	 */	
 	private String m_final = null;
 	

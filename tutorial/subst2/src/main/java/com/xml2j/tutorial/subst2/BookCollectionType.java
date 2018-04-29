@@ -8,12 +8,12 @@ package com.xml2j.tutorial.subst2;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SUBST2 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -38,11 +38,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class BookCollectionType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for BookCollectionType.
@@ -89,7 +84,7 @@ public class BookCollectionType extends ComplexDataType {
   	
   
 	/** list of book element. 
-	 *  @serial
+	
 	 */	
 	private List<BookType> m_bookList = new ArrayList<BookType>();
 	
@@ -139,13 +134,11 @@ public class BookCollectionType extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_bookList != null)
+		if (m_bookList != null) {
 			for(BookType l_book : m_bookList) {
 				l_book.print(out);
 			}
-		else {
-			// out.print("<book>null</book>");
-		}
+		}	
 		
 	}
 }

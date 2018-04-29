@@ -8,12 +8,12 @@ package com.xml2j.tutorial.ext;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: EXT 
-  Generation date: Sat Apr 14 12:01:30 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:42 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -38,11 +38,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class ProductContainerType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for ProductContainerType.
@@ -89,7 +84,7 @@ public class ProductContainerType extends ComplexDataType {
   	
   
 	/** list of Product element. 
-	 *  @serial
+	
 	 */	
 	private List<ProductType> m_productList = new ArrayList<ProductType>();
 	
@@ -139,13 +134,11 @@ public class ProductContainerType extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_productList != null)
+		if (m_productList != null) {
 			for(ProductType l_Product : m_productList) {
 				l_Product.print(out);
 			}
-		else {
-			// out.print("<Product>null</Product>");
-		}
+		}	
 		
 	}
 }

@@ -8,12 +8,12 @@ package com.xml2j.tutorial.zoo;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: ZOO 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -38,11 +38,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class ZooCollection extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for ZooCollection.
@@ -89,17 +84,17 @@ public class ZooCollection extends ComplexDataType {
   	
   
 	/** list of zoo element. 
-	 *  @serial
+	
 	 */	
 	private List<ZooType> m_zooList = new ArrayList<ZooType>();
 	
 	/** list of birdZoo element. 
-	 *  @serial
+	
 	 */	
 	private List<BirdZooType> m_birdZooList = new ArrayList<BirdZooType>();
 	
 	/** list of mammalZoo element. 
-	 *  @serial
+	
 	 */	
 	private List<MammalZooType> m_mammalZooList = new ArrayList<MammalZooType>();
 	
@@ -187,29 +182,23 @@ public class ZooCollection extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_zooList != null)
+		if (m_zooList != null) {
 			for(ZooType l_zoo : m_zooList) {
 				l_zoo.print(out);
 			}
-		else {
-			// out.print("<zoo>null</zoo>");
-		}
+		}	
 		
-		if (m_birdZooList != null)
+		if (m_birdZooList != null) {
 			for(BirdZooType l_birdZoo : m_birdZooList) {
 				l_birdZoo.print(out);
 			}
-		else {
-			// out.print("<birdZoo>null</birdZoo>");
-		}
+		}	
 		
-		if (m_mammalZooList != null)
+		if (m_mammalZooList != null) {
 			for(MammalZooType l_mammalZoo : m_mammalZooList) {
 				l_mammalZoo.print(out);
 			}
-		else {
-			// out.print("<mammalZoo>null</mammalZoo>");
-		}
+		}	
 		
 	}
 }

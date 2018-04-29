@@ -8,12 +8,12 @@ package com.xml2j.tutorial.choice;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: CHOICE 
-  Generation date: Sat Apr 14 12:01:30 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:42 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -38,11 +38,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class ContainerType_d0e5_a6 extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for ContainerType_d0e5_a6.
@@ -89,17 +84,17 @@ public class ContainerType_d0e5_a6 extends ComplexDataType {
   	
   
 	/** list of A element. 
-	 *  @serial
+	
 	 */	
 	private List<AType> m_aList = new ArrayList<AType>();
 	
 	/** list of B element. 
-	 *  @serial
+	
 	 */	
 	private List<BType> m_bList = new ArrayList<BType>();
 	
 	/** list of C element. 
-	 *  @serial
+	
 	 */	
 	private List<CType> m_cList = new ArrayList<CType>();
 	
@@ -187,29 +182,23 @@ public class ContainerType_d0e5_a6 extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_aList != null)
+		if (m_aList != null) {
 			for(AType l_A : m_aList) {
 				l_A.print(out);
 			}
-		else {
-			// out.print("<A>null</A>");
-		}
+		}	
 		
-		if (m_bList != null)
+		if (m_bList != null) {
 			for(BType l_B : m_bList) {
 				l_B.print(out);
 			}
-		else {
-			// out.print("<B>null</B>");
-		}
+		}	
 		
-		if (m_cList != null)
+		if (m_cList != null) {
 			for(CType l_C : m_cList) {
 				l_C.print(out);
 			}
-		else {
-			// out.print("<C>null</C>");
-		}
+		}	
 		
 	}
 }

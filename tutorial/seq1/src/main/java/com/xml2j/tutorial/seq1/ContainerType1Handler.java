@@ -8,12 +8,12 @@ package com.xml2j.tutorial.seq1;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SEQ1 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -23,7 +23,6 @@ import org.xml.sax.XMLReader;
 
 /* Framework dependencies */
 import com.xml2j.xml.core.DataSetter;
-import com.xml2j.xml.core.XMLEvent;
 import com.xml2j.xml.core.XMLFragmentHandler;
 import com.xml2j.xml.parser.ParserTask;
 
@@ -141,23 +140,7 @@ public class ContainerType1Handler extends XMLFragmentHandler<ContainerType1> {
 			getData().setMiddleName(getValue());
 			getContents().reset();
 		} else if (localName.equals(getXMLElementName())) {
-				
-			// return control to parent handler..
-			this.deactivate();
-			
-			// get content of this item..
-			getData().setContent(this.getValue());
-			
-			// attach data to parent (if parent data setter is found)..
-			DataSetter setter = getParentDataSetter();
-			if (setter != null) {
-				setter.set(getData());
-			} 
-			
-			// process data if required..
-			if (doProcess()) {
-				process(XMLEvent.END);
-			}
+			handleElement();
 		}
 		
 	}	

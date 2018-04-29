@@ -8,12 +8,12 @@ package com.xml2j.tutorial.zoo;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: ZOO 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -38,11 +38,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class MammalZooType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for MammalZooType.
@@ -89,7 +84,7 @@ public class MammalZooType extends ComplexDataType {
   	
   
 	/** list of mammal element. 
-	 *  @serial
+	
 	 */	
 	private List<MammalType> m_mammalList = new ArrayList<MammalType>();
 	
@@ -139,13 +134,11 @@ public class MammalZooType extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_mammalList != null)
+		if (m_mammalList != null) {
 			for(MammalType l_mammal : m_mammalList) {
 				l_mammal.print(out);
 			}
-		else {
-			// out.print("<mammal>null</mammal>");
-		}
+		}	
 		
 	}
 }

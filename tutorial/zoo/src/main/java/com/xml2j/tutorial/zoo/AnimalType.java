@@ -8,12 +8,12 @@ package com.xml2j.tutorial.zoo;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: ZOO 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -35,11 +35,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class AnimalType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for AnimalType.
@@ -86,12 +81,12 @@ public class AnimalType extends ComplexDataType {
   	
   
 	/** element item for sex element. 
-	 *  @serial
+	
 	 */	
 	private String m_sex = null;
 	
 	/** element item for age element. 
-	 *  @serial
+	
 	 */	
 	private AgeType m_age = null;
 	
@@ -166,11 +161,9 @@ public class AnimalType extends ComplexDataType {
 			out.print("</sex>\n");
 		}
 		
-		if (m_age != null)
+		if (m_age != null) {
 			m_age.print(out);
-		else {
-			// out.print("<age>null</age>");
-		}
+		}	
 		
 	}
 }

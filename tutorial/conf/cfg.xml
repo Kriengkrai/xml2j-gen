@@ -8,7 +8,7 @@
 		
  		<!-- the module name is used as an extension for generation of the package-name -->
 		<!-- the domain's base is the working directory (e.g. tutorial) -->
-		<!-- for a module its base is relative to the domain's (e.g. tutorial/choice) -->
+		<!-- for a module its base is relative to the domain (e.g. tutorial/choice) -->
 		<!-- paths are relative to the module (e.g. schema <-> tutorial/choice/schema) -->
 		
 		<module name="choice" 

@@ -8,12 +8,12 @@ package com.xml2j.tutorial.seq4;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SEQ4 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -37,11 +37,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class ContainerType4 extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for ContainerType4.
@@ -88,17 +83,17 @@ public class ContainerType4 extends ComplexDataType {
   	
   
 	/** list of firstName element. 
-	 *  @serial
+	
 	 */	
 	private StringList m_firstNameList = new StringList("firstName");
 	
 	/** list of middleName element. 
-	 *  @serial
+	
 	 */	
 	private StringList m_middleNameList = new StringList("middleName");
 	
 	/** list of lastName element. 
-	 *  @serial
+	
 	 */	
 	private StringList m_lastNameList = new StringList("lastName");
 		
@@ -186,23 +181,17 @@ public class ContainerType4 extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_firstNameList != null)
+		if (m_firstNameList != null) {
 			m_firstNameList.print(out);
-		else {
-			// out.print("<firstName>null</firstName>");
-		}
+		}	
 		
-		if (m_middleNameList != null)
+		if (m_middleNameList != null) {
 			m_middleNameList.print(out);
-		else {
-			// out.print("<middleName>null</middleName>");
-		}
+		}	
 		
-		if (m_lastNameList != null)
+		if (m_lastNameList != null) {
 			m_lastNameList.print(out);
-		else {
-			// out.print("<lastName>null</lastName>");
-		}
+		}	
 		
 	}
 }

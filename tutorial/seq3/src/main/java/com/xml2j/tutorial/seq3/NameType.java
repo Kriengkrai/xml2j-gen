@@ -8,12 +8,12 @@ package com.xml2j.tutorial.seq3;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SEQ3 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -35,11 +35,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class NameType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for NameType.
@@ -86,17 +81,17 @@ public class NameType extends ComplexDataType {
   	
   
 	/** element item for firstName element. 
-	 *  @serial
+	
 	 */	
 	private String m_firstName = null;
 	
 	/** element item for middleName element. 
-	 *  @serial
+	
 	 */	
 	private String m_middleName = null;
 	
 	/** element item for lastName element. 
-	 *  @serial
+	
 	 */	
 	private String m_lastName = null;
 	

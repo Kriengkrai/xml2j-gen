@@ -7,12 +7,12 @@ package com.xml2j.tutorial.seq3.application;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SEQ3 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -20,6 +20,8 @@ package com.xml2j.tutorial.seq3.application;
 //----------------------- 		IO		-----------------------//
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.zip.GZIPInputStream;
 //-----------------------    LOGGING	-----------------------//
 import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
@@ -65,7 +67,7 @@ public class SeqApplication {
 		}
 
 		// get program arguments
-		final String xml = args[0];
+		final String input = args[0];
 		final String config = args[1];
 		final String schema = args.length >= 3 ? args[2] : null;
 		
@@ -81,21 +83,33 @@ public class SeqApplication {
 			ParserConfiguration configuration = new ParserConfiguration(config);
 	
 			/*	
-				single threaded mode. to use multiple processors simultaneously specify message-handler-runnable.
+				single threaded (default) mode. to use multiple processors simultaneously specify message-handler-runnable.
 				see: documentation version 2.3.0
 			*/
 			// create the application object
 			ParserTask app = new SeqApplicationTask(configuration);
-			
+
+			InputStream inputStream = null;
+			if (input.endsWith(".gz")) {
+				log.info("Assuming gz format.");
+				inputStream = new GZIPInputStream(new FileInputStream(input));
+			} else if (input.endsWith(".xml")) {
+				log.info("Assuming regular xml format.");
+				inputStream = new FileInputStream(input);
+			} else {
+				log.error("Unsupported file format. File must be either gz compressed xml or plain xml");
+				System.exit(0);
+			}
+
 			// validate (optional)
 			if (schema != null) {
-				log.info("Validating {} against {}", xml, schema);
-				app.validateXML(new FileInputStream(xml), new FileInputStream(schema));
+				log.info("Validating {} against {}", input, schema);
+				app.validateXML(inputStream, new FileInputStream(schema));
 			}
 			
 			// process the XML file
 			log.info("Start Processing..");	
-			app.prepareStart( new FileInputStream(xml), new SeqProcessor());
+			app.prepareStart(inputStream, new SeqProcessor());
 			app.processXML();
 			
 			log.info("Processing complete.");

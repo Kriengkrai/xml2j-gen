@@ -8,12 +8,12 @@ package com.xml2j.tutorial.ext;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: EXT 
-  Generation date: Sat Apr 14 12:01:30 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:42 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -33,11 +33,6 @@ import com.xml2j.xml.core.ComplexDataType;
  * 
  */
 public class JeansType extends ProductType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for JeansType.
@@ -84,12 +79,12 @@ public class JeansType extends ProductType {
   	
   
 	/** element item for width element. 
-	 *  @serial
+	
 	 */	
 	private SizeType m_width = null;
 	
 	/** element item for length element. 
-	 *  @serial
+	
 	 */	
 	private SizeType m_length = null;
 	
@@ -158,17 +153,13 @@ public class JeansType extends ProductType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_width != null)
+		if (m_width != null) {
 			m_width.print(out);
-		else {
-			// out.print("<width>null</width>");
-		}
+		}	
 		
-		if (m_length != null)
+		if (m_length != null) {
 			m_length.print(out);
-		else {
-			// out.print("<length>null</length>");
-		}
+		}	
 		
 	}
 }

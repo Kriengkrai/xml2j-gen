@@ -8,12 +8,12 @@ package com.xml2j.tutorial.subst2;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: SUBST2 
-  Generation date: Sat Apr 14 12:01:31 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:43 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -35,11 +35,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class LibraryType_d0e8_a14 extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for LibraryType_d0e8_a14.
@@ -86,17 +81,17 @@ public class LibraryType_d0e8_a14 extends ComplexDataType {
   	
   
 	/** element item for books element. 
-	 *  @serial
+	
 	 */	
 	private BookCollectionType m_books = null;
 	
 	/** element item for cds element. 
-	 *  @serial
+	
 	 */	
 	private OpticalCollectionType m_cds = null;
 	
 	/** element item for miscellaneousItems element. 
-	 *  @serial
+	
 	 */	
 	private GenericCollectionType m_miscellaneousItems = null;
 	
@@ -184,23 +179,17 @@ public class LibraryType_d0e8_a14 extends ComplexDataType {
 	protected void printElements(Printer out) {
 		super.printElements(out);
   
-		if (m_books != null)
+		if (m_books != null) {
 			m_books.print(out);
-		else {
-			// out.print("<books>null</books>");
-		}
+		}	
 		
-		if (m_cds != null)
+		if (m_cds != null) {
 			m_cds.print(out);
-		else {
-			// out.print("<cds>null</cds>");
-		}
+		}	
 		
-		if (m_miscellaneousItems != null)
+		if (m_miscellaneousItems != null) {
 			m_miscellaneousItems.print(out);
-		else {
-			// out.print("<miscellaneousItems>null</miscellaneousItems>");
-		}
+		}	
 		
 	}
 }

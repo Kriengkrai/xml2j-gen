@@ -8,12 +8,12 @@ package com.xml2j.tutorial.ext;
   
   This code was generated using XML2J code generator.
   
-  Version: 2.4.1 
-  Project home: XML2J https://sourceforge.net/projects/xml2j/ 
+  Version: 2.5.0 
+  Project home: XML2J https://github.com/lolkedijkstra/ 
 
   Module: EXT 
-  Generation date: Sat Apr 14 12:01:30 CEST 2018 
-  Author: XML2J-Generator
+  Generation date: Sun Apr 29 12:06:42 CEST 2018 
+  Author: XML2J-GEN
 
 ******************************************************************************/
 
@@ -33,11 +33,6 @@ import com.xml2j.xml.core.TypeAllocator;
  * 
  */
 public class SizeType extends ComplexDataType {
-
-	/**
-	 * serial version UID 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructor for SizeType.
@@ -99,23 +94,23 @@ public class SizeType extends ComplexDataType {
   
   
 
-	/**
-	 * Get 'system' attribute.
-	 * @return the item.
-	 */
-	public String getSystem() {
-		return getAttr("system");
-	}
+//	/**
+//	 * Get 'system' attribute.
+//	 * @return the item.
+//	 */
+//	public String getSystem() {
+//		return getAttr("system");
+//	}
 
-	/**
-	 * Set 'system' attribute.
-	 * 
-	 * Set (overwrite) the attribute data.
-	 * @param data the item that needs to be added.
-	 */
-	public void setSystem(String data) {
-		setAttr("system", data);
-	}
+//	/**
+//	 * Set 'system' attribute.
+//	 * 
+//	 * Set (overwrite) the attribute data.
+//	 * @param data the item that needs to be added.
+//	 */
+//	public void setSystem(String data) {
+//		setAttr("system", data);
+//	}
   
   
 	/**

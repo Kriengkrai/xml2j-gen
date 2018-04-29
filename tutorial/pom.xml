@@ -3,7 +3,7 @@
 <!--
     XML2J XSD to Java code generator
     This (master) POM file was generated using XML2J code generator.
-    Generation date: Sat Apr 14 12:01:31 CEST 2018
+    Generation date: Sun Apr 29 12:06:43 CEST 2018
 -->
    <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -44,7 +44,7 @@
       <dependency>
          <groupId>com.xml2j</groupId>
          <artifactId>xml2j-core</artifactId>
-         <version>2.4.1</version>
+         <version>2.5.0</version>
       </dependency>
    </dependencies>
 </project>
