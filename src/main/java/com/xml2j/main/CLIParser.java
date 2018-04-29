@@ -16,10 +16,11 @@ class CLIParser {
     private HelpFormatter helpFormatter = new HelpFormatter();
     private CommandLine commandLine = null;
 
-    private static final String APPLICATION = "XML2J-GEN";
+    private static final String AUTHOR = "XML2J-GEN";
+    private static final String CLI = "java -jar xml2j.jar [options]";
 
     void printHelp() {
-        helpFormatter.printHelp(APPLICATION, options);
+        helpFormatter.printHelp(CLI, options);
     }
 
     CLIParser() {
@@ -34,7 +35,7 @@ class CLIParser {
                 .addOption("r", "remove", false, "remove old code before generating code")
                 .addOption("version", false, "prints version")
                 .addOption("pom", "pom",false, "generate POM files (defaults to none)")
-                .addOption("a", "author", true, format("author (defaults to %s)", APPLICATION))
+                .addOption("a", "author", true, format("author (defaults to %s)", AUTHOR))
                 .addOption("c", "configuration", true, "(mandatory) configuration file used by generator");
     }
 
@@ -62,7 +63,7 @@ class CLIParser {
     }
 
     String getAuthor() {
-        return hasAuthor() ? getValue("a") : APPLICATION;
+        return hasAuthor() ? getValue("a") : AUTHOR;
     }
 
     String getConfigfileName() {
