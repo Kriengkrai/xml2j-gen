@@ -33,7 +33,7 @@ class CLIParser {
                 .addOption("v", "verbose", false, "verbose")
                 .addOption("i", "intermediate", false, "output intermediate results")
                 .addOption("r", "remove", false, "remove old code before generating code")
-                .addOption("version", false, "prints version")
+                .addOption("version", "version", false, "prints version")
                 .addOption("pom", "pom",false, "generate POM files (defaults to none)")
                 .addOption("a", "author", true, format("author (defaults to %s)", AUTHOR))
                 .addOption("c", "configuration", true, "(mandatory) configuration file used by generator");
@@ -43,7 +43,6 @@ class CLIParser {
         if (commandLine == null)
             throw new NullPointerException("Commandline has not been parsed. Must use parse first");
 
-        boolean hasOpt = commandLine.hasOption(opt);
         return commandLine.hasOption(opt);
     }
 
